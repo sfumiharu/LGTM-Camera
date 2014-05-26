@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AVFoundation/AVCaptureOutput.h>
 
-@interface ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ViewController : UIViewController
+<
+AVCaptureVideoDataOutputSampleBufferDelegate,
+AVCaptureFileOutputRecordingDelegate
+>
 
 @end
