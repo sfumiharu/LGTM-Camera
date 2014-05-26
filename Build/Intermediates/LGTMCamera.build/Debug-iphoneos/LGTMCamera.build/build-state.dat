@@ -1,0 +1,624 @@
+TLGTMCamera
+v6
+r1
+cCheck dependencies
+cCpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/ResourceRules.plist Build/Products/Debug-iphoneos/LGTMCamera.app/ResourceRules.plist
+cProcessPCH /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/PrecompiledHeaders/LGTMCamera-Prefix-agjautgsguthdiexcyaadgghioue/LGTMCamera-Prefix.pch.pch LGTMCamera/LGTMCamera-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/ViewController.o /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/AppDelegate.o /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/AppDelegate.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/main.o /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/main.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/LGTMCamera normal armv7s
+cCompileXIB /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.xib
+cCopyStringsFile /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/en.lproj/InfoPlist.strings LGTMCamera/en.lproj/InfoPlist.strings
+cCompileAssetCatalog /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/Images.xcassets
+cProcessInfoPlistFile /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/Info.plist /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/LGTMCamera-Info.plist
+cGenerateDSYMFile /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app.dSYM /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/LGTMCamera
+cProcessProductPackaging /Users/fumiharu/Library/MobileDevice/Provisioning\ Profiles/39EBB97B-D39D-4DDD-AE6D-40FD6ED21194.mobileprovision /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/embedded.mobileprovision
+cTouch /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app
+cProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/Entitlements.plist /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera.xcent
+cCodeSign /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk
+c00000000534891720000000000000132
+t1397264754
+s306
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/Entitlements.plist
+c00000000531FD9460000000000000094
+t1394596166
+s148
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/ResourceRules.plist
+c00000000531FD9460000000000000096
+t1394596166
+s150
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/SDKSettings.plist
+c00000000531FD946000000000000036B
+t1394596166
+s875
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000531FD947000000000000019E
+t1394596167
+s414
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+c00000000531FD949000000000063A500
+t1394596169
+s6530304
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+c00000000531FD949000000000079C660
+t1394596169
+s7980640
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000005348915C00000000004D7BC0
+t1397264732
+s5077952
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
+c00000000531FD9490000000000433410
+t1394596169
+s4404240
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+c00000000531FD94A0000000000306EF0
+t1394596170
+s3174128
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+c00000000531FD949000000000006DCD0
+t1394596169
+s449744
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c00000000531FD94B0000000000A90C10
+t1394596171
+s11078672
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+c00000000531FD94B00000000000417E0
+t1394596171
+s268256
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c00000000531FD94C0000000000649DB0
+t1394596172
+s6593968
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework/Security
+c00000000531FD94C0000000000186D60
+t1394596172
+s1600864
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c00000000531FD9520000000002759920
+t1394596178
+s41261344
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+c00000000531FD9560000000000385D50
+t1394596182
+s3693904
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/libSystem.dylib
+c00000000531FD959000000000001E300
+t1394596185
+s123648
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/libobjc.dylib
+c00000000531FD959000000000055EFE0
+t1394596185
+s5631968
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libcache.dylib
+c00000000531FD95A000000000002A880
+t1394596186
+s174208
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libcommonCrypto.dylib
+c00000000531FD95A00000000000458C0
+t1394596186
+s284864
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libcompiler_rt.dylib
+c00000000531FD95A000000000003E3E0
+t1394596186
+s254944
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libcopyfile.dylib
+c00000000531FD95A000000000002B130
+t1394596186
+s176432
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libcorecrypto.dylib
+c00000000531FD95A00000000000E1FD0
+t1394596186
+s925648
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libdispatch.dylib
+c00000000531FD95A00000000000A2A70
+t1394596186
+s666224
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libdyld.dylib
+c00000000531FD95A000000000001E8A0
+t1394596186
+s125088
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libkeymgr.dylib
+c00000000531FD95A000000000000BF00
+t1394596186
+s48896
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/liblaunch.dylib
+c00000000531FD95A0000000000034380
+t1394596186
+s213888
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libmacho.dylib
+c00000000531FD95A0000000000022F30
+t1394596186
+s143152
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libremovefile.dylib
+c00000000531FD95A000000000001E2A0
+t1394596186
+s123552
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_asl.dylib
+c00000000531FD95A0000000000052520
+t1394596186
+s337184
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_blocks.dylib
+c00000000531FD95A0000000000015F20
+t1394596186
+s89888
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_c.dylib
+c00000000531FD95A00000000001B90D0
+t1394596186
+s1806544
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_configuration.dylib
+c00000000531FD95A000000000001F170
+t1394596186
+s127344
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_dnssd.dylib
+c00000000531FD95A000000000002FCF0
+t1394596186
+s195824
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_info.dylib
+c00000000531FD95A000000000008A150
+t1394596186
+s565584
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_kernel.dylib
+c00000000531FD95A00000000000B60E0
+t1394596186
+s745696
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_m.dylib
+c00000000531FD95A0000000000078720
+t1394596186
+s493344
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_malloc.dylib
+c00000000531FD95A00000000000621F0
+t1394596186
+s401904
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_network.dylib
+c00000000531FD95A00000000000BDAE0
+t1394596186
+s776928
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_notify.dylib
+c00000000531FD95A0000000000039080
+t1394596186
+s233600
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_platform.dylib
+c00000000531FD95A000000000003CBC0
+t1394596186
+s248768
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_pthread.dylib
+c00000000531FD95A000000000002CFE0
+t1394596186
+s184288
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_sandbox.dylib
+c00000000531FD95A000000000001EB50
+t1394596186
+s125776
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_stats.dylib
+c00000000531FD95A000000000001EED0
+t1394596186
+s126672
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libunwind.dylib
+c00000000531FD95A00000000000236B0
+t1394596186
+s145072
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libxpc.dylib
+c00000000531FD95A00000000000AC500
+t1394596186
+s705792
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/include/module.map
+c00000000531FD9960000000000000ADC
+t1394596246
+s2780
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.ios.a
+c000000005348915C000000000000514C
+t1397264732
+s20812
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera.xcent
+t1400299302
+s398
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/AppDelegate.o
+t1400299298
+s63760
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/LGTMCamera.LinkFileList
+c000000005376DE5B00000000000001A0
+t1400299099
+s416
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/ViewController.o
+t1400299298
+s48456
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/main.o
+t1400299101
+s3776
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/assetcatalog_dependencies.txt
+t1400299102
+s353
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/assetcatalog_generated_info.plist
+t1400299102
+s525
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/PrecompiledHeaders/LGTMCamera-Prefix-agjautgsguthdiexcyaadgghioue/LGTMCamera-Prefix.pch.pch
+t1400299101
+s87844
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app
+t1400299298
+s408
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app.dSYM
+t1400299298
+s102
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/Info.plist
+t1400299102
+s1257
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/LGTMCamera
+t1400299298
+s64688
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/PkgInfo
+t1400299102
+s8
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/ResourceRules.plist
+t1400299099
+s150
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/ViewController.nib
+t1400299102
+s836
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/embedded.mobileprovision
+t1400299102
+s10037
+
+N/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/en.lproj/InfoPlist.strings
+t1400299101
+s42
+
+N/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/AppDelegate.h
+c000000005376D6410000000000000118
+t1400297025
+s280
+
+N/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/AppDelegate.m
+c000000005376DB1D000000000000088D
+t1400298269
+s2189
+
+N/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/Images.xcassets
+c000000005376D6410000000000000088
+t1400297025
+s136
+
+N/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/LGTMCamera-Info.plist
+c000000005376DB1D0000000000000486
+t1400298269
+s1158
+
+N/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/LGTMCamera-Prefix.pch
+c000000005376D6410000000000000158
+t1400297025
+s344
+
+N/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.h
+c000000005376DF22000000000000011C
+t1400299298
+s284
+
+N/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.m
+c000000005376DF220000000000000368
+t1400299298
+s872
+
+N/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.xib
+c000000005376DB1D000000000000052A
+t1400298269
+s1322
+
+N/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/en.lproj/InfoPlist.strings
+c000000005376D641000000000000002D
+t1400297025
+s45
+
+N/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/main.m
+c000000005376D6410000000000000154
+t1400297025
+s340
+
+N/Users/fumiharu/Library/MobileDevice/Provisioning Profiles/39EBB97B-D39D-4DDD-AE6D-40FD6ED21194.mobileprovision
+c000000005314A0DB0000000000002735
+t1393860827
+s10037
+
+CBuild AST from /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/AppDelegate.m
+r0
+
+CBuild AST from /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.m
+r0
+
+CBuild AST from /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/main.m
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies9886c5a61627b941^2db2cda61627b941^---0#1#1#--18"Check dependencies36"9464E35C-D770-485F-B49B-67CB0A70F80F-
+
+CCodeSign /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app
+s421992102.809784
+e421992102.943588
+r1
+xCodeSign
+x/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app
+o/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app: replacing existing signature
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"CodeSign Build/Products/Debug-iphoneos/LGTMCamera.app53"CodeSign Build/Products/Debug-iphoneos/LGTMCamera.app6f63cfa61627b941^b98ef1a61627b941^-110"/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app: replacing existing signature-0#0#1#-19%DVTDocumentLocation2@87"file:///Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/0000000000000000^1162"CodeSign Build/Products/Debug-iphoneos/LGTMCamera.app    cd /Users/fumiharu/Desktop/LGTMCamera    export CODESIGN_ALLOCATE=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/codesign_allocate    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/heroku/bin:/Users/fumiharu/.nodebrew/current/bin:/usr/java/jdk1.6.0_33/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    Using code signing identity "iPhone Developer: fumiharu sugawara (3Y5EEJU59L)" and provisioning profile "iOS Team Provisioning Profile: *" (39EBB97B-D39D-4DDD-AE6D-40FD6ED21194)    /usr/bin/codesign --force --sign 65B0C55F2EE148C31FC84D23C355D9325D257819 --resource-rules=/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/ResourceRules.plist --entitlements /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera.xcent /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app36"E73013AD-6517-457A-B43A-05B3A6A9B5E7-
+bE68DA1B0-1408-444A-9E37-CAC2CE2C2D76
+
+CCompileAssetCatalog /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/Images.xcassets
+s421991901.643249
+e421991902.843709
+r1
+xCompileAssetCatalog
+x/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app
+x/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/Images.xcassets
+o/* com.apple.actool.compilation-results */
+o/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/LaunchImage-700-568h@2x.png
+o/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/Assets.car
+o/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/assetcatalog_generated_info.plist
+o
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"CompileAssetCatalog Build/Products/Debug-iphoneos/LGTMCamera.app LGTMCamera/Images.xcassets91"CompileAssetCatalog Build/Products/Debug-iphoneos/LGTMCamera.app LGTMCamera/Images.xcassetse5d2a4dd1527b941^a4fdd7de1527b941^-381"/* com.apple.actool.compilation-results *//Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/LaunchImage-700-568h@2x.png/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/Assets.car/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/assetcatalog_generated_info.plist-0#0#1#-19%DVTDocumentLocation2@69"file:///Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/Images.xcassets/0000000000000000^1206"CompileAssetCatalog Build/Products/Debug-iphoneos/LGTMCamera.app LGTMCamera/Images.xcassets    cd /Users/fumiharu/Desktop/LGTMCamera    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/heroku/bin:/Users/fumiharu/.nodebrew/current/bin:/usr/java/jdk1.6.0_33/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    /Applications/Xcode.app/Contents/Developer/usr/bin/actool --output-format human-readable-text --notices --warnings --export-dependency-info /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/assetcatalog_dependencies.txt --output-partial-info-plist /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/assetcatalog_generated_info.plist --app-icon AppIcon --launch-image LaunchImage --platform iphoneos --minimum-deployment-target 7.1 --target-device iphone --compress-pngs --compile /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/Images.xcassets36"6D5BBB17-1660-4984-AA9D-BEE31DCB883A-
+bDF01FC05-789A-44C3-BBF8-5AC7B5364A50
+
+CCompileC Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/AppDelegate.o /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/AppDelegate.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s421992098.668442
+e421992098.752223
+r1
+xCompileC
+xBuild/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/AppDelegate.o
+x/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/AppDelegate.m
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/AppDelegate.m
+d/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/AppDelegate.h
+d/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Compile /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/AppDelegate.m208"CompileC Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/AppDelegate.o LGTMCamera/AppDelegate.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compilerc348aba21627b941^a793c0a21627b941^---0#0#1#-19%DVTDocumentLocation2@66"file:///Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/AppDelegate.m0000000000000000^3667"CompileC Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/AppDelegate.o LGTMCamera/AppDelegate.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fumiharu/Desktop/LGTMCamera    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/heroku/bin:/Users/fumiharu/.nodebrew/current/bin:/usr/java/jdk1.6.0_33/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/fumiharu/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=7.1 -iquote /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-generated-files.hmap -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-own-target-headers.hmap -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-all-target-headers.hmap -iquote /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-project-headers.hmap -I/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/DerivedSources/armv7s -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/DerivedSources -F/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos -include /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/PrecompiledHeaders/LGTMCamera-Prefix-agjautgsguthdiexcyaadgghioue/LGTMCamera-Prefix.pch -MMD -MT dependencies -MF /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/AppDelegate.d --serialize-diagnostics /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/AppDelegate.dia -c /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/AppDelegate.m -o /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/AppDelegate.o36"ABCF058E-1603-46AC-BE8C-E04E9675F1E1-
+b7D7CD397-D0A3-49BF-9871-90C6B127ECC1
+
+CCompileC Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/ViewController.o /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s421992098.668116
+e421992098.745131
+r1
+xCompileC
+xBuild/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/ViewController.o
+x/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.m
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.m
+d/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection70"Compile /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.m214"CompileC Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/ViewController.o LGTMCamera/ViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler1137aba21627b941^9605bfa21627b941^---0#0#1#-19%DVTDocumentLocation2@69"file:///Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.m0000000000000000^3685"CompileC Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/ViewController.o LGTMCamera/ViewController.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fumiharu/Desktop/LGTMCamera    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/heroku/bin:/Users/fumiharu/.nodebrew/current/bin:/usr/java/jdk1.6.0_33/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/fumiharu/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=7.1 -iquote /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-generated-files.hmap -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-own-target-headers.hmap -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-all-target-headers.hmap -iquote /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-project-headers.hmap -I/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/DerivedSources/armv7s -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/DerivedSources -F/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos -include /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/PrecompiledHeaders/LGTMCamera-Prefix-agjautgsguthdiexcyaadgghioue/LGTMCamera-Prefix.pch -MMD -MT dependencies -MF /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/ViewController.d --serialize-diagnostics /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/ViewController.dia -c /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.m -o /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/ViewController.o36"4E1BCF6F-B572-4DEE-8BD6-A3A3CC750D9F-
+b7D7CD397-D0A3-49BF-9871-90C6B127ECC1
+
+CCompileC Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/main.o /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/main.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s421991901.168493
+e421991901.307208
+r1
+xCompileC
+xBuild/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/main.o
+x/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/main.m
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/main.m
+d/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/AppDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection60"Compile /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/main.m194"CompileC Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/main.o LGTMCamera/main.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler06642bdd1527b941^c6a54edd1527b941^---0#0#1#-19%DVTDocumentLocation2@59"file:///Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/main.m0000000000000000^3625"CompileC Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/main.o LGTMCamera/main.m normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fumiharu/Desktop/LGTMCamera    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/heroku/bin:/Users/fumiharu/.nodebrew/current/bin:/usr/java/jdk1.6.0_33/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch armv7s -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/fumiharu/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=7.1 -iquote /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-generated-files.hmap -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-own-target-headers.hmap -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-all-target-headers.hmap -iquote /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-project-headers.hmap -I/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/DerivedSources/armv7s -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/DerivedSources -F/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos -include /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/PrecompiledHeaders/LGTMCamera-Prefix-agjautgsguthdiexcyaadgghioue/LGTMCamera-Prefix.pch -MMD -MT dependencies -MF /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/main.d --serialize-diagnostics /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/main.dia -c /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/main.m -o /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/main.o36"FBB9F30A-197D-4B8A-AAC1-F4152EFEBAF1-
+bDF01FC05-789A-44C3-BBF8-5AC7B5364A50
+
+CCompileXIB /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.xib
+s421991901.641317
+e421991902.817709
+r1
+xCompileXIB
+x/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.xib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Compiling /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.xib40"CompileXIB LGTMCamera/ViewController.xiba94da4dd1527b941^f855d1de1527b941^---0#0#1#-19%DVTDocumentLocation2@71"file:///Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.xib0000000000000000^846"CompileXIB LGTMCamera/ViewController.xib    cd /Users/fumiharu/Desktop/LGTMCamera    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/heroku/bin:/Users/fumiharu/.nodebrew/current/bin:/usr/java/jdk1.6.0_33/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    export XCODE_DEVELOPER_USR_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 7.1 --output-format human-readable-text --compile /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/ViewController.nib /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/ViewController.xib36"FFBB13F0-96DF-4F36-AEDB-6C65FCD7F681-
+bDF01FC05-789A-44C3-BBF8-5AC7B5364A50
+
+CCopyStringsFile /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/en.lproj/InfoPlist.strings LGTMCamera/en.lproj/InfoPlist.strings
+s421991901.641519
+e421991901.643412
+r1
+xCopyStringsFile
+x/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/en.lproj/InfoPlist.strings
+xLGTMCamera/en.lproj/InfoPlist.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection42"Copy LGTMCamera/en.lproj/InfoPlist.strings125"CopyStringsFile Build/Products/Debug-iphoneos/LGTMCamera.app/en.lproj/InfoPlist.strings LGTMCamera/en.lproj/InfoPlist.stringsd769a4dd1527b941^4eb7a4dd1527b941^---0#0#1#-19%DVTDocumentLocation2@79"file:///Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/en.lproj/InfoPlist.strings0000000000000000^727"CopyStringsFile Build/Products/Debug-iphoneos/LGTMCamera.app/en.lproj/InfoPlist.strings LGTMCamera/en.lproj/InfoPlist.strings    cd /Users/fumiharu/Desktop/LGTMCamera    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/heroku/bin:/Users/fumiharu/.nodebrew/current/bin:/usr/java/jdk1.6.0_33/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/en.lproj -- LGTMCamera/en.lproj/InfoPlist.strings36"3B866251-606B-47E5-8FC5-223A686B2573-
+bDF01FC05-789A-44C3-BBF8-5AC7B5364A50
+
+CCpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/ResourceRules.plist Build/Products/Debug-iphoneos/LGTMCamera.app/ResourceRules.plist
+s421991899.768565
+e421991899.769488
+r1
+xCpResource
+x/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/ResourceRules.plist
+xBuild/Products/Debug-iphoneos/LGTMCamera.app/ResourceRules.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Copy Build/Products/Debug-iphoneos/LGTMCamera.app/ResourceRules.plist197"CpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/ResourceRules.plist Build/Products/Debug-iphoneos/LGTMCamera.app/ResourceRules.plist78d0c4db1527b941^1747c5db1527b941^---0#0#1#-19%DVTDocumentLocation2@106"file:///Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/ResourceRules.plist003498bcdfffdf42^893"CpResource /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/ResourceRules.plist Build/Products/Debug-iphoneos/LGTMCamera.app/ResourceRules.plist    cd /Users/fumiharu/Desktop/LGTMCamera    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/heroku/bin:/Users/fumiharu/.nodebrew/current/bin:/usr/java/jdk1.6.0_33/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/ResourceRules.plist /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app36"E6DD131E-A19B-4455-AD89-E0F324320ADC-
+bDF01FC05-789A-44C3-BBF8-5AC7B5364A50
+
+CGenerateDSYMFile /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app.dSYM /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/LGTMCamera
+s421992098.789834
+e421992098.806068
+r1
+xGenerateDSYMFile
+x/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app.dSYM
+x/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/LGTMCamera
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Generate /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app.dSYM122"GenerateDSYMFile Build/Products/Debug-iphoneos/LGTMCamera.app.dSYM Build/Products/Debug-iphoneos/LGTMCamera.app/LGTMCamera9e42caa21627b941^c85bcea21627b941^---0#0#1#-19%DVTDocumentLocation2@92"file:///Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app.dSYM/0000000000000000^783"GenerateDSYMFile Build/Products/Debug-iphoneos/LGTMCamera.app.dSYM Build/Products/Debug-iphoneos/LGTMCamera.app/LGTMCamera    cd /Users/fumiharu/Desktop/LGTMCamera    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/heroku/bin:/Users/fumiharu/.nodebrew/current/bin:/usr/java/jdk1.6.0_33/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/LGTMCamera -o /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app.dSYM36"9160541D-D34B-49AC-BDD9-0E2BCA810753-
+b7D7CD397-D0A3-49BF-9871-90C6B127ECC1
+
+CLd /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/LGTMCamera normal armv7s
+s421992098.754835
+e421992098.788078
+r1
+xLd
+x/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/LGTMCamera
+xnormal
+xarmv7s
+d/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/LGTMCamera.LinkFileList
+d/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/ViewController.o
+d/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/AppDelegate.o
+d/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/main.o
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/libobjc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.ios.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework/Security
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libcache.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libcommonCrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libcompiler_rt.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libcopyfile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libcorecrypto.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libdyld.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libkeymgr.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/liblaunch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libmacho.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libremovefile.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_asl.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_kernel.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_malloc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_notify.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_platform.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_pthread.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_sandbox.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libsystem_stats.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libunwind.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"Link /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/LGTMCamera72"Ld Build/Products/Debug-iphoneos/LGTMCamera.app/LGTMCamera normal armv7sf35ac1a21627b941^87c0c9a21627b941^---0#0#1#--1431"Ld Build/Products/Debug-iphoneos/LGTMCamera.app/LGTMCamera normal armv7s    cd /Users/fumiharu/Desktop/LGTMCamera    export IPHONEOS_DEPLOYMENT_TARGET=7.1    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/heroku/bin:/Users/fumiharu/.nodebrew/current/bin:/usr/java/jdk1.6.0_33/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch armv7s -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk -L/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos -F/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos -filelist /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/LGTMCamera.LinkFileList -dead_strip -fobjc-arc -fobjc-link-runtime -miphoneos-version-min=7.1 -framework CoreGraphics -framework UIKit -framework Foundation -Xlinker -dependency_info -Xlinker /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/Objects-normal/armv7s/LGTMCamera_dependency_info.dat -o /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/LGTMCamera36"6D2615CD-CAE8-4AA6-B177-607B47384FA4-
+b7D7CD397-D0A3-49BF-9871-90C6B127ECC1
+
+CProcessInfoPlistFile /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/Info.plist /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/LGTMCamera-Info.plist
+s421991902.844339
+e421991902.846013
+r1
+xProcessInfoPlistFile
+x/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/Info.plist
+x/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/LGTMCamera-Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection75"Process /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/LGTMCamera-Info.plist109"ProcessInfoPlistFile Build/Products/Debug-iphoneos/LGTMCamera.app/Info.plist LGTMCamera/LGTMCamera-Info.plist8736d8de1527b941^e694d8de1527b941^---0#0#1#-19%DVTDocumentLocation2@74"file:///Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/LGTMCamera-Info.plist0000000000000000^1117"ProcessInfoPlistFile Build/Products/Debug-iphoneos/LGTMCamera.app/Info.plist LGTMCamera/LGTMCamera-Info.plist    cd /Users/fumiharu/Desktop/LGTMCamera    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/heroku/bin:/Users/fumiharu/.nodebrew/current/bin:/usr/java/jdk1.6.0_33/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-infoPlistUtility /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/LGTMCamera-Info.plist -genpkginfo /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/ResourceRules.plist -additionalcontentfile /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/assetcatalog_generated_info.plist -o /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/Info.plist36"E77CC1F5-2573-4B29-BF69-C6EA3EEF7E29-
+bDF01FC05-789A-44C3-BBF8-5AC7B5364A50
+
+CProcessPCH /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/PrecompiledHeaders/LGTMCamera-Prefix-agjautgsguthdiexcyaadgghioue/LGTMCamera-Prefix.pch.pch LGTMCamera/LGTMCamera-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s421991899.770196
+e421991901.166596
+r1
+xProcessPCH
+x/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/PrecompiledHeaders/LGTMCamera-Prefix-agjautgsguthdiexcyaadgghioue/LGTMCamera-Prefix.pch.pch
+xLGTMCamera/LGTMCamera-Prefix.pch
+xnormal
+xarmv7s
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/LGTMCamera-Prefix.pch
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection43"Precompile LGTMCamera/LGTMCamera-Prefix.pch225"ProcessPCH Build/Intermediates/PrecompiledHeaders/LGTMCamera-Prefix-agjautgsguthdiexcyaadgghioue/LGTMCamera-Prefix.pch.pch LGTMCamera/LGTMCamera-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler904ec5db1527b941^54a82add1527b941^---0#0#1#-19%DVTDocumentLocation2@74"file:///Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/LGTMCamera-Prefix.pch0000000000000000^3564"ProcessPCH Build/Intermediates/PrecompiledHeaders/LGTMCamera-Prefix-agjautgsguthdiexcyaadgghioue/LGTMCamera-Prefix.pch.pch LGTMCamera/LGTMCamera-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fumiharu/Desktop/LGTMCamera    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/heroku/bin:/Users/fumiharu/.nodebrew/current/bin:/usr/java/jdk1.6.0_33/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch armv7s -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/fumiharu/Library/Developer/Xcode/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wconditional-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -miphoneos-version-min=7.1 -iquote /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-generated-files.hmap -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-own-target-headers.hmap -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-all-target-headers.hmap -iquote /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera-project-headers.hmap -I/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/DerivedSources/armv7s -I/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/DerivedSources -F/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos --serialize-diagnostics /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/PrecompiledHeaders/LGTMCamera-Prefix-agjautgsguthdiexcyaadgghioue/LGTMCamera-Prefix.pch.dia -MMD -MT dependencies -MF /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/PrecompiledHeaders/LGTMCamera-Prefix-agjautgsguthdiexcyaadgghioue/LGTMCamera-Prefix.pch.d -c /Users/fumiharu/Desktop/LGTMCamera/LGTMCamera/LGTMCamera-Prefix.pch -o /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/PrecompiledHeaders/LGTMCamera-Prefix-agjautgsguthdiexcyaadgghioue/LGTMCamera-Prefix.pch.pch36"5185B1DE-6DB3-404E-9359-BA3A7FA22C95-
+bDF01FC05-789A-44C3-BBF8-5AC7B5364A50
+
+CProcessPCH /Users/fumiharu/Library/Developer/Xcode/DerivedData/LGTMCamera-cteqyznuhnlxqkewmithbijkbldz/Index/PrecompiledHeaders/LGTMCamera-Prefix-ctugpseyvzvzmzeqsctilghhtrec_ast/LGTMCamera-Prefix.pch.pch LGTMCamera/LGTMCamera-Prefix.pch normal armv7s objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/Entitlements.plist /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera.xcent
+s421992102.808221
+e421992102.809433
+r1
+xProcessProductPackaging
+x/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/Entitlements.plist
+x/Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera.xcent
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection230"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/Entitlements.plist Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera.xcent230"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/Entitlements.plist Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera.xcent6501cfa61627b941^9737cfa61627b941^---0#0#1#-19%DVTDocumentLocation2@127"file:///Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera.xcent0000000000000000^919"ProcessProductPackaging /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/Entitlements.plist Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera.xcent    cd /Users/fumiharu/Desktop/LGTMCamera    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/heroku/bin:/Users/fumiharu/.nodebrew/current/bin:/usr/java/jdk1.6.0_33/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-productPackagingUtility /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/Entitlements.plist -entitlements -format xml -o /Users/fumiharu/Desktop/LGTMCamera/Build/Intermediates/LGTMCamera.build/Debug-iphoneos/LGTMCamera.build/LGTMCamera.xcent36"8979E4CE-C0A5-4FEC-BCBB-5E4302551807-
+bE68DA1B0-1408-444A-9E37-CAC2CE2C2D76
+
+CProcessProductPackaging /Users/fumiharu/Library/MobileDevice/Provisioning\ Profiles/39EBB97B-D39D-4DDD-AE6D-40FD6ED21194.mobileprovision /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/embedded.mobileprovision
+s421991902.867342
+e421991902.872196
+r1
+xProcessProductPackaging
+x/Users/fumiharu/Library/MobileDevice/Provisioning Profiles/39EBB97B-D39D-4DDD-AE6D-40FD6ED21194.mobileprovision
+x/Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/embedded.mobileprovision
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection206"ProcessProductPackaging /Users/fumiharu/Library/MobileDevice/Provisioning\ Profiles/39EBB97B-D39D-4DDD-AE6D-40FD6ED21194.mobileprovision Build/Products/Debug-iphoneos/LGTMCamera.app/embedded.mobileprovision206"ProcessProductPackaging /Users/fumiharu/Library/MobileDevice/Provisioning\ Profiles/39EBB97B-D39D-4DDD-AE6D-40FD6ED21194.mobileprovision Build/Products/Debug-iphoneos/LGTMCamera.app/embedded.mobileprovision751ddede1527b941^4949dfde1527b941^---0#0#1#-19%DVTDocumentLocation2@111"file:///Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/embedded.mobileprovision003498bcdfffdf42^845"ProcessProductPackaging /Users/fumiharu/Library/MobileDevice/Provisioning\ Profiles/39EBB97B-D39D-4DDD-AE6D-40FD6ED21194.mobileprovision Build/Products/Debug-iphoneos/LGTMCamera.app/embedded.mobileprovision    cd /Users/fumiharu/Desktop/LGTMCamera    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/local/heroku/bin:/Users/fumiharu/.nodebrew/current/bin:/usr/java/jdk1.6.0_33/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"    builtin-productPackagingUtility /Users/fumiharu/Library/MobileDevice/Provisioning\ Profiles/39EBB97B-D39D-4DDD-AE6D-40FD6ED21194.mobileprovision -o /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app/embedded.mobileprovision36"B42FA066-0084-4790-AA57-0598E084EBAF-
+bDF01FC05-789A-44C3-BBF8-5AC7B5364A50
+
+CTouch /Users/fumiharu/Desktop/LGTMCamera/Build/Products/Debug-iphoneos/LGTMCamera.app
+r0
+
