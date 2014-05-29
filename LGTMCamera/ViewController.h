@@ -8,12 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#import <AVFoundation/AVCaptureOutput.h>
+#import <AssetsLibrary/ALAssetsLibrary.h>
 
-@interface ViewController : UIViewController
-<
-AVCaptureVideoDataOutputSampleBufferDelegate,
-AVCaptureFileOutputRecordingDelegate
->
-
+@interface ViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
 @end
