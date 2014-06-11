@@ -15,6 +15,10 @@
     NSUserDefaults *userDefaultPointX;
     NSUserDefaults *userDefaultPointY;
     UIButton *addLGTMBtn;
+    UIButton *saveBtn;
+    UIButton *cameraRollBtn;
+    UIButton *retakeBtn;
+    UIButton *takeBtn;
     AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
     CALayer *previewLayer;
 }
@@ -58,12 +62,16 @@
     
     //   add button
     addLGTMBtn = [self addLGTMButton];
+    saveBtn = [self saveButton];
+    cameraRollBtn = [self cameraRollButton];
+    retakeBtn = [self retakeButton];
+    takeBtn = [self takeButton];
     
     [self.view addSubview:addLGTMBtn];
-    [self.view addSubview:[self saveButton]];
-    [self.view addSubview:[self cameraRollButton]];
-    [self.view addSubview:[self retakeButton]];
-    [self.view addSubview:[self takeButton]];
+    [self.view addSubview:saveBtn];
+    [self.view addSubview:cameraRollBtn];
+    [self.view addSubview:retakeBtn];
+    [self.view addSubview:takeBtn];
     
     //   start taken
     [self setupAVCapture];
@@ -193,6 +201,9 @@
 //    _previewView.transform = t;
 //    captureVideoPreviewLayer.transform = CATransform3DMakeAffineTransform(t);
     addLGTMBtn.transform = t;
+    saveBtn.transform = t;
+    retakeBtn.transform = t;
+    takeBtn.transform = t;
     
     [UIView commitAnimations];
     
