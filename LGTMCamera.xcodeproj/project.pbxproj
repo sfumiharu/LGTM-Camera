@@ -22,6 +22,11 @@
 		2716715F19270DC1002AA1D8 /* LGTMCameraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2716715E19270DC1002AA1D8 /* LGTMCameraTests.m */; };
 		2716716919271187002AA1D8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2716716819271187002AA1D8 /* ViewController.xib */; };
 		27573D75193385A70035AA06 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27573D74193385A70035AA06 /* AVFoundation.framework */; };
+		27AB460C1941F59800A2F6D7 /* retake.png in Resources */ = {isa = PBXBuildFile; fileRef = 27AB46071941F59800A2F6D7 /* retake.png */; };
+		27AB460D1941F59800A2F6D7 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 27AB46081941F59800A2F6D7 /* camera.png */; };
+		27AB460E1941F59800A2F6D7 /* cameraroll.png in Resources */ = {isa = PBXBuildFile; fileRef = 27AB46091941F59800A2F6D7 /* cameraroll.png */; };
+		27AB460F1941F59800A2F6D7 /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 27AB460A1941F59800A2F6D7 /* save.png */; };
+		27AB46101941F59800A2F6D7 /* LGTM.png in Resources */ = {isa = PBXBuildFile; fileRef = 27AB460B1941F59800A2F6D7 /* LGTM.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		2716715E19270DC1002AA1D8 /* LGTMCameraTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGTMCameraTests.m; sourceTree = "<group>"; };
 		2716716819271187002AA1D8 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		27573D74193385A70035AA06 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		27AB46071941F59800A2F6D7 /* retake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retake.png; sourceTree = "<group>"; };
+		27AB46081941F59800A2F6D7 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		27AB46091941F59800A2F6D7 /* cameraroll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraroll.png; sourceTree = "<group>"; };
+		27AB460A1941F59800A2F6D7 /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
+		27AB460B1941F59800A2F6D7 /* LGTM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LGTM.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +132,11 @@
 				2716714919270DC1002AA1D8 /* ViewController.m */,
 				2716716819271187002AA1D8 /* ViewController.xib */,
 				2716714B19270DC1002AA1D8 /* Images.xcassets */,
+				27AB46071941F59800A2F6D7 /* retake.png */,
+				27AB46081941F59800A2F6D7 /* camera.png */,
+				27AB46091941F59800A2F6D7 /* cameraroll.png */,
+				27AB460A1941F59800A2F6D7 /* save.png */,
+				27AB460B1941F59800A2F6D7 /* LGTM.png */,
 				2716713A19270DC1002AA1D8 /* Supporting Files */,
 			);
 			path = LGTMCamera;
@@ -236,8 +251,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2716714C19270DC1002AA1D8 /* Images.xcassets in Resources */,
+				27AB460C1941F59800A2F6D7 /* retake.png in Resources */,
 				2716716919271187002AA1D8 /* ViewController.xib in Resources */,
+				27AB460E1941F59800A2F6D7 /* cameraroll.png in Resources */,
 				2716713E19270DC1002AA1D8 /* InfoPlist.strings in Resources */,
+				27AB460F1941F59800A2F6D7 /* save.png in Resources */,
+				27AB460D1941F59800A2F6D7 /* camera.png in Resources */,
+				27AB46101941F59800A2F6D7 /* LGTM.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +400,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LGTMCamera/LGTMCamera-Prefix.pch";
 				INFOPLIST_FILE = "LGTMCamera/LGTMCamera-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -396,6 +417,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LGTMCamera/LGTMCamera-Prefix.pch";
 				INFOPLIST_FILE = "LGTMCamera/LGTMCamera-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
