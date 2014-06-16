@@ -10,10 +10,16 @@
 
 @interface ViewController (){
     CGPoint pointt;
+    CGFloat xxx;
+    CGFloat yyy;
+    CGFloat www;
+    CGFloat hhh;
     NSInteger tagNo;
     UIDeviceOrientation deviceOrientation;
     NSUserDefaults *userDefaultPointX;
     NSUserDefaults *userDefaultPointY;
+    NSUserDefaults *userDefaultPointw;
+    NSUserDefaults *userDefaultPointh;
     UIButton *addLGTMBtn;
     UIButton *saveBtn;
     UIButton *cameraRollBtn;
@@ -63,15 +69,16 @@
     //   add button
     addLGTMBtn = [self addLGTMButton];
     saveBtn = [self saveButton];
-    cameraRollBtn = [self cameraRollButton];
+//    cameraRollBtn = [self cameraRollButton];
     retakeBtn = [self retakeButton];
     takeBtn = [self takeButton];
     
     [self.view addSubview:addLGTMBtn];
-    [self.view addSubview:saveBtn];
-    [self.view addSubview:cameraRollBtn];
+//    [self.view addSubview:saveBtn];
+//    [self.view addSubview:cameraRollBtn];
     [self.view addSubview:retakeBtn];
     [self.view addSubview:takeBtn];
+    [self.view addSubview:saveBtn];
     
     //   start taken
     [self setupAVCapture];
@@ -82,7 +89,8 @@
         return NO;
     }
     deviceOrientation = [[UIDevice currentDevice] orientation];
-    [self setupAVCapture];
+//    [self setupAVCapture];
+    [self setVideoOrientation];
     [self objectOrientation];
     return YES;
 }
@@ -129,16 +137,16 @@
     captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
     captureVideoPreviewLayer.frame = self.view.bounds;
     captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspect;
-    
 
-    for(AVCaptureConnection *connection in _stillImageOutput.connections)
-    {
-        if(connection.supportsVideoOrientation)
-        {
-            connection.videoOrientation = [self videoOrientation];
-            NSLog(@"麒+%d", connection.videoOrientation);
-        }
-    }
+    
+            for(AVCaptureConnection *connection in _stillImageOutput.connections)
+            {
+                if(connection.supportsVideoOrientation)
+                {
+                    connection.videoOrientation = [self videoOrientation];
+                    NSLog(@"麒+%d", connection.videoOrientation);
+                }
+            }
 
 
 // レイヤーをViewに設定
@@ -228,38 +236,70 @@
              return;
          }
          
+         AVCaptureStillImageOutput *stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
+         NSDictionary *outputSettings = @{ AVVideoCodecKey : AVVideoCodecJPEG};
+         [stillImageOutput setOutputSettings:outputSettings];
+         
+         
          // 入力された画像データからJPEGフォーマットとしてデータを取得
          _imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
                   
          [self.session stopRunning];
          self.previewView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithData:_imageData]];
+         [self takeAnimation];
      }];
+}
+-(void)takeAnimation{
+    [UIView beginAnimations:@"yo-" context:nil];
+    [UIView animateWithDuration:2
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         CGAffineTransform retake = CGAffineTransformMakeTranslation(80, 0);
+                         retakeBtn.transform = retake;
+//                         CGAffineTransform lgtm = CGAffineTransformMakeTranslation(-80, 0);
+//                         addLGTMBtn.transform = lgtm;
+//                         takeBtn.hidden = YES;
+//                         addLGTMBtn.hidden = NO;
+                     }
+                     completion:nil];
 }
 -(void)retakePhoto:(id)sender{
     [self.session startRunning];
     [_imageView removeFromSuperview];
     _imageData = nil;
 }
--(void)addLGTMImage{
-    UIImage *image = [UIImage imageNamed:@"LGTM.png"];
-    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.previewView.center.x, self.previewView.center.y, _imageView.image.size.width/5, _imageView.image.size.height/5)];
+-(void)addLGTMImage:(id)sender{
+    if (!_imageData) {
+        return;
+    }
+    
+    UIImage *image = [UIImage imageNamed:@"brazil"];
+//    NSLog(@"AAA+%f++%f", image.size.width, image.size.height);
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width/2,self.view.bounds.size.height/2, image.size.width * 2, image.size.height * 2)];
+//    NSLog(@"BBB+%f++%f", _imageView.frame.size.width, _imageView.frame.size.height);
     _imageView.image = image;
-    _imageView.center = self.previewView.center;
+//    _imageView.center = self.previewView.center;
     _imageView.contentMode = UIViewContentModeScaleAspectFill;
-
+    
     [self.previewView addSubview:_imageView];
+//    addLGTMBtn.hidden = NO;
+//    saveBtn.hidden = NO;
 }
 -(void)assetLibrary{}
 -(void)savePhoto:(id)sender{
     _shutter = [[UIImageView alloc]initWithImage:[UIImage imageWithData:_imageData]];
 //    UIGraphicsBeginImageContext(_shutter.image.size);
-    UIGraphicsBeginImageContext(CGSizeMake(_shutter.image.size.width, _shutter.image.size.height));
+    UIGraphicsBeginImageContextWithOptions(_shutter.frame.size, YES, 2);
+    UIGraphicsBeginImageContext(CGSizeMake(_shutter.frame.size.width, _shutter.frame.size.height));
     CGFloat x = [userDefaultPointX floatForKey:@"x"];
-    CGFloat y = [userDefaultPointX floatForKey:@"y"];
+    CGFloat y = [userDefaultPointY floatForKey:@"y"];
+    CGFloat w = [userDefaultPointw floatForKey:@"w"];
+    CGFloat h = [userDefaultPointh floatForKey:@"h"];
     
-    CGRect rect = CGRectMake(0, 0, _shutter.image.size.width, _shutter.image.size.height);
-    CGRect rect1 = CGRectMake(x, y*3.2, _imageView.image.size.width, _imageView.image.size.height);
-    NSLog(@"おおお+%f+++%f", x, y);
+    CGRect rect = CGRectMake(0, 0, _shutter.frame.size.width, _shutter.frame.size.height);
+    CGRect rect1 = CGRectMake(xxx, yyy*3.4, www, hhh);
+    NSLog(@"savePhoto-x+%f+y+%f", xxx, yyy);
     [_shutter.image drawInRect:rect];
     [_imageView.image drawInRect:rect1];
     
@@ -278,43 +318,67 @@
         CGPoint p = [[touches anyObject]locationInView:self.previewView];
         _imageView.center = p;
         
-        CGRect frame = [_imageView frame];
-        CGPoint topLeft = CGPointMake(CGRectGetMinX(frame), CGRectGetMinY(frame));
-        [self saveLGTMPoint:topLeft.x xy:@"x"];
-        [self saveLGTMPoint:topLeft.y xy:@"y"];
+//        CGRect frame = _imageView.frame;
+
+//        CGPoint topLeft = CGPointMake(CGRectGetMinX(frame), CGRectGetMinY(frame));
+//        NSLog(@"あああ+%f++%f", topLeft.x, topLeft.y);
+//        [self saveLGTMPoint:topLeft.x xy:@"x"];
+//        [self saveLGTMPoint:topLeft.y xy:@"y"];
+
+        xxx = _imageView.frame.origin.x;
+        yyy = _imageView.frame.origin.y;
+//        [self saveLGTMPoint:xxx xy:@"x"];
+//        [self saveLGTMPoint:yyy xy:@"y"];
+        
+        www = _imageView.frame.size.width * 3.4;
+        hhh = _imageView.frame.size.height * 3.4;
+//        NSLog(@"いいい+%f++%f", _imageView.frame.size.width, _imageView.frame.size.height);
+//        [self saveLGTMRect:aa wh:@"w"];
+//        [self saveLGTMRect:bb wh:@"h"];
     }
 }
+-(void)saveLGTMRect:(CGFloat)points wh:(NSString*)wh{
+    if ([wh isEqualToString:@"w"]) {
+        userDefaultPointw = [NSUserDefaults standardUserDefaults];
+        [userDefaultPointw setFloat:points forKey:@"w"];
+        [userDefaultPointw synchronize];
+    }
+    userDefaultPointh = [NSUserDefaults standardUserDefaults];
+    [userDefaultPointh setFloat:points forKey:@"h"];
+    [userDefaultPointh synchronize];
+}
 -(void)saveLGTMPoint:(CGFloat)points xy:(NSString*)xy{
-    userDefaultPointX = [NSUserDefaults standardUserDefaults];
-    userDefaultPointY = [NSUserDefaults standardUserDefaults];
-    
     if ([xy isEqualToString:@"x"]) {
+        userDefaultPointX = [NSUserDefaults standardUserDefaults];
         [userDefaultPointX setFloat:points forKey:@"x"];
         [userDefaultPointX synchronize];
     }
+    userDefaultPointY = [NSUserDefaults standardUserDefaults];
     [userDefaultPointY setFloat:points forKey:@"y"];
     [userDefaultPointY synchronize];
 }
 -(UIButton *)addLGTMButton{
-    UIButton *addLGTMButton = [[UIButton alloc]initWithFrame:CGRectMake(0, self.view.bounds.size.height - 350, 60, 60)];
+    UIButton *addLGTMButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width / 3.5, self.view.bounds.size.height - 160, 60, 60)];
     [addLGTMButton setBackgroundImage:[UIImage imageNamed:@"LGTM.png"] forState:UIControlStateNormal];
-    [addLGTMButton addTarget:self action:@selector(addLGTMImage) forControlEvents:UIControlEventTouchUpInside];
+    [addLGTMButton addTarget:self action:@selector(addLGTMImage:) forControlEvents:UIControlEventTouchUpInside];
+//    addLGTMButton.hidden = YES;
     return addLGTMButton;
 }
 -(UIButton *)saveButton{
-    UIButton *saveButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width / 2.35, self.view.bounds.size.height - 280, 60, 60)];
+    UIButton *saveButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width / 6, self.view.bounds.size.height - 70, 60, 60)];
     [saveButton setBackgroundImage:[UIImage imageNamed:@"save.png"] forState:UIControlStateNormal];
     [saveButton addTarget:self action:@selector(savePhoto:) forControlEvents:UIControlEventTouchUpInside];
+//    saveButton.hidden = YES;
     return saveButton;
 }
--(UIButton *)cameraRollButton{
-    UIButton *cameraRollButton = [[UIButton alloc]initWithFrame:CGRectMake(0, self.view.bounds.size.height - 210, 60, 60)];
-    [cameraRollButton setBackgroundImage:[UIImage imageNamed:@"cameraroll.png"] forState:UIControlStateNormal];
-    [cameraRollButton addTarget:self action:@selector(hoge:) forControlEvents:UIControlEventTouchUpInside];
-    return cameraRollButton;
-}
+//-(UIButton *)cameraRollButton{
+//    UIButton *cameraRollButton = [[UIButton alloc]initWithFrame:CGRectMake(0, self.view.bounds.size.height - 70, 60, 60)];
+//    [cameraRollButton setBackgroundImage:[UIImage imageNamed:@"cameraroll.png"] forState:UIControlStateNormal];
+//    [cameraRollButton addTarget:self action:@selector(hoge:) forControlEvents:UIControlEventTouchUpInside];
+//    return cameraRollButton;
+//}
 -(UIButton *)retakeButton{
-    UIButton *retakeButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width / 2.35, self.view.bounds.size.height - 140, 60, 60)];
+    UIButton *retakeButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width / 2.35, self.view.bounds.size.height - 70, 60, 60)];
     [retakeButton setBackgroundImage:[UIImage imageNamed:@"retake.png"] forState:UIControlStateNormal];
     [retakeButton addTarget:self action:@selector(retakePhoto:) forControlEvents:UIControlEventTouchUpInside];
     return retakeButton;
