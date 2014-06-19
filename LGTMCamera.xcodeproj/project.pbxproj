@@ -34,6 +34,7 @@
 		27EA09D919529B4B00A7D430 /* LGTM3.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EA09D419529B4B00A7D430 /* LGTM3.png */; };
 		27EA09DA19529B4B00A7D430 /* LGTM4.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EA09D519529B4B00A7D430 /* LGTM4.png */; };
 		27EA09DB19529B4B00A7D430 /* LGTM5.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EA09D619529B4B00A7D430 /* LGTM5.png */; };
+		27EA09DE1952E6F600A7D430 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EA09DD1952E6F600A7D430 /* plus.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		27EA09D419529B4B00A7D430 /* LGTM3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LGTM3.png; sourceTree = "<group>"; };
 		27EA09D519529B4B00A7D430 /* LGTM4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LGTM4.png; sourceTree = "<group>"; };
 		27EA09D619529B4B00A7D430 /* LGTM5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LGTM5.png; sourceTree = "<group>"; };
+		27EA09DD1952E6F600A7D430 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 		27EA09DC19529B5600A7D430 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				27EA09DD1952E6F600A7D430 /* plus.png */,
 				27AB46071941F59800A2F6D7 /* retake.png */,
 				27AB46081941F59800A2F6D7 /* camera.png */,
 				27AB46091941F59800A2F6D7 /* cameraroll.png */,
@@ -288,6 +291,7 @@
 				27633CC9194964A700F8293D /* bbrazil.png in Resources */,
 				27AB460C1941F59800A2F6D7 /* retake.png in Resources */,
 				2716716919271187002AA1D8 /* ViewController.xib in Resources */,
+				27EA09DE1952E6F600A7D430 /* plus.png in Resources */,
 				27633CC7194963D200F8293D /* brazil@2x.png in Resources */,
 				27AB460E1941F59800A2F6D7 /* cameraroll.png in Resources */,
 				2716713E19270DC1002AA1D8 /* InfoPlist.strings in Resources */,
