@@ -15,6 +15,7 @@
     CGFloat www;
     CGFloat hhh;
     NSInteger tagNo;
+    NSInteger don;
     UIDeviceOrientation deviceOrientation;
     NSUserDefaults *userDefaultPointX;
     NSUserDefaults *userDefaultPointY;
@@ -25,6 +26,8 @@
     UIButton *cameraRollBtn;
     UIButton *retakeBtn;
     UIButton *takeBtn;
+    NSArray *lgtmSelectionButtonList;
+    NSArray *lgtmSelectionButtonName;
     AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
     CALayer *previewLayer;
 }
@@ -38,29 +41,18 @@
 @property(nonatomic, strong)UIImageView *shutter;
 @property(nonatomic, strong)UIImageView *lgtmView;
 @property(nonatomic, strong)UIImage *uiimage;
-
-//- (CGFloat)distanceWithPointA:(CGPoint)pointA pointB:(CGPoint)pointB;
 @end
 
 @implementation ViewController
--(void)viewWillAppear:(BOOL)animated{}
--(void)viewDidAppear:(BOOL)animated{
-    //    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    //    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    //    [nc addObserver:self selector:@selector(didChangedOrientation:)
-    //               name:UIDeviceOrientationDidChangeNotification object:nil];
-}
--(void)viewDidDisappear:(BOOL)animated{
-    //    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    //    [nc removeObserver:self
-    //                  name:UIDeviceOrientationDidChangeNotification object:nil];
-    //    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
-}
 -(void)viewDidLoad{
     [super viewDidLoad];
     
+    lgtmSelectionButtonList = [NSArray arrayWithObjects:@"0", @"1", nil];
+    lgtmSelectionButtonName = [NSArray arrayWithObjects:@"LGTM0", @"LGTM1", nil];
+    
     //   init/add preview
-    self.previewView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    self.previewView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    NSLog(@"aa+%f++%f", self.view.frame.size.width, self.view.frame.size.height);
     [self.view addSubview:self.previewView];
     
     //   Multi Touches
@@ -69,30 +61,18 @@
     //   add button
     addLGTMBtn = [self addLGTMButton];
     saveBtn = [self saveButton];
-//    cameraRollBtn = [self cameraRollButton];
     retakeBtn = [self retakeButton];
     takeBtn = [self takeButton];
     
     [self.view addSubview:addLGTMBtn];
-//    [self.view addSubview:saveBtn];
-//    [self.view addSubview:cameraRollBtn];
     [self.view addSubview:retakeBtn];
     [self.view addSubview:takeBtn];
     [self.view addSubview:saveBtn];
+    //    cameraRollBtn = [self cameraRollButton];
+    //    [self.view addSubview:cameraRollBtn];
     
     //   start taken
     [self setupAVCapture];
-}
-
--(BOOL)shouldAutorotate{
-    if (_imageData) {
-        return NO;
-    }
-    deviceOrientation = [[UIDevice currentDevice] orientation];
-//    [self setupAVCapture];
-    [self setVideoOrientation];
-    [self objectOrientation];
-    return YES;
 }
 
 - (AVCaptureVideoOrientation)videoOrientation {
@@ -138,24 +118,15 @@
     captureVideoPreviewLayer.frame = self.view.bounds;
     captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspect;
 
-    
-            for(AVCaptureConnection *connection in _stillImageOutput.connections)
-            {
-                if(connection.supportsVideoOrientation)
-                {
-                    connection.videoOrientation = [self videoOrientation];
-                    NSLog(@"麒+%d", connection.videoOrientation);
-                }
-            }
+    [self setVideoOrientation];
 
-
-// レイヤーをViewに設定
+//  Setting Layer in View
     previewLayer = self.previewView.layer;
     previewLayer.masksToBounds = YES;
     [previewLayer addSublayer:captureVideoPreviewLayer];
     
     
-    // セッション開始
+//    Session Start
     [self.session startRunning];
 }
 
@@ -165,7 +136,7 @@
         if(connection.supportsVideoOrientation)
         {
             connection.videoOrientation = [self videoOrientation];
-            NSLog(@"麒+%d", connection.videoOrientation);
+//            NSLog(@"麒+%d", connection.videoOrientation);
         }
     }
 }
@@ -197,26 +168,19 @@
         angle = -90;
     }
     
-    
-    
     //回転させるためのアフィン変形を作成する
-    CGAffineTransform t = CGAffineTransformMakeRotation(angle * M_PI / 180);
-    
-    //アニメーション付きでボタンを回転
+        CGAffineTransform t = CGAffineTransformMakeRotation(angle * M_PI / 180);
+
+    //    Set Animation
     [UIView beginAnimations:@"device rotation" context:nil];
     [UIView setAnimationDuration:0.3];
-    
-//    _previewView.transform = t;
-//    captureVideoPreviewLayer.transform = CATransform3DMakeAffineTransform(t);
     addLGTMBtn.transform = t;
     saveBtn.transform = t;
     retakeBtn.transform = t;
     takeBtn.transform = t;
-    
+    _imageView.transform = t;
     [UIView commitAnimations];
-    
 }
-
 
 
 
@@ -257,48 +221,67 @@
                      animations:^{
                          CGAffineTransform retake = CGAffineTransformMakeTranslation(80, 0);
                          retakeBtn.transform = retake;
-//                         CGAffineTransform lgtm = CGAffineTransformMakeTranslation(-80, 0);
-//                         addLGTMBtn.transform = lgtm;
-//                         takeBtn.hidden = YES;
-//                         addLGTMBtn.hidden = NO;
                      }
                      completion:nil];
 }
+
 -(void)retakePhoto:(id)sender{
     [self.session startRunning];
     [_imageView removeFromSuperview];
     _imageData = nil;
 }
--(void)addLGTMImage:(id)sender{
+
+-(void)addLGTMSelectionView:(id)sender{
     if (!_imageData) {
         return;
     }
+    UIScrollView *sv = [[UIScrollView alloc]initWithFrame:CGRectMake(50, 50, 200, 300)];
     
-    UIImage *image = [UIImage imageNamed:@"brazil"];
-//    NSLog(@"AAA+%f++%f", image.size.width, image.size.height);
-    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width/2,self.view.bounds.size.height/2, image.size.width * 2, image.size.height * 2)];
-//    NSLog(@"BBB+%f++%f", _imageView.frame.size.width, _imageView.frame.size.height);
+    sv.backgroundColor = [UIColor redColor];
+    sv.contentSize = CGSizeMake(0, 1200);
+    [self.previewView addSubview:sv];
+
+
+
+    int y = 0;
+    for (int i = 0; i < [lgtmSelectionButtonList count]; i ++) {
+        UIButton *lgtmSelectionButton = [[UIButton alloc]initWithFrame:CGRectMake(0, y, 200, 50)];
+        [lgtmSelectionButton setBackgroundImage:[UIImage imageNamed:[lgtmSelectionButtonName objectAtIndex:i]] forState:UIControlStateNormal];
+        [lgtmSelectionButton addTarget:self action:@selector(addLGTMImage:) forControlEvents:UIControlEventTouchUpInside];
+        lgtmSelectionButton.tag = i;
+        [sv addSubview:lgtmSelectionButton];
+        y = y +50;
+    }
+}
+
+-(void)addLGTMImage:(UIButton *)sender{
+    if (sender.tag == 0) {
+        NSLog(@"ああああ");
+    }else if (sender.tag == 1){
+        NSLog(@"いいいい");
+    }
+    
+    UIImage *image = [UIImage imageNamed:[lgtmSelectionButtonName objectAtIndex:sender.tag]];
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2,self.view.frame.size.height/2, image.size.width * 2, image.size.height * 2)];
+    NSLog(@"bb+%f++%f", self.view.frame.size.width/2,self.view.frame.size.height/2);
     _imageView.image = image;
-//    _imageView.center = self.previewView.center;
     _imageView.contentMode = UIViewContentModeScaleAspectFill;
     
     [self.previewView addSubview:_imageView];
-//    addLGTMBtn.hidden = NO;
-//    saveBtn.hidden = NO;
 }
--(void)assetLibrary{}
+
 -(void)savePhoto:(id)sender{
     _shutter = [[UIImageView alloc]initWithImage:[UIImage imageWithData:_imageData]];
 //    UIGraphicsBeginImageContext(_shutter.image.size);
     UIGraphicsBeginImageContextWithOptions(_shutter.frame.size, YES, 2);
     UIGraphicsBeginImageContext(CGSizeMake(_shutter.frame.size.width, _shutter.frame.size.height));
-    CGFloat x = [userDefaultPointX floatForKey:@"x"];
-    CGFloat y = [userDefaultPointY floatForKey:@"y"];
-    CGFloat w = [userDefaultPointw floatForKey:@"w"];
-    CGFloat h = [userDefaultPointh floatForKey:@"h"];
+//    CGFloat x = [userDefaultPointX floatForKey:@"x"];
+//    CGFloat y = [userDefaultPointY floatForKey:@"y"];
+//    CGFloat w = [userDefaultPointw floatForKey:@"w"];
+//    CGFloat h = [userDefaultPointh floatForKey:@"h"];
     
     CGRect rect = CGRectMake(0, 0, _shutter.frame.size.width, _shutter.frame.size.height);
-    CGRect rect1 = CGRectMake(xxx, yyy*3.4, www, hhh);
+    CGRect rect1 = CGRectMake(xxx*3.4, yyy*3.4, www, hhh);
     NSLog(@"savePhoto-x+%f+y+%f", xxx, yyy);
     [_shutter.image drawInRect:rect];
     [_imageView.image drawInRect:rect1];
@@ -347,6 +330,7 @@
     [userDefaultPointh setFloat:points forKey:@"h"];
     [userDefaultPointh synchronize];
 }
+
 -(void)saveLGTMPoint:(CGFloat)points xy:(NSString*)xy{
     if ([xy isEqualToString:@"x"]) {
         userDefaultPointX = [NSUserDefaults standardUserDefaults];
@@ -357,10 +341,24 @@
     [userDefaultPointY setFloat:points forKey:@"y"];
     [userDefaultPointY synchronize];
 }
+
+-(BOOL)shouldAutorotate{
+    if (_imageData) {
+        return NO;
+    }
+    
+    deviceOrientation = [[UIDevice currentDevice] orientation];
+    [self setVideoOrientation];
+    [self objectOrientation];
+    return YES;
+}
+
+
+
 -(UIButton *)addLGTMButton{
     UIButton *addLGTMButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width / 3.5, self.view.bounds.size.height - 160, 60, 60)];
     [addLGTMButton setBackgroundImage:[UIImage imageNamed:@"LGTM.png"] forState:UIControlStateNormal];
-    [addLGTMButton addTarget:self action:@selector(addLGTMImage:) forControlEvents:UIControlEventTouchUpInside];
+    [addLGTMButton addTarget:self action:@selector(addLGTMSelectionView:) forControlEvents:UIControlEventTouchUpInside];
 //    addLGTMButton.hidden = YES;
     return addLGTMButton;
 }
@@ -391,7 +389,6 @@
 }
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
