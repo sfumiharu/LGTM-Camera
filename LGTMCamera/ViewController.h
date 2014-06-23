@@ -10,6 +10,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AssetsLibrary/ALAssetsLibrary.h>
 #import <Social/Social.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface ViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface ViewController : UIViewController
+<
+AVCaptureVideoDataOutputSampleBufferDelegate,
+MFMailComposeViewControllerDelegate
+>
 @end

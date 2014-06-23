@@ -23,6 +23,9 @@
     UIButton *retakeBtn;
     UIButton *takeBtn;
     UIButton *menuBtn;
+    UIButton *mailBtn;
+    UILabel *retakeLbl;
+    UILabel *menuLbl;
     NSArray *lgtmSelectionButtonList;
     NSArray *lgtmSelectionButtonName;
     CALayer *previewLayer;
@@ -33,6 +36,7 @@
     UIScrollView *sv;
     UIDeviceOrientation deviceOrientation;
     AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
+    MFMailComposeViewController *MCVC;
 }
 @property(nonatomic, strong)AVCaptureDeviceInput *videoInput;
 @property(nonatomic, strong)AVCaptureStillImageOutput *stillImageOutput;
@@ -41,6 +45,7 @@
 @property(nonatomic, strong)NSData *imageData;
 @property(nonatomic, strong)UIImageView *shutter;
 @property(nonatomic, strong)UIImageView *lgtmView;
+- (CGFloat)distanceWithPointA:(CGPoint)pointA pointB:(CGPoint)pointB;
 @end
 
 @implementation ViewController
@@ -98,21 +103,22 @@
     takeTabView.center = CGPointMake(_previewView.frame.size.width-(_previewView.frame.size.width*2), _previewView.frame.size.height - 40);
     
     takedTabView = [[UIView alloc]initWithFrame:CGRectMake(_previewView.frame.size.width*2, _previewView.frame.size.height-80, _previewView.frame.size.width, 80)];
-    takedTabView.backgroundColor = [UIColor blackColor];
+    takedTabView.backgroundColor = RGB(51, 51, 51);
     takedTabView.alpha = 0.9;
     takedTabView.center = CGPointMake(_previewView.frame.size.width / 2, _previewView.frame.size.height - 40);
     [self.view addSubview:takedTabView];
     
     addLGTMBtn = [self addLGTMButton];
-    saveBtn = [self saveButton];
     retakeBtn = [self retakeButton];
     menuBtn = [self menuButton];
+    retakeLbl = [self retakeLabel];
+    menuLbl = [self menuLabel];
     
     [takedTabView addSubview:menuBtn];
     [takedTabView addSubview:addLGTMBtn];
     [takedTabView addSubview:retakeBtn];
-    [takedTabView addSubview:saveBtn];
-
+    [takedTabView addSubview:retakeLbl];
+    [takedTabView addSubview:menuLbl];
 }
 -(void)backTabView{
     takeTabView.center = CGPointMake(_previewView.frame.size.width / 2, _previewView.frame.size.height - 40);
@@ -120,6 +126,8 @@
     [_lgtmView removeFromSuperview];
     [sv removeFromSuperview];
     [self uploadBaseViewFadeOut];
+    _lgtmView = nil;
+    sv = nil;
     _imageData = nil;
     [self.session startRunning];
 
@@ -138,13 +146,13 @@
 
 
 -(void)addLGTMSelectionView{
-    if (!_imageData) {
+    if (!_imageData || sv || baseView) {
         return;
     }
     
 //    LGTM Selection ScrollView
     sv = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 250, 320)];
-    sv.backgroundColor = RGB(50, 50, 49);
+    sv.backgroundColor = RGB(51, 51, 51);
     sv.center = self.previewView.center;
 //    sv.contentSize = CGSizeMake(0, 1200);
     [self.previewView addSubview:sv];
@@ -161,12 +169,15 @@
     }
 }
 -(void)addLGTMImage:(UIButton *)sender{
+    [_lgtmView removeFromSuperview];
+    _lgtmView = nil;
     UIImage *image = [UIImage imageNamed:[lgtmSelectionButtonName objectAtIndex:sender.tag]];
     _lgtmView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
     _lgtmView.image = image;
     _lgtmView.center = CGPointMake(_previewView.frame.size.width/2, _previewView.frame.size.height/2);
     _lgtmView.contentMode = UIViewContentModeScaleAspectFill;
     [sv removeFromSuperview];
+    sv = nil;
     [self.previewView addSubview:_lgtmView];
 }
 -(void)GetImageFromCurrentImageContext{
@@ -190,12 +201,10 @@
     UIImageWriteToSavedPhotosAlbum(mixed, self, nil, nil);
 }
 
--(void)savePhoto:(id)sender{
-    [self GetImageFromCurrentImageContext];
-    [self backTabView];
-}
-
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    if (baseView) {
+        return;
+    }else{
     if ([touches count] == 1) {
         CGPoint p = [[touches anyObject]locationInView:_previewView];
         _lgtmView.center = p;
@@ -205,8 +214,42 @@
         
         lgtmViewW = _lgtmView.frame.size.width;
         lgtmViewH = _lgtmView.frame.size.height;
+    } else if ([touches count] == 2) {
+        //2本指でタッチしている場合は、２点間の距離を計算
+        NSArray *twoFingers = [touches allObjects];
+        UITouch *touch1 = [twoFingers objectAtIndex:0];
+        UITouch *touch2 = [twoFingers objectAtIndex:1];
+        CGPoint previous1 = [touch1 previousLocationInView:self.previewView];
+        CGPoint previous2 = [touch2 previousLocationInView:self.previewView];
+        CGPoint now1 = [touch1 locationInView:self.previewView];
+        CGPoint now2 = [touch2 locationInView:self.previewView];
+        
+        //現状の距離と、前回の距離を比較して距離が縮まったか離れたかを判別
+        CGFloat previousDistance = [self distanceWithPointA:previous1 pointB:previous2];
+        CGFloat distance = [self distanceWithPointA:now1 pointB:now2];
+        
+        CGFloat scale = 1.0;
+        if (previousDistance > distance) {
+            //距離が縮まったらならピンチイン
+            scale -= ( previousDistance - distance ) / 300.0;
+        } else if (distance > previousDistance) {
+            // 距離が広がったならピンチアウト
+            scale += ( distance - previousDistance ) / 300.0;
+        }
+        CGAffineTransform newTransform =
+        CGAffineTransformScale(_lgtmView.transform, scale, scale);
+        _lgtmView.transform = newTransform;
+        _lgtmView.center = self.previewView.center;
+        }
     }
 }
+- (CGFloat)distanceWithPointA:(CGPoint)pointA pointB:(CGPoint)pointB
+{
+    CGFloat dx = fabs( pointB.x - pointA.x );
+    CGFloat dy = fabs( pointB.y - pointA.y );
+    return sqrt(dx * dx + dy * dy);
+}
+
 -(BOOL)shouldAutorotate{
     if (_imageData) {
         return NO;
@@ -218,22 +261,41 @@
     return YES;
 }
 -(void)addUploadBaseViewFadeIn{
+    if (baseView) {
+        CGAffineTransform t = CGAffineTransformMakeRotation(0 * M_PI / 180);
+        menuBtn.transform = t;
+        [self uploadBaseViewFadeOut];
+    }else{
+    
     baseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _previewView.frame.size.width, _previewView.frame.size.height)];
     baseView.alpha = 0;
-    baseView.backgroundColor = [UIColor blackColor];
+    baseView.backgroundColor = RGB(51, 51, 51);
 
     twitterBtn = [self twitterButton];
+    saveBtn = [self saveButton];
+        mailBtn = [self mailButton];
+        
     twitterBtn.alpha = 0;
-    
+    saveBtn.alpha = 0;
+        mailBtn.alpha = 0;
+        
     [_previewView addSubview:baseView];
     [baseView addSubview:twitterBtn];
-    
+    [baseView addSubview:saveBtn];
+        [baseView addSubview:mailBtn];
+        
     [UIView beginAnimations:@"fadeIn" context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     [UIView setAnimationDuration:0.2];
-    baseView.alpha = 0.8;
-    twitterBtn.alpha = 0.8;
+    baseView.alpha = 0.9;
+    twitterBtn.alpha = 1;
+        saveBtn.alpha = 1;
+        mailBtn.alpha = 1;
     [UIView commitAnimations];
+    
+    CGAffineTransform t = CGAffineTransformMakeRotation(45 * M_PI / 180);
+    menuBtn.transform = t;
+    }
 }
 
 -(void)uploadBaseViewFadeOut{
@@ -242,21 +304,14 @@
     [UIView setAnimationDuration:0.2];
     baseView.alpha = 0;
     [baseView removeFromSuperview];
+    baseView = nil;
     [UIView commitAnimations];
 }
 
--(void)pressTwitterButton{
-    [self GetImageFromCurrentImageContext];
-    SLComposeViewController *tw = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [tw setInitialText:@"LGTM!"];
-    [tw addImage:mixed];
-    [self presentViewController:tw animated:YES completion:nil];
-    [self uploadBaseViewFadeOut];
-}
 
 -(void)addTakeButton{
     takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _previewView.frame.size.height-80, self.view.frame.size.width, 80)];
-    takeTabView.backgroundColor = [UIColor blackColor];
+    takeTabView.backgroundColor = RGB(51, 51, 51);
     takeTabView.alpha = 0.9;
     [self.view addSubview:takeTabView];
     
@@ -264,46 +319,87 @@
     [takeTabView addSubview:takeBtn];
 }
 
+
+-(void)pressTwitterButton{
+    [self GetImageFromCurrentImageContext];
+    SLComposeViewController *tw = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [tw setInitialText:@"LGTM!"];
+    [tw addImage:mixed];
+    [self presentViewController:tw animated:YES completion:nil];
+    [self backTabView];
+}
+-(void)pressSaveButton:(id)sender{
+    [self GetImageFromCurrentImageContext];
+    [self backTabView];
+}
+-(void)pressMailButton{
+    MCVC = [[MFMailComposeViewController alloc]init];
+    MCVC.mailComposeDelegate = self;
+    [MCVC setSubject:@"LGTM! for LGTMcamera"];
+    
+    [self GetImageFromCurrentImageContext];
+    NSData *data = [[NSData alloc]initWithData:UIImageJPEGRepresentation(mixed, 1)];
+    [MCVC addAttachmentData:data mimeType:@"image/jpeg" fileName:@"LGTM!image"];
+    [MCVC setMessageBody:@"LGTM!" isHTML:NO];
+    [self presentViewController:MCVC animated:NO completion:nil];
+}
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    switch (result) {
+        case MFMailComposeResultCancelled:
+            [self dismissViewControllerAnimated:YES completion:nil];
+            break;
+        case MFMailComposeResultSent:
+            [self dismissViewControllerAnimated:YES completion:nil];
+            [self backTabView];
+            break;
+        default:
+            break;
+    }
+}
 -(UIButton *)twitterButton{
-    UIButton *twitterButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
-    twitterButton.center = CGPointMake(baseView.frame.size.width/2, baseView.frame.size.height/2);
+    UIButton *twitterButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 70, 70)];
+    twitterButton.center = CGPointMake(baseView.frame.size.width/6, baseView.frame.size.height/2);
     [twitterButton setBackgroundImage:[UIImage imageNamed:@"1_twitter"] forState:UIControlStateNormal];
     [twitterButton addTarget:self action:@selector(pressTwitterButton) forControlEvents:UIControlEventTouchUpInside];
     return twitterButton;
 }
+-(UIButton *)mailButton{
+    UIButton *mailButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 70, 70)];
+    mailButton.center = CGPointMake(baseView.frame.size.width/1.2, baseView.frame.size.height/2);
+    [mailButton setBackgroundImage:[UIImage imageNamed:@"1_mail"] forState:UIControlStateNormal];
+    [mailButton addTarget:self action:@selector(pressMailButton) forControlEvents:UIControlEventTouchUpInside];
+    return mailButton;
+}
 
 -(UIButton *)saveButton{
-    UIButton *saveButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
-    saveButton.center = CGPointMake(takeTabView.frame.size.width/1.16, takeTabView.frame.size.height/2);
+    UIButton *saveButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 70, 70)];
+    saveButton.center = CGPointMake(baseView.frame.size.width/2, baseView.frame.size.height/2);
     [saveButton setBackgroundImage:[UIImage imageNamed:@"1_save"] forState:UIControlStateNormal];
-    [saveButton addTarget:self action:@selector(savePhoto:) forControlEvents:UIControlEventTouchUpInside];
+    [saveButton addTarget:self action:@selector(pressSaveButton:) forControlEvents:UIControlEventTouchUpInside];
     return saveButton;
 }
 
 -(UIButton *)addLGTMButton{
-    UIButton *addLGTMButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
-    addLGTMButton.center = CGPointMake(takeTabView.frame.size.width/1.6, takeTabView.frame.size.height/2);
+    UIButton *addLGTMButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+    addLGTMButton.center = CGPointMake(takeTabView.frame.size.width/1.2, takeTabView.frame.size.height/2);
     [addLGTMButton setBackgroundImage:[UIImage imageNamed:@"LGTM.png"] forState:UIControlStateNormal];
     [addLGTMButton addTarget:self action:@selector(addLGTMSelectionView) forControlEvents:UIControlEventTouchUpInside];
     return addLGTMButton;
 }
-
 -(UIButton *)menuButton{
-    UIButton *menuButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
-    menuButton.center = CGPointMake(takeTabView.frame.size.width/2.6, takeTabView.frame.size.height/2);
-    [menuButton setBackgroundImage:[UIImage imageNamed:@"1_upload"] forState:UIControlStateNormal];
+    UIButton *menuButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+    menuButton.center = CGPointMake(takeTabView.frame.size.width/2, takeTabView.frame.size.height/2);
+    [menuButton setBackgroundImage:[UIImage imageNamed:@"1_menu"] forState:UIControlStateNormal];
     [menuButton addTarget:self action:@selector(addUploadBaseViewFadeIn) forControlEvents:UIControlEventTouchUpInside];
     return menuButton;
 }
-
 -(UIButton *)retakeButton{
-    UIButton *retakeButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
-    retakeButton.center = CGPointMake(takeTabView.frame.size.width/8, takeTabView.frame.size.height/2);
+    UIButton *retakeButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+    retakeButton.center = CGPointMake(takeTabView.frame.size.width/6, takeTabView.frame.size.height/2);
     [retakeButton setBackgroundImage:[UIImage imageNamed:@"1_back"] forState:UIControlStateNormal];
     [retakeButton addTarget:self action:@selector(backTabView) forControlEvents:UIControlEventTouchUpInside];
     return retakeButton;
 }
-
 -(UIButton *)takeButton{
     UIButton *takeButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
     takeButton.center = CGPointMake(takeTabView.frame.size.width/2, takeTabView.frame.size.height/2);
@@ -312,10 +408,32 @@
     return takeButton;
 }
 
+-(UILabel *)retakeLabel{
+    UILabel *retakeLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 50, 15)];
+    retakeLabel.center = CGPointMake(takeTabView.frame.size.width/6, takeTabView.frame.size.height/1.1);
+    retakeLabel.backgroundColor = RGB(51, 51, 51);
+    retakeLabel.alpha = 0.8;
+    retakeLabel.textColor = [UIColor whiteColor];
+    retakeLabel.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:13];
+    retakeLabel.textAlignment = UIBaselineAdjustmentAlignCenters;
+    retakeLabel.text = @"retake";
+    return retakeLabel;
+}
+
+-(UILabel *)menuLabel{
+    UILabel *menuLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 50, 15)];
+    menuLabel.center = CGPointMake(takeTabView.frame.size.width/2, takeTabView.frame.size.height/1.1);
+    menuLabel.backgroundColor = RGB(51, 51, 51);
+    menuLabel.alpha = 0.8;
+    menuLabel.textColor = [UIColor whiteColor];
+    menuLabel.font = [UIFont fontWithName:@"ArialRoundedMTBold" size:13];
+    menuLabel.textAlignment = UIBaselineAdjustmentAlignCenters;
+    menuLabel.text = @"save";
+    return menuLabel;
+}
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
 }
-
 - (AVCaptureVideoOrientation)videoOrientation {
     switch (deviceOrientation) {
         case UIDeviceOrientationLandscapeLeft:
@@ -335,7 +453,7 @@
             break;
     }
 }
--(void)setupAVCapture{
+- (void)setupAVCapture{
     NSError *error = nil;
     
     // 入力と出力からキャプチャーセッションを作成
@@ -369,8 +487,7 @@
     //    Session Start
     [self.session startRunning];
 }
-
--(void)setVideoOrientation{
+- (void)setVideoOrientation{
     for(AVCaptureConnection *connection in _stillImageOutput.connections)
     {
         if(connection.supportsVideoOrientation)
@@ -380,9 +497,7 @@
         }
     }
 }
-
--(void)objectOrientation
-{
+- (void)objectOrientation{
     
     //使えない向きの時は処理しない
     if (deviceOrientation == UIDeviceOrientationPortraitUpsideDown
@@ -416,9 +531,7 @@
     [UIView setAnimationDuration:0.3];
     addLGTMBtn.transform = t;
     retakeBtn.transform = t;
-    saveBtn.transform = t;
     takeBtn.transform = t;
     [UIView commitAnimations];
 }
-
 @end
