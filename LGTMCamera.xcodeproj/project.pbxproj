@@ -21,9 +21,16 @@
 		2716715D19270DC1002AA1D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2716715B19270DC1002AA1D8 /* InfoPlist.strings */; };
 		2716715F19270DC1002AA1D8 /* LGTMCameraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2716715E19270DC1002AA1D8 /* LGTMCameraTests.m */; };
 		2716716919271187002AA1D8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2716716819271187002AA1D8 /* ViewController.xib */; };
+		2724FBD519590382003D58AC /* imageSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2724FBD319590382003D58AC /* imageSearchViewController.m */; };
+		2724FBD619590382003D58AC /* imageSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2724FBD419590382003D58AC /* imageSearchViewController.xib */; };
+		2724FBD81959BF7A003D58AC /* bingapires.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2724FBD71959BF7A003D58AC /* bingapires.strings */; };
+		2724FBE2195ADC80003D58AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2724FBE1195ADC80003D58AC /* QuartzCore.framework */; };
+		2724FBE4195B0E4C003D58AC /* 1_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 2724FBE3195B0E4C003D58AC /* 1_search.png */; };
+		2724FBE8195B9215003D58AC /* imageSearchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2724FBE6195B9215003D58AC /* imageSearchDetailViewController.m */; };
+		2724FBE9195B9215003D58AC /* imageSearchDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2724FBE7195B9215003D58AC /* imageSearchDetailViewController.xib */; };
+		2724FBEC195B93FF003D58AC /* 0_batsu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2724FBEA195B93FF003D58AC /* 0_batsu.png */; };
+		2724FBED195B93FF003D58AC /* 0_check.png in Resources */ = {isa = PBXBuildFile; fileRef = 2724FBEB195B93FF003D58AC /* 0_check.png */; };
 		27573D75193385A70035AA06 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27573D74193385A70035AA06 /* AVFoundation.framework */; };
-		27633CC7194963D200F8293D /* brazil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27633CC6194963D200F8293D /* brazil@2x.png */; };
-		27633CC9194964A700F8293D /* bbrazil.png in Resources */ = {isa = PBXBuildFile; fileRef = 27633CC8194964A700F8293D /* bbrazil.png */; };
 		27AB460C1941F59800A2F6D7 /* retake.png in Resources */ = {isa = PBXBuildFile; fileRef = 27AB46071941F59800A2F6D7 /* retake.png */; };
 		27AB460D1941F59800A2F6D7 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 27AB46081941F59800A2F6D7 /* camera.png */; };
 		27AB460E1941F59800A2F6D7 /* cameraroll.png in Resources */ = {isa = PBXBuildFile; fileRef = 27AB46091941F59800A2F6D7 /* cameraroll.png */; };
@@ -40,6 +47,12 @@
 		27EA09F41953C8B400A7D430 /* 1_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EA09F31953C8B400A7D430 /* 1_back.png */; };
 		27EA09F91954059D00A7D430 /* 1_twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EA09F81954059D00A7D430 /* 1_twitter.png */; };
 		27EA09FB1954082300A7D430 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EA09FA1954082300A7D430 /* Social.framework */; };
+		27EA0A03195527C700A7D430 /* 1_mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EA0A02195527C700A7D430 /* 1_mail.png */; };
+		27EA0A05195562AD00A7D430 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EA0A04195562AD00A7D430 /* MessageUI.framework */; };
+		27EA0A071957DDFC00A7D430 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EA0A061957DDFC00A7D430 /* Icon-Small@2x.png */; };
+		27EA0A0A1957DE7800A7D430 /* good-chef-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EA0A081957DE7800A7D430 /* good-chef-80.png */; };
+		27EA0A0B1957DE7800A7D430 /* good-chef-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EA0A091957DE7800A7D430 /* good-chef-120.png */; };
+		626E042D34FE428EA9D8F104 /* libPods-LGTMCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2515A0F986304E24BF5E366C /* libPods-LGTMCamera.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2515A0F986304E24BF5E366C /* libPods-LGTMCamera.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LGTMCamera.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2716713019270DC1002AA1D8 /* LGTMCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LGTMCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2716713319270DC1002AA1D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2716713519270DC1002AA1D8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,9 +86,18 @@
 		2716715C19270DC1002AA1D8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2716715E19270DC1002AA1D8 /* LGTMCameraTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGTMCameraTests.m; sourceTree = "<group>"; };
 		2716716819271187002AA1D8 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		2724FBD219590382003D58AC /* imageSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageSearchViewController.h; sourceTree = "<group>"; };
+		2724FBD319590382003D58AC /* imageSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageSearchViewController.m; sourceTree = "<group>"; };
+		2724FBD419590382003D58AC /* imageSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = imageSearchViewController.xib; sourceTree = "<group>"; };
+		2724FBD71959BF7A003D58AC /* bingapires.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = bingapires.strings; sourceTree = "<group>"; };
+		2724FBE1195ADC80003D58AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2724FBE3195B0E4C003D58AC /* 1_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_search.png; sourceTree = "<group>"; };
+		2724FBE5195B9215003D58AC /* imageSearchDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageSearchDetailViewController.h; sourceTree = "<group>"; };
+		2724FBE6195B9215003D58AC /* imageSearchDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = imageSearchDetailViewController.m; sourceTree = "<group>"; };
+		2724FBE7195B9215003D58AC /* imageSearchDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = imageSearchDetailViewController.xib; sourceTree = "<group>"; };
+		2724FBEA195B93FF003D58AC /* 0_batsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0_batsu.png; sourceTree = "<group>"; };
+		2724FBEB195B93FF003D58AC /* 0_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0_check.png; sourceTree = "<group>"; };
 		27573D74193385A70035AA06 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		27633CC6194963D200F8293D /* brazil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brazil@2x.png"; sourceTree = "<group>"; };
-		27633CC8194964A700F8293D /* bbrazil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bbrazil.png; sourceTree = "<group>"; };
 		27AB46071941F59800A2F6D7 /* retake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retake.png; sourceTree = "<group>"; };
 		27AB46081941F59800A2F6D7 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		27AB46091941F59800A2F6D7 /* cameraroll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraroll.png; sourceTree = "<group>"; };
@@ -91,6 +114,12 @@
 		27EA09F31953C8B400A7D430 /* 1_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_back.png; sourceTree = "<group>"; };
 		27EA09F81954059D00A7D430 /* 1_twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_twitter.png; sourceTree = "<group>"; };
 		27EA09FA1954082300A7D430 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		27EA0A02195527C700A7D430 /* 1_mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_mail.png; sourceTree = "<group>"; };
+		27EA0A04195562AD00A7D430 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		27EA0A061957DDFC00A7D430 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		27EA0A081957DE7800A7D430 /* good-chef-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "good-chef-80.png"; sourceTree = "<group>"; };
+		27EA0A091957DE7800A7D430 /* good-chef-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "good-chef-120.png"; sourceTree = "<group>"; };
+		71F42CE2FBAE44FCB3C44044 /* Pods-LGTMCamera.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LGTMCamera.xcconfig"; path = "Pods/Pods-LGTMCamera.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +127,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27EA0A05195562AD00A7D430 /* MessageUI.framework in Frameworks */,
 				27EA09FB1954082300A7D430 /* Social.framework in Frameworks */,
 				27573D75193385A70035AA06 /* AVFoundation.framework in Frameworks */,
 				2716713619270DC1002AA1D8 /* CoreGraphics.framework in Frameworks */,
 				2716713819270DC1002AA1D8 /* UIKit.framework in Frameworks */,
 				2716713419270DC1002AA1D8 /* Foundation.framework in Frameworks */,
+				626E042D34FE428EA9D8F104 /* libPods-LGTMCamera.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2724FBE2195ADC80003D58AC /* QuartzCore.framework in Frameworks */,
 				2716715319270DC1002AA1D8 /* XCTest.framework in Frameworks */,
 				2716715519270DC1002AA1D8 /* UIKit.framework in Frameworks */,
 				2716715419270DC1002AA1D8 /* Foundation.framework in Frameworks */,
@@ -126,6 +158,7 @@
 				2716715819270DC1002AA1D8 /* LGTMCameraTests */,
 				2716713219270DC1002AA1D8 /* Frameworks */,
 				2716713119270DC1002AA1D8 /* Products */,
+				71F42CE2FBAE44FCB3C44044 /* Pods-LGTMCamera.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,12 +174,15 @@
 		2716713219270DC1002AA1D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2724FBE1195ADC80003D58AC /* QuartzCore.framework */,
+				27EA0A04195562AD00A7D430 /* MessageUI.framework */,
 				27EA09FA1954082300A7D430 /* Social.framework */,
 				27573D74193385A70035AA06 /* AVFoundation.framework */,
 				2716713319270DC1002AA1D8 /* Foundation.framework */,
 				2716713519270DC1002AA1D8 /* CoreGraphics.framework */,
 				2716713719270DC1002AA1D8 /* UIKit.framework */,
 				2716715219270DC1002AA1D8 /* XCTest.framework */,
+				2515A0F986304E24BF5E366C /* libPods-LGTMCamera.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,6 +196,13 @@
 				2716714819270DC1002AA1D8 /* ViewController.h */,
 				2716714919270DC1002AA1D8 /* ViewController.m */,
 				2716716819271187002AA1D8 /* ViewController.xib */,
+				2724FBD219590382003D58AC /* imageSearchViewController.h */,
+				2724FBD319590382003D58AC /* imageSearchViewController.m */,
+				2724FBD419590382003D58AC /* imageSearchViewController.xib */,
+				2724FBE5195B9215003D58AC /* imageSearchDetailViewController.h */,
+				2724FBE6195B9215003D58AC /* imageSearchDetailViewController.m */,
+				2724FBE7195B9215003D58AC /* imageSearchDetailViewController.xib */,
+				2724FBD71959BF7A003D58AC /* bingapires.strings */,
 				2716714B19270DC1002AA1D8 /* Images.xcassets */,
 				2716713A19270DC1002AA1D8 /* Supporting Files */,
 			);
@@ -169,6 +212,9 @@
 		2716713A19270DC1002AA1D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				27EA0A061957DDFC00A7D430 /* Icon-Small@2x.png */,
+				27EA0A081957DE7800A7D430 /* good-chef-80.png */,
+				27EA0A091957DE7800A7D430 /* good-chef-120.png */,
 				2716713B19270DC1002AA1D8 /* LGTMCamera-Info.plist */,
 				2716713C19270DC1002AA1D8 /* InfoPlist.strings */,
 				2716713F19270DC1002AA1D8 /* main.m */,
@@ -202,8 +248,6 @@
 				27AB46081941F59800A2F6D7 /* camera.png */,
 				27AB46091941F59800A2F6D7 /* cameraroll.png */,
 				27AB460B1941F59800A2F6D7 /* LGTM.png */,
-				27633CC6194963D200F8293D /* brazil@2x.png */,
-				27633CC8194964A700F8293D /* bbrazil.png */,
 				27EA09D219529B4B00A7D430 /* LGTM0.png */,
 				27EA09D319529B4B00A7D430 /* LGTM1.png */,
 				27EA09D419529B4B00A7D430 /* LGTM3.png */,
@@ -214,7 +258,11 @@
 				27EA09ED1953451D00A7D430 /* 1_save.png */,
 				27EA09EE1953451D00A7D430 /* 1_menu.png */,
 				27EA09F31953C8B400A7D430 /* 1_back.png */,
+				2724FBE3195B0E4C003D58AC /* 1_search.png */,
+				27EA0A02195527C700A7D430 /* 1_mail.png */,
 				27EA09F81954059D00A7D430 /* 1_twitter.png */,
+				2724FBEA195B93FF003D58AC /* 0_batsu.png */,
+				2724FBEB195B93FF003D58AC /* 0_check.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -226,9 +274,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2716716219270DC1002AA1D8 /* Build configuration list for PBXNativeTarget "LGTMCamera" */;
 			buildPhases = (
+				8A2C74723C864544866B8AD5 /* Check Pods Manifest.lock */,
 				2716712C19270DC1002AA1D8 /* Sources */,
 				2716712D19270DC1002AA1D8 /* Frameworks */,
 				2716712E19270DC1002AA1D8 /* Resources */,
+				4F4065EE26734E8EBA06CBBD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,25 +349,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				27EA09F01953451D00A7D430 /* 1_take.png in Resources */,
+				2724FBE9195B9215003D58AC /* imageSearchDetailViewController.xib in Resources */,
+				2724FBE4195B0E4C003D58AC /* 1_search.png in Resources */,
 				27EA09D919529B4B00A7D430 /* LGTM3.png in Resources */,
 				2716714C19270DC1002AA1D8 /* Images.xcassets in Resources */,
+				2724FBEC195B93FF003D58AC /* 0_batsu.png in Resources */,
 				27EA09DA19529B4B00A7D430 /* LGTM4.png in Resources */,
 				27EA09D819529B4B00A7D430 /* LGTM1.png in Resources */,
 				27EA09DB19529B4B00A7D430 /* LGTM5.png in Resources */,
 				27EA09D719529B4B00A7D430 /* LGTM0.png in Resources */,
-				27633CC9194964A700F8293D /* bbrazil.png in Resources */,
+				27EA0A0A1957DE7800A7D430 /* good-chef-80.png in Resources */,
+				27EA0A0B1957DE7800A7D430 /* good-chef-120.png in Resources */,
 				27AB460C1941F59800A2F6D7 /* retake.png in Resources */,
 				2716716919271187002AA1D8 /* ViewController.xib in Resources */,
 				27EA09F21953451D00A7D430 /* 1_menu.png in Resources */,
-				27633CC7194963D200F8293D /* brazil@2x.png in Resources */,
 				27EA09F41953C8B400A7D430 /* 1_back.png in Resources */,
 				27EA09F11953451D00A7D430 /* 1_save.png in Resources */,
+				2724FBD81959BF7A003D58AC /* bingapires.strings in Resources */,
 				27AB460E1941F59800A2F6D7 /* cameraroll.png in Resources */,
 				2716713E19270DC1002AA1D8 /* InfoPlist.strings in Resources */,
+				27EA0A03195527C700A7D430 /* 1_mail.png in Resources */,
 				27EA09EF1953451D00A7D430 /* 1_upload.png in Resources */,
 				27EA09F91954059D00A7D430 /* 1_twitter.png in Resources */,
+				2724FBD619590382003D58AC /* imageSearchViewController.xib in Resources */,
 				27AB460D1941F59800A2F6D7 /* camera.png in Resources */,
 				27AB46101941F59800A2F6D7 /* LGTM.png in Resources */,
+				27EA0A071957DDFC00A7D430 /* Icon-Small@2x.png in Resources */,
+				2724FBED195B93FF003D58AC /* 0_check.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,13 +389,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4F4065EE26734E8EBA06CBBD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-LGTMCamera-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A2C74723C864544866B8AD5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2716712C19270DC1002AA1D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2724FBE8195B9215003D58AC /* imageSearchDetailViewController.m in Sources */,
 				2716714A19270DC1002AA1D8 /* ViewController.m in Sources */,
 				2716714419270DC1002AA1D8 /* AppDelegate.m in Sources */,
+				2724FBD519590382003D58AC /* imageSearchViewController.m in Sources */,
 				2716714019270DC1002AA1D8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +545,7 @@
 		};
 		2716716319270DC1002AA1D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71F42CE2FBAE44FCB3C44044 /* Pods-LGTMCamera.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -462,13 +556,14 @@
 				INFOPLIST_FILE = "LGTMCamera/LGTMCamera-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8113AF4F-9BF8-476E-A637-6ABC91033FD9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		2716716419270DC1002AA1D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71F42CE2FBAE44FCB3C44044 /* Pods-LGTMCamera.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -479,7 +574,7 @@
 				INFOPLIST_FILE = "LGTMCamera/LGTMCamera-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "8113AF4F-9BF8-476E-A637-6ABC91033FD9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

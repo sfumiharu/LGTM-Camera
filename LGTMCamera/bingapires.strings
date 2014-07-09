@@ -1,0 +1,1295 @@
+/* 
+  bingapires.strings
+  LGTMCamera
+
+  Created by fumiharu on 2014/06/24.
+  Copyright (c) 2014年 fumiharu. All rights reserved.
+
+
+2014-06-24 23:14:47.865 LGTMCamera[61928:70b] {
+    d =     {
+        results =         (
+        {
+            AlterationOverrideQuery = "";
+            AlteredQuery = "";
+            ID = "ac574a1e-67bb-4673-901e-1d04720c72b2";
+            Image =                 (
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "neoculture.wordpress.com/2010/07/04";
+                FileSize = 239980;
+                Height = 768;
+                ID = "5fe22369-c91d-42b5-8a8a-85f4a3722c38";
+                MediaUrl = "http://neoculture.files.wordpress.com/2010/07/shibuya.jpg";
+                SourceUrl = "http://neoculture.wordpress.com/2010/07/04/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 43893;
+                    Height = 360;
+                    MediaUrl = "http://ts4.mm.bing.net/th?id=HN.608018690423915819&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = shibuya;
+                Width = 1024;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=0&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "japanesense.wordpress.com/2012/09/28/shibuya-the-core-of...";
+                FileSize = 1075481;
+                Height = 1365;
+                ID = "ce90a2c3-3e76-461f-a550-8edccf08c7fa";
+                MediaUrl = "http://japanesense.files.wordpress.com/2012/09/img_7801-rectfish.jpg";
+                SourceUrl = "http://japanesense.wordpress.com/2012/09/28/shibuya-the-core-of-youth-and-trend-in-tokyo-part-4/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 42135;
+                    Height = 319;
+                    MediaUrl = "http://ts1.mm.bing.net/th?id=HN.608048424485457636&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Shibuya \U201cThe Core of Youth and Trend in ...";
+                Width = 2048;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=1&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "tokiorevolution.blogspot.com/2012/06/foto-shibuya-la...";
+                FileSize = 234730;
+                Height = 768;
+                ID = "d636880e-6bb0-4bd1-8f93-a7c5cede3ef4";
+                MediaUrl = "http://4.bp.blogspot.com/-xY3lo6tmm7s/T8BITY1lX1I/AAAAAAAAFk8/V31kdXe357A/s1600/shibuya1.jpg";
+                SourceUrl = "http://tokiorevolution.blogspot.com/2012/06/foto-shibuya-la-ciudad-de-la-moda.html";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 38669;
+                    Height = 360;
+                    MediaUrl = "http://ts2.mm.bing.net/th?id=HN.608037897518515485&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Foto: Shibuya la ciudad de la moda";
+                Width = 1024;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=2&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "tokyofashion.com/shibuya-christmas-pictures-2009";
+                FileSize = 488308;
+                Height = 850;
+                ID = "b5883340-68e9-4686-944c-c76c595cfb63";
+                MediaUrl = "http://tokyofashion.com/wp-content/uploads/2009/12/Shibuya-Christmas-Pictures-2009-002.JPG";
+                SourceUrl = "http://tokyofashion.com/shibuya-christmas-pictures-2009/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 44752;
+                    Height = 318;
+                    MediaUrl = "http://ts3.mm.bing.net/th?id=HN.608005483399742934&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "We\U2019re on the other side of Shibuya ...";
+                Width = 1280;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=3&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "www.popjapantravel.com/travel-guide/tokyo/shibuya";
+                FileSize = 193145;
+                Height = 768;
+                ID = "986b507a-32df-468b-a1e4-9b6cded13c68";
+                MediaUrl = "http://upload.wikimedia.org/wikipedia/commons/9/9d/Shibuya_at_night.JPG";
+                SourceUrl = "http://www.popjapantravel.com/travel-guide/tokyo/shibuya";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 38580;
+                    Height = 360;
+                    MediaUrl = "http://ts2.mm.bing.net/th?id=HN.607993307169754189&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "shibuya crossing at night";
+                Width = 1024;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=4&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "www.evaway.fr/circuit-touristique/voyage-japon-1-mois...";
+                FileSize = 318947;
+                Height = 1024;
+                ID = "6cc59232-570c-4561-a179-537942f62bf7";
+                MediaUrl = "http://www.evaway.fr/s3/evawayus/photos/original/17/17-86-E2-0E-08-17-A3-DD-4D-0A-0B-3B-52-77-56-AB-6D-E6-DD-52.jpg";
+                SourceUrl = "http://www.evaway.fr/circuit-touristique/voyage-japon-1-mois/view/64994";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 21599;
+                    Height = 240;
+                    MediaUrl = "http://ts2.mm.bing.net/th?id=HN.608017646748831625&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Voyage Japon 1 mois";
+                Width = 1280;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=5&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "www.douzo.fr/news/?p=549";
+                FileSize = 193050;
+                Height = 768;
+                ID = "b25c4001-1133-4d35-acc7-2a42db574b0c";
+                MediaUrl = "http://www.douzo.fr/news/wp-content/uploads/2010/12/shibuya-2.jpg";
+                SourceUrl = "http://www.douzo.fr/news/?p=549";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 33105;
+                    Height = 360;
+                    MediaUrl = "http://ts1.mm.bing.net/th?id=HN.607994660087795012&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "shibuya-2";
+                Width = 1024;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=6&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "gratzindustries.blogspot.com/2010/04/japan-trip-around...";
+                FileSize = 277178;
+                Height = 1200;
+                ID = "018a3361-dcb7-46f5-8c60-c5e8f93ef7dc";
+                MediaUrl = "http://3.bp.blogspot.com/_aj_173BZ0-c/S7lqianaq8I/AAAAAAAAFTk/w1RKhsXhXJ0/s1600/Shibuya+043.JPG";
+                SourceUrl = "http://gratzindustries.blogspot.com/2010/04/japan-trip-around-shibuya.html";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 38505;
+                    Height = 360;
+                    MediaUrl = "http://ts1.mm.bing.net/th?id=HN.608029956131130900&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Monday, April 5, 2010";
+                Width = 1600;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=7&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "japancultpopbr.blogspot.com/2011/01/conhendo-um-pouco...";
+                FileSize = 565568;
+                Height = 1200;
+                ID = "132ef5a0-c155-468b-b376-10dfe7fb5383";
+                MediaUrl = "http://3.bp.blogspot.com/_6q2Cftfl84w/TS378vB1EdI/AAAAAAAAAOg/6OSugCIjsTM/s1600/shibuya_109_building_tokyo_january_20061.jpg";
+                SourceUrl = "http://japancultpopbr.blogspot.com/2011/01/conhendo-um-pouco-shibuya.html";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 37328;
+                    Height = 360;
+                    MediaUrl = "http://ts1.mm.bing.net/th?id=HN.608011273016970564&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Conhendo um pouco Shibuya...";
+                Width = 1600;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=8&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "visual-kuri.blogspot.com/2011/01/imagenes-de-shibuya...";
+                FileSize = 318186;
+                Height = 768;
+                ID = "dc959465-8114-4441-a0dc-c1d6520c6e3e";
+                MediaUrl = "http://www.quicoto.com/wp-content/uploads/2008/05/shibuya_tokyo_japan2.jpg";
+                SourceUrl = "http://visual-kuri.blogspot.com/2011/01/imagenes-de-shibuya-tokyo-japon.html";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 62963;
+                    Height = 360;
+                    MediaUrl = "http://ts3.mm.bing.net/th?id=HN.608026855162906546&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Imagenes de Shibuya (Tokyo, Japon)";
+                Width = 1024;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=9&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "commons.wikimedia.org/wiki/File:Shibuya_Night_(HDR).jpg";
+                FileSize = 636294;
+                Height = 683;
+                ID = "a88c13e0-0ae4-4c7b-a15f-d341974f7b39";
+                MediaUrl = "http://upload.wikimedia.org/wikipedia/commons/4/4e/Shibuya_Night_%28HDR%29.jpg";
+                SourceUrl = "http://commons.wikimedia.org/wiki/File:Shibuya_Night_(HDR).jpg";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 33740;
+                    Height = 320;
+                    MediaUrl = "http://ts4.mm.bing.net/th?id=HN.608006625862944059&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Description Shibuya Night (HDR).jpg";
+                Width = 1024;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=10&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "www.tokyoluv.com/shibuya-crossing-tilt-shift";
+                FileSize = 1017791;
+                Height = 624;
+                ID = "51aeeeb9-f1ce-4856-ac4d-b2bafde1c264";
+                MediaUrl = "http://www.tokyoluv.com/wp-content/uploads/2010/06/shibuya_Tilt_Shift.jpg";
+                SourceUrl = "http://www.tokyoluv.com/shibuya-crossing-tilt-shift/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 19409;
+                    Height = 198;
+                    MediaUrl = "http://ts4.mm.bing.net/th?id=HN.608032215283535023&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "25Jun Shibuya Crossing Tilt Shift";
+                Width = 940;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=11&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "sakurahouse-blog.com/fr/2011/10/18/nightlife-a-tokyo-quel...";
+                FileSize = 303279;
+                Height = 1200;
+                ID = "49aa3e75-95d5-4265-b460-b2e67efe64ad";
+                MediaUrl = "http://sakurahouse-blog.com/fr/files/2011/10/Shibuya.jpg";
+                SourceUrl = "http://sakurahouse-blog.com/fr/2011/10/18/nightlife-a-tokyo-quel-est-votre-quartier-favori/shibuya/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 35627;
+                    Height = 360;
+                    MediaUrl = "http://ts3.mm.bing.net/th?id=HN.607990519737813282&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = Shibuya;
+                Width = 1600;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=12&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "www.disfrutatokio.com/shibuya";
+                FileSize = 152765;
+                Height = 600;
+                ID = "247a8dd1-9757-4135-97a2-c28b6cf1b743";
+                MediaUrl = "http://www.disfrutatokio.com/fotos/shibuya-edificios.jpg";
+                SourceUrl = "http://www.disfrutatokio.com/shibuya";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 13323;
+                    Height = 200;
+                    MediaUrl = "http://ts3.mm.bing.net/th?id=HN.608037536737853822&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Pan\U00f3ramica de Shibuya al salir de la ...";
+                Width = 900;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=13&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "www.runningronin.com/2011/05/shibuya-alley.html";
+                FileSize = 271026;
+                Height = 1065;
+                ID = "c1c96a76-989c-4c07-9bf5-6f95b767dff5";
+                MediaUrl = "http://3.bp.blogspot.com/-0lUsyfbJeDw/TeEC1NAzroI/AAAAAAAAAWU/I5L8v8wP-d4/s1600/SMALL+shibuya+jan+11+164_5_6_tonemapped.jpg";
+                SourceUrl = "http://www.runningronin.com/2011/05/shibuya-alley.html";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 37538;
+                    Height = 319;
+                    MediaUrl = "http://ts2.mm.bing.net/th?id=HN.608035719969113513&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Look at all the ghosting and rips on the ...";
+                Width = 1600;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=14&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "www.everytrail.com/guide/shibuya-nights";
+                FileSize = 190118;
+                Height = 375;
+                ID = "a5bf7fa0-1dea-4ab6-b37c-46bf5c062127";
+                MediaUrl = "http://images.everytrail.com/pics/fullsize/219972-DSC01668.JPG";
+                SourceUrl = "http://www.everytrail.com/guide/shibuya-nights";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 32875;
+                    Height = 360;
+                    MediaUrl = "http://ts4.mm.bing.net/th?id=HN.608049957787208299&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Shibuya Nights";
+                Width = 500;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=15&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "wikimapia.org/19697/Shibuya-Station-Crossing";
+                FileSize = 13817303;
+                Height = 3264;
+                ID = "a8a3b07a-9605-4ded-b76f-0b98ff74709b";
+                MediaUrl = "http://photos.wikimapia.org/p/00/03/16/73/59_full.jpg";
+                SourceUrl = "http://wikimapia.org/19697/Shibuya-Station-Crossing";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 53323;
+                    Height = 317;
+                    MediaUrl = "http://ts1.mm.bing.net/th?id=HN.608014580145262460&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Shibuya Station Crossing (Tokyo)";
+                Width = 4928;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=16&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "www.tripadvisor.com/Tourism-g1066456-Shibuya_Tokyo_Tokyo...";
+                FileSize = 47609;
+                Height = 412;
+                ID = "ad78b72c-5191-4ba3-a7aa-0d262e60e85e";
+                MediaUrl = "http://media-cdn.tripadvisor.com/media/photo-s/01/1a/ba/45/shibuya-at-night.jpg";
+                SourceUrl = "http://www.tripadvisor.com/Tourism-g1066456-Shibuya_Tokyo_Tokyo_Prefecture_Kanto-Vacations.html";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 27215;
+                    Height = 359;
+                    MediaUrl = "http://ts4.mm.bing.net/th?id=HN.608006746119539387&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Shibuya Center Town (inefekt, May 2013)";
+                Width = 550;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=17&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "gaijinlife.wordpress.com/2010/02/11/impressive-views-of...";
+                FileSize = 335455;
+                Height = 768;
+                ID = "13a3ae05-7e78-417b-bf5f-71ea0115ee82";
+                MediaUrl = "http://gaijinlife.files.wordpress.com/2010/02/shibuya.jpg";
+                SourceUrl = "http://gaijinlife.wordpress.com/2010/02/11/impressive-views-of-tokyo/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 25194;
+                    Height = 225;
+                    MediaUrl = "http://ts1.mm.bing.net/th?id=HN.608018926647642340&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = shibuya;
+                Width = 1024;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=18&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "commons.wikimedia.org/wiki/File:Shibuya-Crossing-Evening...";
+                FileSize = 629273;
+                Height = 900;
+                ID = "4da9139f-6e21-4b6e-b9ff-39146afde479";
+                MediaUrl = "http://upload.wikimedia.org/wikipedia/commons/e/e8/Shibuya-Crossing-Evening-01.jpg";
+                SourceUrl = "http://commons.wikimedia.org/wiki/File:Shibuya-Crossing-Evening-01.jpg";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 48483;
+                    Height = 360;
+                    MediaUrl = "http://ts4.mm.bing.net/th?id=HN.608017406233019627&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Description Shibuya-Crossing-Evening-01 ...";
+                Width = 1200;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=19&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "en.wikipedia.org/wiki/File:Shibuya_crossing.jpg";
+                FileSize = 265509;
+                Height = 640;
+                ID = "69d87eb7-d350-4bbf-bc34-9b75cd2bc616";
+                MediaUrl = "http://upload.wikimedia.org/wikipedia/en/5/57/Shibuya_crossing.jpg";
+                SourceUrl = "http://en.wikipedia.org/wiki/File:Shibuya_crossing.jpg";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 14081;
+                    Height = 199;
+                    MediaUrl = "http://ts1.mm.bing.net/th?id=HN.608036952629707632&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "File:Shibuya crossing.jpg";
+                Width = 963;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=20&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "pertraviagens.wordpress.com/2009/11/04/tokio/shibuya";
+                FileSize = 896078;
+                Height = 1704;
+                ID = "e02f93a2-8422-4c3d-a5fa-41c3624b8ca0";
+                MediaUrl = "http://pertraviagens.files.wordpress.com/2009/11/shibuya.jpg";
+                SourceUrl = "http://pertraviagens.wordpress.com/2009/11/04/tokio/shibuya/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 40577;
+                    Height = 360;
+                    MediaUrl = "http://ts3.mm.bing.net/th?id=HN.608055807537382442&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "T\U00f3quio \U00bb Shibuya";
+                Width = 2272;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=21&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "en.wikipedia.org/wiki/File:Shibuya_night.jpg";
+                FileSize = 258958;
+                Height = 765;
+                ID = "c20920ef-92ec-4dd6-9e11-55c9b2cbfa1c";
+                MediaUrl = "http://upload.wikimedia.org/wikipedia/commons/e/e2/Shibuya_night.jpg";
+                SourceUrl = "http://en.wikipedia.org/wiki/File:Shibuya_night.jpg";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 22989;
+                    Height = 223;
+                    MediaUrl = "http://ts3.mm.bing.net/th?id=HN.607986332146862670&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "File:Shibuya night.jpg";
+                Width = 1027;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=22&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "tokyofashion.com/shibuya-christmas-pictures-2009";
+                FileSize = 391013;
+                Height = 850;
+                ID = "eef32272-e74e-44d9-b9dc-8d439d537932";
+                MediaUrl = "http://tokyofashion.com/wp-content/uploads/2009/12/Shibuya-Christmas-Pictures-2009-001.JPG";
+                SourceUrl = "http://tokyofashion.com/shibuya-christmas-pictures-2009/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 38383;
+                    Height = 318;
+                    MediaUrl = "http://ts1.mm.bing.net/th?id=HN.607994771747439760&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Christmas Time in Shibuya, Japan";
+                Width = 1280;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=23&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "shoptalk.kozaimodern.com/?p=508";
+                FileSize = 347845;
+                Height = 1200;
+                ID = "e929236a-706c-433b-aac3-27343e60c24b";
+                MediaUrl = "http://shoptalk.kozaimodern.com/wp-content/uploads/2011/09/Video-screens-at-Shibuya-crossing.jpg";
+                SourceUrl = "http://shoptalk.kozaimodern.com/?p=508";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 19248;
+                    Height = 225;
+                    MediaUrl = "http://ts3.mm.bing.net/th?id=HN.608030016254971082&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Shibuya Crossing, video screens at dusk";
+                Width = 1600;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=24&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "commons.wikimedia.org/wiki/File:1_shibuya_crossing_2012.jpg";
+                FileSize = 15289280;
+                Height = 4403;
+                ID = "7b88d13f-64ba-4f44-be3b-627630173f59";
+                MediaUrl = "http://upload.wikimedia.org/wikipedia/commons/5/57/1_shibuya_crossing_2012.jpg";
+                SourceUrl = "http://commons.wikimedia.org/wiki/File:1_shibuya_crossing_2012.jpg";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 41859;
+                    Height = 327;
+                    MediaUrl = "http://ts4.mm.bing.net/th?id=HN.608010070429206339&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Description 1 shibuya crossing 2012.jpg";
+                Width = 6462;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=25&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "www.monicasilva.it/tokyo-diaries/shibuya_crossing";
+                FileSize = 328958;
+                Height = 1000;
+                ID = "4405ad5f-09b8-49c9-941d-563fa13d2292";
+                MediaUrl = "http://www.monicasilva.it/wp-content/uploads/2012/07/Shibuya_Crossing.jpg";
+                SourceUrl = "http://www.monicasilva.it/tokyo-diaries/shibuya_crossing/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 23745;
+                    Height = 225;
+                    MediaUrl = "http://ts3.mm.bing.net/th?id=HN.608046504633237694&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Shibuya Crossing \U2013 Tokio";
+                Width = 1333;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=26&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "simvt.org/2009/05/29/japan-tour-day-2-mmm-sushi/img_2245";
+                FileSize = 2344491;
+                Height = 2304;
+                ID = "42615287-5168-4cde-acc8-9faf4fca26d5";
+                MediaUrl = "http://simvt.files.wordpress.com/2009/05/img_2245.jpg";
+                SourceUrl = "http://simvt.org/2009/05/29/japan-tour-day-2-mmm-sushi/img_2245/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 20938;
+                    Height = 225;
+                    MediaUrl = "http://ts3.mm.bing.net/th?id=HN.608055309314295766&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Japan Tour Day 2: Mmm, Sushi! \U00bb Shibuya!";
+                Width = 3072;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=27&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "commons.wikimedia.org/wiki/File:Shibuya_Q-Front_at_night.jpg";
+                FileSize = 1306126;
+                Height = 960;
+                ID = "ff5d8cfd-0db2-4d9c-8cb4-08b1b0ca3236";
+                MediaUrl = "http://upload.wikimedia.org/wikipedia/commons/e/e3/Shibuya_Q-Front_at_night.jpg";
+                SourceUrl = "http://commons.wikimedia.org/wiki/File:Shibuya_Q-Front_at_night.jpg";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 43844;
+                    Height = 360;
+                    MediaUrl = "http://ts3.mm.bing.net/th?id=HN.608035874587870034&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Description Shibuya Q-Front at night.jpg";
+                Width = 1280;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=28&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "planachanlovejapan.over-blog.com/article-quartier-de...";
+                FileSize = 296972;
+                Height = 960;
+                ID = "5ff42a57-be1e-443a-80b4-cd3370268bfa";
+                MediaUrl = "http://www.globaled.org/japanproject/SocialIssuesProject/Photos/Shibuya.jpg";
+                SourceUrl = "http://planachanlovejapan.over-blog.com/article-quartier-de-tokyo-shibuya-99026025.html";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 21693;
+                    Height = 225;
+                    MediaUrl = "http://ts1.mm.bing.net/th?id=HN.608001922874736868&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "... /SocialIssuesProject/Photos/Shibuya.jpg";
+                Width = 1280;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=29&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "doramastar.ru/3557/nochnaya-shibuya";
+                FileSize = 43250;
+                Height = 412;
+                ID = "54d167ad-8c45-4cc0-b386-2c3cf36c5db1";
+                MediaUrl = "http://doramastar.ru/wp-content/uploads/2012/07/8795e3a.jpg";
+                SourceUrl = "http://doramastar.ru/3557/nochnaya-shibuya";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 15001;
+                    Height = 224;
+                    MediaUrl = "http://ts2.mm.bing.net/th?id=HN.608039791599157465&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "\U041d\U043e\U0447\U043d\U0430\U044f Shibuya";
+                Width = 550;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=30&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "keanpoh.blogspot.com/2011/04/shibuya-night.html";
+                FileSize = 390654;
+                Height = 666;
+                ID = "c930c12c-77fd-4c53-a96c-b4e5f163a806";
+                MediaUrl = "http://1.bp.blogspot.com/-WJX92-n7Soo/TZhOcynVlYI/AAAAAAAABNc/Beyv53_Lyf0/s1600/Tokyo_Shibuya_Night.jpg";
+                SourceUrl = "http://keanpoh.blogspot.com/2011/04/shibuya-night.html";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 39633;
+                    Height = 319;
+                    MediaUrl = "http://ts4.mm.bing.net/th?id=HN.608013390435125439&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "... junction in Shibuya, Tokyo [HDR Picture";
+                Width = 1000;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=31&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "it.youinjapan.net/tokyo/shibuya.php";
+                FileSize = 355088;
+                Height = 1200;
+                ID = "e01fe009-ea65-4c19-98be-3feea61c7689";
+                MediaUrl = "http://it.youinjapan.net/tokyo/foto/shibuya_labi.jpg";
+                SourceUrl = "http://it.youinjapan.net/tokyo/shibuya.php";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 24511;
+                    Height = 225;
+                    MediaUrl = "http://ts4.mm.bing.net/th?id=HN.608045946291357719&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "strada di shibuya di sera di fronte labi";
+                Width = 1600;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=32&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "traveljapanblog.com/wordpress/tag/shibuya";
+                FileSize = 792435;
+                Height = 1080;
+                ID = "3f17fbcb-0a21-459e-8b51-970ceafc1beb";
+                MediaUrl = "http://traveljapanblog.com/wordpress/wp-content/uploads/2012/11/P1000892-shibuya-crossing.jpg";
+                SourceUrl = "http://traveljapanblog.com/wordpress/tag/shibuya/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 34123;
+                    Height = 270;
+                    MediaUrl = "http://ts2.mm.bing.net/th?id=HN.608031197375368181&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "shibuya crossing \U6e0b\U8c37\U99c5\U524d\U306e ...";
+                Width = 1918;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=33&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "letterstoadyingdream.wordpress.com/2010/12/21/my-drunken...";
+                FileSize = 165374;
+                Height = 342;
+                ID = "522d4243-2e6e-46e0-96c4-89460e60fffe";
+                MediaUrl = "http://letterstoadyingdream.files.wordpress.com/2010/12/shibuya.jpg";
+                SourceUrl = "http://letterstoadyingdream.wordpress.com/2010/12/21/my-drunken-tour-of-japan-i-pretend-i-am-a-tour-guide-people-would-listen-too/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 22009;
+                    Height = 205;
+                    MediaUrl = "http://ts4.mm.bing.net/th?id=HN.608023492202467107&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = shibuya;
+                Width = 500;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=34&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "unamiradahaciajapon.blogspot.com/2011/01/paseando-por...";
+                FileSize = 123289;
+                Height = 450;
+                ID = "efc9d717-ca2f-4097-85e6-90c97e6a6194";
+                MediaUrl = "http://2.bp.blogspot.com/_Pk81sUcqKYw/TUP7mILNKcI/AAAAAAAABr4/2ONN2_nPU60/s640/Shibuya-88.jpg";
+                SourceUrl = "http://unamiradahaciajapon.blogspot.com/2011/01/paseando-por-shibuya.html";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 31208;
+                    Height = 250;
+                    MediaUrl = "http://ts2.mm.bing.net/th?id=HN.607992074519053653&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Shibuya es un distrito fundado en 1947 y ...";
+                Width = 540;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=35&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "www.ilovetokyo.fr/tokyo/shibuya";
+                FileSize = 551752;
+                Height = 768;
+                ID = "36de944c-e73c-4d58-9943-25fef775852c";
+                MediaUrl = "http://www.ilovetokyo.fr/wp-content/uploads/2008/04/shibuya_pietons_soir.jpg";
+                SourceUrl = "http://www.ilovetokyo.fr/tokyo/shibuya/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 19426;
+                    Height = 225;
+                    MediaUrl = "http://ts1.mm.bing.net/th?id=HN.608027246003423784&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "r\U00e9ponses \U00e0 \U201cShibuya\U201d";
+                Width = 1024;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=36&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "graemerose.com/2010/09/14/shoo-shoo-shibuya";
+                FileSize = 1449367;
+                Height = 2448;
+                ID = "492238c9-66b2-4c49-ae0f-21609031bfa1";
+                MediaUrl = "http://graemerose.files.wordpress.com/2010/09/shibuya.jpg";
+                SourceUrl = "http://graemerose.com/2010/09/14/shoo-shoo-shibuya/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 31589;
+                    Height = 225;
+                    MediaUrl = "http://ts2.mm.bing.net/th?id=HN.607986439517700817&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "shoo shoo shibuya";
+                Width = 3264;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=37&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "temporarilylost.com/2012/08/24/neon-lights-giant-lanterns...";
+                FileSize = 3259886;
+                Height = 3000;
+                ID = "99cb3877-ffba-41d4-8770-53fc76e0e953";
+                MediaUrl = "http://temporarilylostdotcom.files.wordpress.com/2012/08/shibuya-16-shibuya-crossing.jpg";
+                SourceUrl = "http://temporarilylost.com/2012/08/24/neon-lights-giant-lanterns-and-urban-sprawl-in-tokyo/shibuya-16-shibuya-crossing/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 44575;
+                    Height = 360;
+                    MediaUrl = "http://ts2.mm.bing.net/th?id=HN.607999277174951429&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Shibuya 16 \U2013 Shibuya Crossing";
+                Width = 4000;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=38&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "www.tripadvisor.com/LocationPhotos-g298184-Tokyo_Tokyo...";
+                FileSize = 63181;
+                Height = 440;
+                ID = "cf477bb5-1488-4855-9ea7-d58bbf4321f3";
+                MediaUrl = "http://media-cdn.tripadvisor.com/media/photo-s/01/12/8f/9a/shibuya.jpg";
+                SourceUrl = "http://www.tripadvisor.com/LocationPhotos-g298184-Tokyo_Tokyo_Prefecture_Kanto.html";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 39876;
+                    Height = 384;
+                    MediaUrl = "http://ts2.mm.bing.net/th?id=HN.608041668503800109&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Tokyo, Japan: Shibuya";
+                Width = 550;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=39&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "www.asteriskrealty.jp/articles/news/research-on-recent...";
+                FileSize = 318979;
+                Height = 669;
+                ID = "795e9f4c-889e-4547-adb4-bbb2d1c39962";
+                MediaUrl = "http://www.asteriskrealty.jp/wp-content/uploads/shibuya.jpg";
+                SourceUrl = "http://www.asteriskrealty.jp/articles/news/research-on-recent-residential-rent-in-tokyo-feb.html/attachment/shibuya";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 18618;
+                    Height = 200;
+                    MediaUrl = "http://ts3.mm.bing.net/th?id=HN.608003378872256726&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = shibuya;
+                Width = 1000;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=40&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "it.wikipedia.org/wiki/File:Shibuya_crossing_2.jpg";
+                FileSize = 103424;
+                Height = 600;
+                ID = "0c2c31d2-98d7-4113-91d8-6465f9a1143b";
+                MediaUrl = "http://upload.wikimedia.org/wikipedia/commons/1/10/Shibuya_crossing_2.jpg";
+                SourceUrl = "http://it.wikipedia.org/wiki/File:Shibuya_crossing_2.jpg";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 31768;
+                    Height = 360;
+                    MediaUrl = "http://ts1.mm.bing.net/th?id=HN.608000892081275228&pid=15.1";
+                    Width = 480;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Descrizione Shibuya crossing 2.jpg";
+                Width = 800;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=41&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "gratzindustries.blogspot.com/2010/04/japan-trip-around...";
+                FileSize = 245399;
+                Height = 1600;
+                ID = "8b17ecfd-4404-463f-8b59-4bde235fd382";
+                MediaUrl = "http://3.bp.blogspot.com/_aj_173BZ0-c/S7mT8gTVsaI/AAAAAAAAFXs/l-TCxo0zAwY/s1600/Shibuya+010.JPG";
+                SourceUrl = "http://gratzindustries.blogspot.com/2010/04/japan-trip-around-shibuya.html";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 17117;
+                    Height = 300;
+                    MediaUrl = "http://ts4.mm.bing.net/th?id=HN.608000505538216327&pid=15.1";
+                    Width = 225;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "This place, for example, looked at first ...";
+                Width = 1200;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=42&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "tekinico.free.fr/roppongi--shibuya.php";
+                FileSize = 1473381;
+                Height = 2592;
+                ID = "6af2626c-74f4-4a3f-84b2-094b0d744556";
+                MediaUrl = "http://tekinico.free.fr/pics/b31/shibuya.by.night.2.l.jpg";
+                SourceUrl = "http://tekinico.free.fr/roppongi--shibuya.php";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 17083;
+                    Height = 200;
+                    MediaUrl = "http://ts1.mm.bing.net/th?id=HN.608000239248146504&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "\U516d\U672c\U6728 & \U6e0b\U8c37 - Roppongi & Shibuya";
+                Width = 3872;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=43&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "tokyofashion.com/shibuya-halloween-costumes-pictures-2012";
+                FileSize = 409682;
+                Height = 1500;
+                ID = "d5c3f1ce-c7d9-4bee-9aaf-64f66a10acac";
+                MediaUrl = "http://tokyofashion.com/wp-content/uploads/2012/10/Shibuya-Halloween-Costumes-2012-010.jpg";
+                SourceUrl = "http://tokyofashion.com/shibuya-halloween-costumes-pictures-2012/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 21502;
+                    Height = 300;
+                    MediaUrl = "http://ts3.mm.bing.net/th?id=HN.608016499989218526&pid=15.1";
+                    Width = 200;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Shibuya Halloween Costume Street Snaps ...";
+                Width = 1000;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=44&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "commons.wikimedia.org/wiki/File:Shibuya_intersection_at...";
+                FileSize = 116153;
+                Height = 683;
+                ID = "94afbbf4-62e6-467f-a068-4cb0832f0fba";
+                MediaUrl = "http://upload.wikimedia.org/wikipedia/commons/3/35/Shibuya_intersection_at_night.jpg";
+                SourceUrl = "http://commons.wikimedia.org/wiki/File:Shibuya_intersection_at_night.jpg";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 14686;
+                    Height = 200;
+                    MediaUrl = "http://ts4.mm.bing.net/th?id=HN.608014481357668959&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "File:Shibuya intersection at night.jpg";
+                Width = 1024;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=45&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "it.youinjapan.net/tokyo/shibuya.php";
+                FileSize = 372541;
+                Height = 1536;
+                ID = "38318169-bf26-40d9-98ba-e9a0f3332171";
+                MediaUrl = "http://it.youinjapan.net/tokyo/foto/shibuya_hachiko.jpg";
+                SourceUrl = "http://it.youinjapan.net/tokyo/shibuya.php";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 14631;
+                    Height = 225;
+                    MediaUrl = "http://ts4.mm.bing.net/th?id=HN.608009434773323991&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "statua hackiko shibuya";
+                Width = 2048;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=46&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "en.wikipedia.org/wiki/File:Shibuya_at_night.jpg";
+                FileSize = 5544517;
+                Height = 2448;
+                ID = "87a568c8-bfe8-4f95-90b3-8c8ee3807043";
+                MediaUrl = "http://upload.wikimedia.org/wikipedia/commons/0/0d/Shibuya_at_night.jpg";
+                SourceUrl = "http://en.wikipedia.org/wiki/File:Shibuya_at_night.jpg";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 14279;
+                    Height = 225;
+                    MediaUrl = "http://ts3.mm.bing.net/th?id=HN.608021881584750450&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Description Shibuya at night.jpg";
+                Width = 3264;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=47&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "sakdarkside.wordpress.com/2011/05/23/sakus-games-the...";
+                FileSize = 481733;
+                Height = 768;
+                ID = "405f8b45-57b4-4277-80d4-dbf02925541a";
+                MediaUrl = "http://sakdarkside.files.wordpress.com/2011/05/shibuya_tokyo.jpg";
+                SourceUrl = "http://sakdarkside.wordpress.com/2011/05/23/sakus-games-the-world-ends-with-you/";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 19845;
+                    Height = 225;
+                    MediaUrl = "http://ts2.mm.bing.net/th?id=HN.608009207139665045&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "shibuya atestada y sensual shibuya";
+                Width = 1024;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=48&$top=1";
+                };
+            },
+            {
+                ContentType = "image/jpeg";
+                DisplayUrl = "misawa-travelog.blogspot.com/2009/03/shibuya-crossing...";
+                FileSize = 31172;
+                Height = 268;
+                ID = "2f138f3c-9ee3-48f8-8f2a-98759f1f2846";
+                MediaUrl = "http://1.bp.blogspot.com/_6xz3nsl2C40/SbJDou3OhaI/AAAAAAAAAeo/hNsQiS6gKO8/s400/shibuya9.jpg";
+                SourceUrl = "http://misawa-travelog.blogspot.com/2009/03/shibuya-crossing-tokyo-japan-at-night.html";
+                Thumbnail =                         {
+                    ContentType = "image/jpg";
+                    FileSize = 12386;
+                    Height = 201;
+                    MediaUrl = "http://ts2.mm.bing.net/th?id=HN.608015215798126137&pid=15.1";
+                    Width = 300;
+                    "__metadata" =                             {
+                        type = "Bing.Thumbnail";
+                    };
+                };
+                Title = "Shibuya 109, a major shopping center in ...";
+                Width = 400;
+                "__metadata" =                         {
+                    type = ImageResult;
+                    uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/ExpandableSearchResultSet(guid'ac574a1e-67bb-4673-901e-1d04720c72b2')/Image?$skip=49&$top=1";
+                };
+            }
+            );
+            ImageOffset = 0;
+            ImageTotal = 35100;
+            News =                 (
+            );
+            NewsOffset = "";
+            NewsTotal = "";
+            RelatedSearch =                 (
+            );
+            SpellingSuggestions =                 (
+            );
+            SpellingSuggestionsTotal = "";
+            Video =                 (
+            );
+            VideoOffset = "";
+            VideoTotal = "";
+            Web =                 (
+            );
+            WebOffset = "";
+            WebTotal = "";
+            "__metadata" =                 {
+                type = ExpandableSearchResult;
+                uri = "https://api.datamarket.azure.com/Data.ashx/Bing/Search/v1/Composite?Sources='image'&Query='shibuya'&$skip=0&$top=1";
+            };
+        }
+        );
+    };
+}
+*/

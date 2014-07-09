@@ -2,13 +2,12 @@
 //  ViewController.m
 //  LGTMCamera
 //
-//  Created by fumiharu on 2014/05/17.
+//  rated by fumiharu on 2014/05/17.
 //  Copyright (c) 2014年 fumiharu. All rights reserved.
 //
 
 #import "ViewController.h"
-
-#define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#import "imageSearchViewController.h"
 
 @interface ViewController (){
     CGFloat lgtmViewX;
@@ -17,6 +16,7 @@
     CGFloat lgtmViewH;
     CGFloat px;
     CGFloat py;
+    NSURLRequest *req;
     UIButton *addLGTMBtn;
     UIButton *twitterBtn;
     UIButton *saveBtn;
@@ -24,6 +24,7 @@
     UIButton *takeBtn;
     UIButton *menuBtn;
     UIButton *mailBtn;
+    UIButton *imageSearchBtn;
     UILabel *retakeLbl;
     UILabel *menuLbl;
     NSArray *lgtmSelectionButtonList;
@@ -33,6 +34,7 @@
     UIView *takedTabView;
     UIView *baseView;
     UIImage *mixed;
+    UIImage *imag;
     UIScrollView *sv;
     UIDeviceOrientation deviceOrientation;
     AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
@@ -49,9 +51,20 @@
 @end
 
 @implementation ViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil img:(UIImage *)im;{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        imag = im;
+    }
+    return self;
+}
+
 -(void)viewDidLoad{
     [super viewDidLoad];
-    
+    imageSearchDetailViewController *d = [[imageSearchDetailViewController alloc]init];
+    d.delegate = self;
+
 //    LGTM images data
     lgtmSelectionButtonList = [NSArray arrayWithObjects:@"0", @"1", @"2", @"3", @"4", nil];
     lgtmSelectionButtonName = [NSArray arrayWithObjects:@"LGTM0", @"LGTM1", @"LGTM3", @"LGTM4", @"LGTM5", nil];
@@ -67,16 +80,35 @@
     
 //   start take
     [self setupAVCapture];
+//    UIImageView *i=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 300, 300)];
+//    i.image = [UIImage imageNamed:@"0_check"];
+//    [self.view addSubview:i];
+//            self.previewView.backgroundColor = [UIColor redColor];
 }
 
--(void)takePhoto:(id)sender{
+-(void)aaa:(UIImage *)images{
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    if (imag) {
+//        [self.session stopRunning];
+//        self.previewView.backgroundColor = [UIColor colorWithPatternImage:imag];
+//        NSLog(@"willap通った");
+//    }
+//    
+//    NSLog(@"willap通らない");
+}
+-(void)takePhotos{
+    NSLog(@"うけと");
+}
+-(void)takePhoto{
     // ビデオ入力のAVCaptureConnectionを取得
     AVCaptureConnection *videoConnection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
-    
     if (videoConnection == nil) {
-        return;
+//        return;
     }
-    
     // ビデオ入力から画像を非同期で取得。ブロックで定義されている処理が呼び出され、画像データを引数から取得する
     [self.stillImageOutput
      captureStillImageAsynchronouslyFromConnection:videoConnection
@@ -91,13 +123,12 @@
          
          
          // 入力された画像データからJPEGフォーマットとしてデータを取得
-         _imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-                  
-         [self.session stopRunning];
-         self.previewView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithData:_imageData]];
-         [self takeAnimation];
-         [self pushTabView];
+    [self.session stopRunning];
+    _imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+    self.previewView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithData:_imageData]];
+         
      }];
+    [self pushTabView];
 }
 -(void)pushTabView{
     takeTabView.center = CGPointMake(_previewView.frame.size.width-(_previewView.frame.size.width*2), _previewView.frame.size.height - 40);
@@ -316,6 +347,9 @@
     [self.view addSubview:takeTabView];
     
     takeBtn = [self takeButton];
+    imageSearchBtn = [self imageSearchButton];
+    
+    [takeTabView addSubview:imageSearchBtn];
     [takeTabView addSubview:takeBtn];
 }
 
@@ -404,10 +438,21 @@
     UIButton *takeButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
     takeButton.center = CGPointMake(takeTabView.frame.size.width/2, takeTabView.frame.size.height/2);
     [takeButton setBackgroundImage:[UIImage imageNamed:@"1_take"] forState:UIControlStateNormal];
-    [takeButton addTarget:self action:@selector(takePhoto:) forControlEvents:UIControlEventTouchUpInside];
+    [takeButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
     return takeButton;
 }
-
+-(void)pressImageSearchButton{
+    imageSearchViewController *vc = [[imageSearchViewController alloc]initWithNibName:@"imageSearchViewController" bundle:nil];
+    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:vc];
+    [self presentViewController:nc animated:YES completion:nil];
+}
+-(UIButton *)imageSearchButton{
+    UIButton *imageSearchButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+    imageSearchButton.center = CGPointMake(takeTabView.frame.size.width/4, takeTabView.frame.size.height/2);
+    [imageSearchButton setBackgroundImage:[UIImage imageNamed:@"1_search"] forState:UIControlStateNormal];
+    [imageSearchButton addTarget:self action:@selector(pressImageSearchButton) forControlEvents:UIControlEventTouchUpInside];
+    return imageSearchButton;
+}
 -(UILabel *)retakeLabel{
     UILabel *retakeLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 50, 15)];
     retakeLabel.center = CGPointMake(takeTabView.frame.size.width/6, takeTabView.frame.size.height/1.1);
@@ -481,7 +526,7 @@
     
     //  Setting Layer in View
     previewLayer = self.previewView.layer;
-    previewLayer.masksToBounds = YES;
+    previewLayer.masksToBounds = YES;    
     [previewLayer addSublayer:captureVideoPreviewLayer];
     
     //    Session Start
