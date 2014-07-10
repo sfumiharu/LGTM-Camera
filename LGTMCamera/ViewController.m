@@ -70,24 +70,17 @@
     lgtmSelectionButtonName = [NSArray arrayWithObjects:@"LGTM0", @"LGTM1", @"LGTM3", @"LGTM4", @"LGTM5", nil];
     
 //   init/add preview
-    self.previewView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    [self.view addSubview:self.previewView];
+    _previewView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [self.view addSubview:_previewView];
+    NSLog(@"sel.w+%f,,,+%f", self.view.frame.size.width, self.view.frame.size.height);
 
 //   Multi Touches
-    self.previewView.multipleTouchEnabled = YES;
+    _previewView.multipleTouchEnabled = YES;
     
     [self addTakeButton];
     
 //   start take
     [self setupAVCapture];
-//    UIImageView *i=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 300, 300)];
-//    i.image = [UIImage imageNamed:@"0_check"];
-//    [self.view addSubview:i];
-//            self.previewView.backgroundColor = [UIColor redColor];
-}
-
--(void)aaa:(UIImage *)images{
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -105,12 +98,12 @@
 }
 -(void)takePhoto{
     // ビデオ入力のAVCaptureConnectionを取得
-    AVCaptureConnection *videoConnection = [self.stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
+    AVCaptureConnection *videoConnection = [_stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
     if (videoConnection == nil) {
 //        return;
     }
     // ビデオ入力から画像を非同期で取得。ブロックで定義されている処理が呼び出され、画像データを引数から取得する
-    [self.stillImageOutput
+    [_stillImageOutput
      captureStillImageAsynchronouslyFromConnection:videoConnection
      completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
          if (imageDataSampleBuffer == NULL) {
@@ -123,9 +116,9 @@
          
          
          // 入力された画像データからJPEGフォーマットとしてデータを取得
-    [self.session stopRunning];
+    [_session stopRunning];
     _imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-    self.previewView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithData:_imageData]];
+    _previewView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithData:_imageData]];
          
      }];
     [self pushTabView];
@@ -163,18 +156,6 @@
     [self.session startRunning];
 
 }
--(void)takeAnimation{
-    [UIView beginAnimations:@"yo-" context:nil];
-    [UIView animateWithDuration:2
-                          delay:0
-                        options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         CGAffineTransform retake = CGAffineTransformMakeTranslation(80, 0);
-                         retakeBtn.transform = retake;
-                     }
-                     completion:nil];
-}
-
 
 -(void)addLGTMSelectionView{
     if (!_imageData || sv || baseView) {
@@ -341,10 +322,15 @@
 
 
 -(void)addTakeButton{
-    takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _previewView.frame.size.height-80, self.view.frame.size.width, 80)];
+//    if ([self is4inch]) {
+        takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _previewView.frame.size.height-80, _previewView.frame.size.width, 80)];
+//    }else{
+//        takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _previewView.frame.size.height-160, _previewView.frame.size.width, 80)];
+//
+//    }
     takeTabView.backgroundColor = RGB(51, 51, 51);
     takeTabView.alpha = 0.9;
-    [self.view addSubview:takeTabView];
+    [_previewView addSubview:takeTabView];
     
     takeBtn = [self takeButton];
     imageSearchBtn = [self imageSearchButton];
@@ -542,6 +528,12 @@
         }
     }
 }
+
+-(BOOL)is4inch{
+    CGSize SS = [[UIScreen mainScreen]bounds].size;
+    return SS.width == 320 && SS.height == 568;
+}
+
 - (void)objectOrientation{
     
     //使えない向きの時は処理しない
