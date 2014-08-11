@@ -157,7 +157,7 @@
 }
 
 -(void)setThumbnailBaseView{
-    sv = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 120, self.view.frame.size.width, 460)];
+    sv = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 120, self.view.frame.size.width, self.view.frame.size.height-120)];
     sv.contentSize = CGSizeMake(0, [Thumbnail_MediaUrl count]/3*110);
     NSLog(@"さむ+%d", [Thumbnail_MediaUrl count]);
     [self.view addSubview:sv];

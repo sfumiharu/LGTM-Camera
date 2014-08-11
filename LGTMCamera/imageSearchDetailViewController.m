@@ -31,10 +31,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    v.viewDele = self;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     _previewSearchImage.backgroundColor = [UIColor grayColor];
-    [_previewSearchImage setImage:image];
+//    [_previewSearchImage setImage:image];
+    
+    UIImageView *preview = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 380)];
+    [preview setImage:image];
+    [self.view addSubview:preview];
+    
+    UIButton *selectButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/1.6, self.view.frame.size.height-180, 100, 100)];
+    [selectButton setBackgroundImage:[UIImage imageNamed:@"0_check"] forState:UIControlStateNormal];
+    [selectButton addTarget:self action:@selector(pressSelectButton) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:selectButton];
+    
+    UIButton *outButton = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width/7, self.view.frame.size.height-180, 100, 100)];
+    [outButton setBackgroundImage:[UIImage imageNamed:@"0_batsu"] forState:UIControlStateNormal];
+    [outButton addTarget:self action:@selector(pressOutButton) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:outButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,25 +57,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)pressSelectButton:(id)sender {
-//    ViewController *vc = [[ViewController alloc]init];
-//    [vc takePhoto];
-//    [self.view.window addSubview:vc.view];
+- (void)pressSelectButton{
     [self dismissViewControllerAnimated:YES completion:nil];
-    [_delegate takePhotos];
-//    if ([_delegate respondsToSelector:@selector(takePhotos)]) {
-//        NSLog(@"通った");
-//        [self dismissViewControllerAnimated:YES completion:nil];
-
-//    }else{
-//        NSLog(@"通らない");
-//    }
+    ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil img:image];
+    [vc takePhotos];
 }
 
--(void)aaa{
-    NSLog(@"aaa");
-}
-- (IBAction)pressOutButton:(id)sender {
+- (void)pressOutButton{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

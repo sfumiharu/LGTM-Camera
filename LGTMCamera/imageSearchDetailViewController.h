@@ -15,7 +15,6 @@
 @interface imageSearchDetailViewController : UIViewController
 @property (assign, nonatomic) id<imageSearchDetailViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIImageView *previewSearchImage;
-- (IBAction)pressSelectButton:(id)sender;
+- (void)pressSelectButton;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil img:(UIImage *)im;
 @end
-

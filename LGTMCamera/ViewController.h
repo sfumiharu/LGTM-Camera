@@ -25,6 +25,5 @@ imageSearchDetailViewControllerDelegate
 >
 
 - (void)takePhoto;
-- (void)takePhotos;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil img:(UIImage *)im;
 @end
