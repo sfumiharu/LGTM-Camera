@@ -288,24 +288,24 @@
 
     twitterBtn = [self twitterButton];
     saveBtn = [self saveButton];
-        mailBtn = [self mailButton];
+//    mailBtn = [self mailButton];
         
     twitterBtn.alpha = 0;
     saveBtn.alpha = 0;
-        mailBtn.alpha = 0;
+//    mailBtn.alpha = 0;
         
     [_previewView addSubview:baseView];
     [baseView addSubview:twitterBtn];
     [baseView addSubview:saveBtn];
-        [baseView addSubview:mailBtn];
+//    [baseView addSubview:mailBtn];
         
     [UIView beginAnimations:@"fadeIn" context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     [UIView setAnimationDuration:0.2];
     baseView.alpha = 0.9;
     twitterBtn.alpha = 1;
-        saveBtn.alpha = 1;
-        mailBtn.alpha = 1;
+    saveBtn.alpha = 1;
+//    mailBtn.alpha = 1;
     [UIView commitAnimations];
     
     CGAffineTransform t = CGAffineTransformMakeRotation(45 * M_PI / 180);
@@ -380,7 +380,7 @@
 }
 -(UIButton *)twitterButton{
     UIButton *twitterButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 70, 70)];
-    twitterButton.center = CGPointMake(baseView.frame.size.width/6, baseView.frame.size.height/2);
+    twitterButton.center = CGPointMake(baseView.frame.size.width/4.6, baseView.frame.size.height/2);
     [twitterButton setBackgroundImage:[UIImage imageNamed:@"1_twitter"] forState:UIControlStateNormal];
     [twitterButton addTarget:self action:@selector(pressTwitterButton) forControlEvents:UIControlEventTouchUpInside];
     return twitterButton;
@@ -395,7 +395,7 @@
 
 -(UIButton *)saveButton{
     UIButton *saveButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 70, 70)];
-    saveButton.center = CGPointMake(baseView.frame.size.width/2, baseView.frame.size.height/2);
+    saveButton.center = CGPointMake(baseView.frame.size.width/1.3, baseView.frame.size.height/2);
     [saveButton setBackgroundImage:[UIImage imageNamed:@"1_save"] forState:UIControlStateNormal];
     [saveButton addTarget:self action:@selector(pressSaveButton:) forControlEvents:UIControlEventTouchUpInside];
     return saveButton;
