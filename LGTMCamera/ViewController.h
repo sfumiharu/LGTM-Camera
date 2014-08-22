@@ -12,6 +12,7 @@
 #import <Social/Social.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import "imageSearchDetailViewController.h"
+#import "imageSearchViewController.h"
 
 #define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 
@@ -21,9 +22,11 @@ AVCaptureVideoDataOutputSampleBufferDelegate,
 MFMailComposeViewControllerDelegate,
 NSURLAuthenticationChallengeSender,
 NSURLConnectionDelegate,
-imageSearchDetailViewControllerDelegate
+ISDVCDelegate,
+ISVCDelegate
 >
-
+@property(nonatomic, strong)UIView *previewView;
 - (void)takePhoto;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil img:(UIImage *)im;
+- (void)imaged:(UIImage *)im;
 @end

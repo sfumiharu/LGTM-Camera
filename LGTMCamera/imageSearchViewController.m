@@ -29,7 +29,7 @@
 
 @implementation imageSearchViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil img:(UIImage *)im;
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -38,9 +38,15 @@
     return self;
 }
 
+-(void)ISDVCMethod:(id)im{
+    NSLog(@"ちはる");
+    [self.delegate ISVCDelegateMethod:im];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     _queryForm.delegate = self;
     [_queryForm becomeFirstResponder];
     self.navigationItem.title = @"Search Image";
@@ -153,6 +159,7 @@
 //    
     imageSearchDetailViewController *iii = [[imageSearchDetailViewController alloc]initWithNibName:@"imageSearchDetailViewController" bundle:nil img:sender.imageView.image];
     [iii.previewSearchImage setImage:sender.imageView.image];
+    iii.delegate = self;
     [self.navigationController pushViewController:iii animated:YES];
 }
 

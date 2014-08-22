@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol imageSearchDetailViewControllerDelegate <NSObject>
-- (void)takePhotos;
+@protocol ISDVCDelegate <NSObject>
+- (void)ISDVCMethod:(UIImage *)im;
 @end
 
 @interface imageSearchDetailViewController : UIViewController
-@property (assign, nonatomic) id<imageSearchDetailViewControllerDelegate> delegate;
+@property (weak, nonatomic) id<ISDVCDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIImageView *previewSearchImage;
 - (void)pressSelectButton;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil img:(UIImage *)im;

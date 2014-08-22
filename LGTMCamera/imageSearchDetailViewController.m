@@ -59,8 +59,7 @@
 
 - (void)pressSelectButton{
     [self dismissViewControllerAnimated:YES completion:nil];
-    ViewController *vc = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil img:image];
-    [vc takePhotos];
+    [self.delegate ISDVCMethod:image];
 }
 
 - (void)pressOutButton{

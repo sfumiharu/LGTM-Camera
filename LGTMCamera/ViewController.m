@@ -35,6 +35,7 @@
     UIView *baseView;
     UIImage *mixed;
     UIImage *imag;
+    UIImageView *sii;
     UIScrollView *sv;
     UIDeviceOrientation deviceOrientation;
     AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
@@ -43,7 +44,7 @@
 @property(nonatomic, strong)AVCaptureDeviceInput *videoInput;
 @property(nonatomic, strong)AVCaptureStillImageOutput *stillImageOutput;
 @property(nonatomic, strong)AVCaptureSession *session;
-@property(nonatomic, strong)UIView *previewView;
+//@property(nonatomic, strong)UIView *previewView;
 @property(nonatomic, strong)NSData *imageData;
 @property(nonatomic, strong)UIImageView *shutter;
 @property(nonatomic, strong)UIImageView *lgtmView;
@@ -51,8 +52,14 @@
 @end
 
 @implementation ViewController
--(void)aaa{
-    NSLog(@"ああ");
+-(void)ISVCDelegateMethod:(id)im{
+    imag = im;
+    [self pushTabView];
+    _previewView.backgroundColor = [UIColor colorWithPatternImage:imag];
+//    [_session stopRunning];
+//    [_previewView removeFromSuperview];
+//    previewLayer.hidden = YES;
+//    [self.view addSubview:_previewView];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil img:(UIImage *)im;{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -64,9 +71,6 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    imageSearchDetailViewController *d = [[imageSearchDetailViewController alloc]init];
-    d.delegate = self;
-
     _previewView.multipleTouchEnabled = YES;
 
     lgtmSelectionButtonList = [NSArray arrayWithObjects:@"0", @"1", @"2", @"3", @"4", nil];
@@ -109,6 +113,7 @@
          
          // 入力された画像データからJPEGフォーマットとしてデータを取得
          [_session stopRunning];
+
          _imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
          _previewView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithData:_imageData]];
      }];
@@ -337,7 +342,7 @@
     takeBtn = [self takeButton];
     imageSearchBtn = [self imageSearchButton];
     
-//    [takeTabView addSubview:imageSearchBtn];
+    [takeTabView addSubview:imageSearchBtn];
     [takeTabView addSubview:takeBtn];
 }
 
@@ -431,6 +436,8 @@
 }
 -(void)pressImageSearchButton{
     imageSearchViewController *vc = [[imageSearchViewController alloc]initWithNibName:@"imageSearchViewController" bundle:nil];
+    vc.delegate = self;
+    [_session stopRunning];
     UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:vc];
     [self presentViewController:nc animated:YES completion:nil];
 }
@@ -464,6 +471,13 @@
     menuLabel.text = @"save";
     return menuLabel;
 }
+
+-(UIImageView *)searchImage{
+    UIImageView *si = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-80)];
+    si.backgroundColor = [UIColor colorWithPatternImage:imag];
+    return si;
+}
+
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
 }
