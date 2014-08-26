@@ -25,8 +25,19 @@ NSURLConnectionDelegate,
 ISDVCDelegate,
 ISVCDelegate
 >
+{
+    UIView *baseView;
+    UIView *takeTabView;
+    UIView *takedTabView;
+}
 @property(nonatomic, strong)UIView *previewView;
 - (void)takePhoto;
+- (void)backTabView;
+- (void)pressMailButton;
+- (void)pressTwitterButton;
+- (void)addLGTMSelectionView;
+- (void)pressImageSearchButton;
+- (void)addUploadBaseViewFadeIn;
+- (void)pressSaveButton:(id)sender;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil img:(UIImage *)im;
-- (void)imaged:(UIImage *)im;
 @end
