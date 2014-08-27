@@ -30,7 +30,9 @@ ISVCDelegate
     UIView *takeTabView;
     UIView *takedTabView;
 }
-@property(nonatomic, strong)UIView *previewView;
+@property (strong, nonatomic) UIView *previewView;
+@property (strong, nonatomic) UIImageView *setImageView;
+
 - (void)takePhoto;
 - (void)backTabView;
 - (void)pressMailButton;

@@ -50,13 +50,18 @@
 @end
 
 @implementation ViewController
+
+
 -(void)ISVCDelegateMethod:(id)im{
     imag = im;
     [self pushTabView];
+//    [previewLayer removeFromSuperlayer];
+    [captureVideoPreviewLayer removeFromSuperlayer];
     [_session stopRunning];
     
-    _previewView.backgroundColor = [UIColor colorWithPatternImage:imag];
-    _previewView.contentMode = UIViewContentModeScaleAspectFit;
+    [_setImageView setImage:imag];
+//    _setImageView.backgroundColor = [UIColor colorWithPatternImage:imag];
+    _setImageView.contentMode = UIViewContentModeScaleAspectFit;
     
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil img:(UIImage *)im;{
@@ -69,25 +74,21 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    _previewView.multipleTouchEnabled = YES;
+    self.view.multipleTouchEnabled = YES;
 
     lgtmSelectionButtonList = [NSArray arrayWithObjects:@"0", @"1", @"2", @"3", @"4", nil];
     lgtmSelectionButtonName = [NSArray arrayWithObjects:@"LGTM0", @"LGTM1", @"LGTM3", @"LGTM4", @"LGTM5", nil];
     
-    _previewView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    [self.view addSubview:_previewView];
+    _setImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [self.view addSubview:_setImageView];
+    
+    //    _previewView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+//    [self.view addSubview:_previewView];
     NSLog(@"sel.w+%f,,,+%f", self.view.frame.size.width, self.view.frame.size.height);
 
     
     [self addTakeButton];
     [self setupAVCapture];
-}
-
--(void)takePhotos{
-    UIImageView *i = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 380)];
-    [i setImage:[UIImage imageNamed:@"0_check"]];
-    i.backgroundColor = [UIColor redColor];
-    [self.view addSubview:i];
 }
 
 -(void)takePhoto{
@@ -113,25 +114,47 @@
          [_session stopRunning];
 
          _imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-         _previewView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithData:_imageData]];
+         [_setImageView setImage:[UIImage imageWithData:_imageData]];
+//         _previewView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithData:_imageData]];
      }];
     [self pushTabView];
 }
+-(void)addTakeButton{
+    if ([self is4inch]) {
+        takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height, _setImageView.frame.size.width, 90)];
+    }else{
+        takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-80, _setImageView.frame.size.width, 80)];
+    }
+    
+    takeTabView.backgroundColor = RGB(51, 51, 51);
+    takeTabView.alpha = 0.5;
+    [self.view addSubview:takeTabView];
+    
+    takeBtn = [self takeButton];
+    takeBtn.center = CGPointMake(takeTabView.frame.size.width/2, takeTabView.frame.size.height/2);
+    
+    imageSearchBtn = [self imageSearchButton];
+    imageSearchBtn.center = CGPointMake(takeTabView.frame.size.width/4, takeTabView.frame.size.height/2);
+    
+    
+    [takeTabView addSubview:imageSearchBtn];
+    [takeTabView addSubview:takeBtn];
+}
 
 -(void)pushTabView{
-    takeTabView.center = CGPointMake(_previewView.frame.size.width-(_previewView.frame.size.width*2), _previewView.frame.size.height - 40);
-    
-//    takedTabView = [[UIView alloc]initWithFrame:CGRectMake(_previewView.frame.size.width, _previewView.frame.size.height-80, _previewView.frame.size.width, 80)];
+    takeTabView.center = CGPointMake(_setImageView.frame.size.width-(_setImageView.frame.size.width*2), _setImageView.frame.size.height - 40);
     
     if ([self is4inch]) {
-        takedTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _previewView.frame.size.height, _previewView.frame.size.width, 90)];
+        takedTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height, _setImageView.frame.size.width, 90)];
     }else{
-        takedTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _previewView.frame.size.height-80, _previewView.frame.size.width, 80)];
+        takedTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-80, _setImageView.frame.size.width, 80)];
     }
     
     takedTabView.backgroundColor = RGB(51, 51, 51);
     takedTabView.alpha = 0.5;
-//    takedTabView.center = CGPointMake(_previewView.frame.size.width / 2, _previewView.frame.size.height - 40);
+    
+//    takedTabView.center = CGPointMake(_setImageView.frame.size.width / 2, _setImageView.frame.size.height - 40);
+    
     [self.view addSubview:takedTabView];
     
     addLGTMBtn = [self addLGTMButton];
@@ -156,34 +179,40 @@
     [takedTabView addSubview:retakeLbl];
     [takedTabView addSubview:menuLbl];
 }
+
 -(void)backTabView{
     if ([self is4inch]) {
-        takeTabView.center = CGPointMake(_previewView.frame.size.width / 2, _previewView.frame.size.height+45);
+        takeTabView.center = CGPointMake(_setImageView.frame.size.width / 2, _setImageView.frame.size.height+45);
     }else{
-        takeTabView.center = CGPointMake(_previewView.frame.size.width / 2, _previewView.frame.size.height-40);
+        takeTabView.center = CGPointMake(_setImageView.frame.size.width / 2, _setImageView.frame.size.height-40);
     }
-    takedTabView.center = CGPointMake((_previewView.frame.size.width * 3) / 2, _previewView.frame.size.height - 40);
+    
+    takedTabView.center = CGPointMake((_setImageView.frame.size.width * 3) / 2, _setImageView.frame.size.height - 40);
+    
     [_lgtmView removeFromSuperview];
     [sv removeFromSuperview];
     [self uploadBaseViewFadeOut];
+    
     _lgtmView = nil;
     sv = nil;
     _imageData = nil;
+    
+    [previewLayer addSublayer:captureVideoPreviewLayer];
     [self.session startRunning];
 
 }
 
 -(void)addLGTMSelectionView{
-    if (!_imageData || sv || baseView) {
+    if (sv || baseView) {
         return;
     }
     
 //    LGTM Selection ScrollView
     sv = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 250, 320)];
     sv.backgroundColor = RGB(51, 51, 51);
-    sv.center = self.previewView.center;
+    sv.center = _setImageView.center;
 //    sv.contentSize = CGSizeMake(0, 1200);
-    [self.previewView addSubview:sv];
+    [self.view addSubview:sv];
 
 //    LGTM images Placement on ScrollView
     int y = 10;
@@ -199,14 +228,16 @@
 -(void)addLGTMImage:(UIButton *)sender{
     [_lgtmView removeFromSuperview];
     _lgtmView = nil;
+    
     UIImage *image = [UIImage imageNamed:[lgtmSelectionButtonName objectAtIndex:sender.tag]];
     _lgtmView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
     _lgtmView.image = image;
-    _lgtmView.center = CGPointMake(_previewView.frame.size.width/2, _previewView.frame.size.height/2);
+    _lgtmView.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
     _lgtmView.contentMode = UIViewContentModeScaleAspectFill;
+    
     [sv removeFromSuperview];
     sv = nil;
-    [self.previewView addSubview:_lgtmView];
+    [_setImageView addSubview:_lgtmView];
 }
 -(void)GetImageFromCurrentImageContext{
     if (_imageData) {
@@ -215,10 +246,10 @@
         _shutter = [[UIImageView alloc]initWithImage:imag];
     }
     
-    UIGraphicsBeginImageContextWithOptions(_previewView.frame.size, YES, 2);
-    UIGraphicsBeginImageContext(CGSizeMake(_previewView.frame.size.width, _previewView.frame.size.height));
+    UIGraphicsBeginImageContextWithOptions(_setImageView.frame.size, YES, 2);
+    UIGraphicsBeginImageContext(CGSizeMake(_setImageView.frame.size.width, _setImageView.frame.size.height));
     
-    CGRect rect = CGRectMake(0, 0, _previewView.frame.size.width, _previewView.frame.size.height);
+    CGRect rect = CGRectMake(0, 0, _setImageView.frame.size.width, _setImageView.frame.size.height);
     CGRect rect1 = CGRectMake(lgtmViewX,lgtmViewY, lgtmViewW, lgtmViewH);
     NSLog(@"savePhoto-x+%f+y+%f", lgtmViewX, lgtmViewY);
     [_shutter.image drawInRect:rect];
@@ -239,7 +270,7 @@
         return;
     }else{
     if ([touches count] == 1) {
-        CGPoint p = [[touches anyObject]locationInView:_previewView];
+        CGPoint p = [[touches anyObject]locationInView:_setImageView];
         _lgtmView.center = p;
         
         lgtmViewX = _lgtmView.frame.origin.x;
@@ -252,10 +283,10 @@
         NSArray *twoFingers = [touches allObjects];
         UITouch *touch1 = [twoFingers objectAtIndex:0];
         UITouch *touch2 = [twoFingers objectAtIndex:1];
-        CGPoint previous1 = [touch1 previousLocationInView:self.previewView];
-        CGPoint previous2 = [touch2 previousLocationInView:self.previewView];
-        CGPoint now1 = [touch1 locationInView:self.previewView];
-        CGPoint now2 = [touch2 locationInView:self.previewView];
+        CGPoint previous1 = [touch1 previousLocationInView:self.view];
+        CGPoint previous2 = [touch2 previousLocationInView:self.view];
+        CGPoint now1 = [touch1 locationInView:self.view];
+        CGPoint now2 = [touch2 locationInView:self.view];
         
         //現状の距離と、前回の距離を比較して距離が縮まったか離れたかを判別
         CGFloat previousDistance = [self distanceWithPointA:previous1 pointB:previous2];
@@ -272,7 +303,7 @@
         CGAffineTransform newTransform =
         CGAffineTransformScale(_lgtmView.transform, scale, scale);
         _lgtmView.transform = newTransform;
-        _lgtmView.center = self.previewView.center;
+        _lgtmView.center = _setImageView.center;
         }
     }
 }
@@ -300,7 +331,7 @@
         [self uploadBaseViewFadeOut];
     }else{
     
-    baseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _previewView.frame.size.width, _previewView.frame.size.height)];
+    baseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _setImageView.frame.size.width, _setImageView.frame.size.height)];
     baseView.alpha = 0;
     baseView.backgroundColor = RGB(51, 51, 51);
 
@@ -317,7 +348,7 @@
     saveBtn.alpha = 0;
 //    mailBtn.alpha = 0;
         
-    [_previewView addSubview:baseView];
+    [_setImageView addSubview:baseView];
     [baseView addSubview:twitterBtn];
     [baseView addSubview:saveBtn];
 //    [baseView addSubview:mailBtn];
@@ -345,29 +376,6 @@
     baseView = nil;
     [UIView commitAnimations];
 }
-
-
--(void)addTakeButton{
-    if ([self is4inch]) {
-        takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _previewView.frame.size.height, _previewView.frame.size.width, 90)];
-    }else{
-        takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _previewView.frame.size.height-80, _previewView.frame.size.width, 80)];
-    }
-    takeTabView.backgroundColor = RGB(51, 51, 51);
-    takeTabView.alpha = 0.5;
-    [self.view addSubview:takeTabView];
-    
-    takeBtn = [self takeButton];
-    takeBtn.center = CGPointMake(takeTabView.frame.size.width/2, takeTabView.frame.size.height/2);
-
-    imageSearchBtn = [self imageSearchButton];
-    imageSearchBtn.center = CGPointMake(takeTabView.frame.size.width/4, takeTabView.frame.size.height/2);
-
-    
-    [takeTabView addSubview:imageSearchBtn];
-    [takeTabView addSubview:takeBtn];
-}
-
 
 -(void)pressTwitterButton{
     [self GetImageFromCurrentImageContext];
@@ -455,13 +463,13 @@
     
     // キャプチャーセッションから入力のプレビュー表示を作成
     captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
-    captureVideoPreviewLayer.frame = _previewView.frame;
+    captureVideoPreviewLayer.frame = _setImageView.frame;
     captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     
     [self setVideoOrientation];
     
     //  Setting Layer in View
-    previewLayer = self.previewView.layer;
+    previewLayer = _setImageView.layer;
     previewLayer.masksToBounds = YES;    
     [previewLayer addSublayer:captureVideoPreviewLayer];
     

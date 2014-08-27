@@ -31,6 +31,7 @@
 		2724FBEC195B93FF003D58AC /* 0_batsu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2724FBEA195B93FF003D58AC /* 0_batsu.png */; };
 		2724FBED195B93FF003D58AC /* 0_check.png in Resources */ = {isa = PBXBuildFile; fileRef = 2724FBEB195B93FF003D58AC /* 0_check.png */; };
 		27573D75193385A70035AA06 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27573D74193385A70035AA06 /* AVFoundation.framework */; };
+		278C981F19AC4A42004EF1E1 /* UIKit+LGTMCameraAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 278C981E19AC4A42004EF1E1 /* UIKit+LGTMCameraAddition.m */; };
 		27AB460C1941F59800A2F6D7 /* retake.png in Resources */ = {isa = PBXBuildFile; fileRef = 27AB46071941F59800A2F6D7 /* retake.png */; };
 		27AB460D1941F59800A2F6D7 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 27AB46081941F59800A2F6D7 /* camera.png */; };
 		27AB460E1941F59800A2F6D7 /* cameraroll.png in Resources */ = {isa = PBXBuildFile; fileRef = 27AB46091941F59800A2F6D7 /* cameraroll.png */; };
@@ -98,6 +99,8 @@
 		2724FBEA195B93FF003D58AC /* 0_batsu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0_batsu.png; sourceTree = "<group>"; };
 		2724FBEB195B93FF003D58AC /* 0_check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0_check.png; sourceTree = "<group>"; };
 		27573D74193385A70035AA06 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		278C981D19AC4A42004EF1E1 /* UIKit+LGTMCameraAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+LGTMCameraAddition.h"; sourceTree = "<group>"; };
+		278C981E19AC4A42004EF1E1 /* UIKit+LGTMCameraAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIKit+LGTMCameraAddition.m"; sourceTree = "<group>"; };
 		27AB46071941F59800A2F6D7 /* retake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retake.png; sourceTree = "<group>"; };
 		27AB46081941F59800A2F6D7 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		27AB46091941F59800A2F6D7 /* cameraroll.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraroll.png; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				2724FBE5195B9215003D58AC /* imageSearchDetailViewController.h */,
 				2724FBE6195B9215003D58AC /* imageSearchDetailViewController.m */,
 				2724FBE7195B9215003D58AC /* imageSearchDetailViewController.xib */,
+				278C981D19AC4A42004EF1E1 /* UIKit+LGTMCameraAddition.h */,
+				278C981E19AC4A42004EF1E1 /* UIKit+LGTMCameraAddition.m */,
 				2724FBD71959BF7A003D58AC /* bingapires.strings */,
 				2716714B19270DC1002AA1D8 /* Images.xcassets */,
 				2716713A19270DC1002AA1D8 /* Supporting Files */,
@@ -432,6 +437,7 @@
 				2716714419270DC1002AA1D8 /* AppDelegate.m in Sources */,
 				2724FBD519590382003D58AC /* imageSearchViewController.m in Sources */,
 				2716714019270DC1002AA1D8 /* main.m in Sources */,
+				278C981F19AC4A42004EF1E1 /* UIKit+LGTMCameraAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
