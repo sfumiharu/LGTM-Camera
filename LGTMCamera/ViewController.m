@@ -121,7 +121,7 @@
 }
 -(void)addTakeButton{
     if ([self is4inch]) {
-        takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height, _setImageView.frame.size.width, 90)];
+        takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-90, _setImageView.frame.size.width, 90)];
     }else{
         takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-80, _setImageView.frame.size.width, 80)];
     }
@@ -145,7 +145,7 @@
     takeTabView.center = CGPointMake(_setImageView.frame.size.width-(_setImageView.frame.size.width*2), _setImageView.frame.size.height - 40);
     
     if ([self is4inch]) {
-        takedTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height, _setImageView.frame.size.width, 90)];
+        takedTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-90, _setImageView.frame.size.width, 90)];
     }else{
         takedTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-80, _setImageView.frame.size.width, 80)];
     }
@@ -181,12 +181,8 @@
 }
 
 -(void)backTabView{
-    if ([self is4inch]) {
-        takeTabView.center = CGPointMake(_setImageView.frame.size.width / 2, _setImageView.frame.size.height+45);
-    }else{
-        takeTabView.center = CGPointMake(_setImageView.frame.size.width / 2, _setImageView.frame.size.height-40);
-    }
-    
+    [self addTakeButton];
+
     takedTabView.center = CGPointMake((_setImageView.frame.size.width * 3) / 2, _setImageView.frame.size.height - 40);
     
     [_lgtmView removeFromSuperview];
@@ -348,7 +344,7 @@
     saveBtn.alpha = 0;
 //    mailBtn.alpha = 0;
         
-    [_setImageView addSubview:baseView];
+    [self.view addSubview:baseView];
     [baseView addSubview:twitterBtn];
     [baseView addSubview:saveBtn];
 //    [baseView addSubview:mailBtn];
