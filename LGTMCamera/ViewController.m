@@ -212,7 +212,7 @@
 //    LGTM Selection ScrollView
     sv = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 250, 320)];
     sv.backgroundColor = RGB(51, 51, 51);
-    sv.center = _setImageView.center;
+    sv.center = self.view.center;
 //    sv.contentSize = CGSizeMake(0, 1200);
     [self.view addSubview:sv];
 
@@ -234,7 +234,7 @@
     UIImage *image = [UIImage imageNamed:[lgtmSelectionButtonName objectAtIndex:sender.tag]];
     _lgtmView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
     _lgtmView.image = image;
-    _lgtmView.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
+    _lgtmView.center = CGPointMake(_setImageView.frame.size.width/2, _setImageView.frame.size.height/2);
     _lgtmView.contentMode = UIViewContentModeScaleAspectFill;
     
     [sv removeFromSuperview];
@@ -335,7 +335,7 @@
         [self uploadBaseViewFadeOut];
     }else{
     
-    baseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _setImageView.frame.size.width, _setImageView.frame.size.height)];
+    baseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-90)];
     baseView.alpha = 0;
     baseView.backgroundColor = RGB(51, 51, 51);
 
