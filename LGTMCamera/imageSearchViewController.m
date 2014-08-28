@@ -39,7 +39,6 @@
 }
 
 -(void)ISDVCMethod:(id)im{
-    NSLog(@"ちはる");
     [self.delegate ISVCDelegateMethod:im];
 }
 
@@ -48,8 +47,9 @@
     [super viewDidLoad];
     
     _queryForm.delegate = self;
+    _queryForm.keyboardType = UIKeyboardTypeASCIICapable;
     [_queryForm becomeFirstResponder];
-    self.navigationItem.title = @"Search Image";
+    self.navigationItem.title = @"search LGTM! Base Image";
     UIBarButtonItem *bb = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                        target:self action:@selector(pressCancelButton)];
     self.navigationItem.leftBarButtonItem = bb;
@@ -58,7 +58,16 @@
 -(void)pressCancelButton{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
+-(BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    NSString *NGWord = @"!\"\\#$%&'()@[]{}|^~=;:_?<>,/-*.¥ ";
+    for (int i=0; i<[NGWord length]; i++) {
+        NSString *check = [NGWord substringWithRange:NSMakeRange(i, 1)];
+        if ([text isEqual:check]) {
+            return NO;
+        }
+    }
+    return YES;
+}
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     [sv removeFromSuperview];
     [self getJson];
@@ -101,7 +110,7 @@
 
 -(void)setImageView{
     [self setThumbnailBaseView];
-
+    
     int imx = 10;
     int imy = 10;
     int count = 0;
@@ -137,26 +146,6 @@
     }
 }
 -(void)pressButton:(UIButton *)sender{
-//    UIView *baseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-////    baseView.alpha = ;
-//    baseView.backgroundColor = RGB(51, 51, 51);
-//    [self.view addSubview:baseView];
-//    
-//    UIImageView *preview = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, baseView.frame.size.width, baseView.frame.size.height-300)];
-//    preview.image = sender.imageView.image;
-//    preview.contentMode = UIViewContentModeScaleAspectFit;
-//    [baseView addSubview:preview];
-//    
-//    UIButton *cancelButton = [[UIButton alloc]initWithFrame:CGRectMake(baseView.frame.origin.x/1.4, baseView.frame.origin.y/5, 60, 60)];
-//    [cancelButton setBackgroundImage:[UIImage imageNamed:@"0_batsu"] forState:UIControlStateNormal];
-//    [cancelButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
-//    [baseView addSubview:cancelButton];
-//    
-//    UIButton *selectButton = [[UIButton alloc]initWithFrame:CGRectMake(baseView.frame.origin.x/1.4, baseView.frame.origin.y/2, 60, 60)];
-//    [selectButton setBackgroundImage:[UIImage imageNamed:@"0_check"] forState:UIControlStateNormal];
-//    [selectButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
-//    [baseView addSubview:selectButton];
-//    
     imageSearchDetailViewController *iii = [[imageSearchDetailViewController alloc]initWithNibName:@"imageSearchDetailViewController" bundle:nil img:sender.imageView.image];
     [iii.previewSearchImage setImage:sender.imageView.image];
     iii.delegate = self;
@@ -166,7 +155,6 @@
 -(void)setThumbnailBaseView{
     sv = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 120, self.view.frame.size.width, self.view.frame.size.height-120)];
     sv.contentSize = CGSizeMake(0, [Thumbnail_MediaUrl count]/3*110);
-    NSLog(@"さむ+%d", [Thumbnail_MediaUrl count]);
     [self.view addSubview:sv];
 }
 

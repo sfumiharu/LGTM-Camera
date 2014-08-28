@@ -36,7 +36,8 @@
     _previewSearchImage.backgroundColor = [UIColor grayColor];
 //    [_previewSearchImage setImage:image];
     
-    UIImageView *preview = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 380)];
+    UIImageView *preview = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    preview.contentMode = UIViewContentModeScaleAspectFit;
     [preview setImage:image];
     [self.view addSubview:preview];
     

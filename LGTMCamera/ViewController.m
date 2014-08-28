@@ -17,6 +17,8 @@
     CGFloat lgtmViewH;
     CGFloat px;
     CGFloat py;
+    CGFloat width, height;
+    CGRect frame;
     NSURLRequest *req;
     UIButton *addLGTMBtn;
     UIButton *twitterBtn;
@@ -53,16 +55,19 @@
 
 
 -(void)ISVCDelegateMethod:(id)im{
-    imag = im;
     [self pushTabView];
-//    [previewLayer removeFromSuperlayer];
     [captureVideoPreviewLayer removeFromSuperlayer];
-    [_session stopRunning];
     
+    imag = im;
+//    [_setImageView setImage:imag];
+    frame = AVMakeRectWithAspectRatioInsideRect(imag.size, _setImageView.bounds);
+    NSLog(@"setimage.w+%f,,,+%f", frame.size.width, frame.size.height);
+    
+    
+    [_setImageView setFrame:CGRectMake(0, 0,  frame.size.width, frame.size.height)];
     [_setImageView setImage:imag];
-//    _setImageView.backgroundColor = [UIColor colorWithPatternImage:imag];
-    _setImageView.contentMode = UIViewContentModeScaleAspectFit;
-    
+
+    NSLog(@"setimage22.w+%f,,,+%f", frame.size.width, frame.size.height);
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil img:(UIImage *)im;{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -78,14 +83,6 @@
 
     lgtmSelectionButtonList = [NSArray arrayWithObjects:@"0", @"1", @"2", @"3", @"4", nil];
     lgtmSelectionButtonName = [NSArray arrayWithObjects:@"LGTM0", @"LGTM1", @"LGTM3", @"LGTM4", @"LGTM5", nil];
-    
-    _setImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    [self.view addSubview:_setImageView];
-    
-    //    _previewView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-//    [self.view addSubview:_previewView];
-    NSLog(@"sel.w+%f,,,+%f", self.view.frame.size.width, self.view.frame.size.height);
-
     
     [self addTakeButton];
     [self setupAVCapture];
@@ -115,11 +112,20 @@
 
          _imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
          [_setImageView setImage:[UIImage imageWithData:_imageData]];
-//         _previewView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithData:_imageData]];
+         frame.size.width = _setImageView.frame.size.width;
+         frame.size.height = _setImageView.frame.size.height;
      }];
     [self pushTabView];
 }
 -(void)addTakeButton{
+//    [_setImageView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+
+    [_setImageView removeFromSuperview];
+    _setImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [self.view addSubview:_setImageView];
+    NSLog(@"sel.w+%f,,,+%f", self.view.frame.size.width, self.view.frame.size.height);
+
+    
     if ([self is4inch]) {
         takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-90, _setImageView.frame.size.width, 90)];
     }else{
@@ -140,9 +146,9 @@
     [takeTabView addSubview:imageSearchBtn];
     [takeTabView addSubview:takeBtn];
 }
-
 -(void)pushTabView{
-    takeTabView.center = CGPointMake(_setImageView.frame.size.width-(_setImageView.frame.size.width*2), _setImageView.frame.size.height - 40);
+    [takeTabView removeFromSuperview];
+//    takeTabView.center = CGPointMake(_setImageView.frame.size.width-(_setImageView.frame.size.width*2), _setImageView.frame.size.height - 40);
     
     if ([self is4inch]) {
         takedTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-90, _setImageView.frame.size.width, 90)];
@@ -179,11 +185,11 @@
     [takedTabView addSubview:retakeLbl];
     [takedTabView addSubview:menuLbl];
 }
-
 -(void)backTabView{
     [self addTakeButton];
 
-    takedTabView.center = CGPointMake((_setImageView.frame.size.width * 3) / 2, _setImageView.frame.size.height - 40);
+    [takedTabView removeFromSuperview];
+//    takedTabView.center = CGPointMake((_setImageView.frame.size.width * 3) / 2, _setImageView.frame.size.height - 40);
     
     [_lgtmView removeFromSuperview];
     [sv removeFromSuperview];
@@ -194,10 +200,10 @@
     _imageData = nil;
     
     [previewLayer addSublayer:captureVideoPreviewLayer];
-    [self.session startRunning];
+    [self setupAVCapture];
+//    [self.session startRunning];
 
 }
-
 -(void)addLGTMSelectionView{
     if (sv || baseView) {
         return;
@@ -236,16 +242,18 @@
     [_setImageView addSubview:_lgtmView];
 }
 -(void)GetImageFromCurrentImageContext{
-    if (_imageData) {
-        _shutter = [[UIImageView alloc]initWithImage:[UIImage imageWithData:_imageData]];
-    }else{
-        _shutter = [[UIImageView alloc]initWithImage:imag];
-    }
+//    if (_imageData) {
+//        _shutter = [[UIImageView alloc]initWithImage:[UIImage imageWithData:_imageData]];
+//    }else{
+        _shutter = [[UIImageView alloc]initWithImage:_setImageView.image];
+//    }
+    NSLog(@"shutter-x+%f+y+%f", _shutter.frame.size.width, _shutter.frame.size.height);
     
-    UIGraphicsBeginImageContextWithOptions(_setImageView.frame.size, YES, 2);
-    UIGraphicsBeginImageContext(CGSizeMake(_setImageView.frame.size.width, _setImageView.frame.size.height));
+    UIGraphicsBeginImageContextWithOptions(frame.size, YES, 2);
+    UIGraphicsBeginImageContext(CGSizeMake(frame.size.width, frame.size.height));
     
-    CGRect rect = CGRectMake(0, 0, _setImageView.frame.size.width, _setImageView.frame.size.height);
+    CGRect rect = CGRectMake(0, 0, frame.size.width, frame.size.height);
+    
     CGRect rect1 = CGRectMake(lgtmViewX,lgtmViewY, lgtmViewW, lgtmViewH);
     NSLog(@"savePhoto-x+%f+y+%f", lgtmViewX, lgtmViewY);
     [_shutter.image drawInRect:rect];
