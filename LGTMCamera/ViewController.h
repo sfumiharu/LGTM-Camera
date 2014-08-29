@@ -34,9 +34,8 @@ ISVCDelegate
 }
 @property (strong, nonatomic) UIView *previewView;
 @property (strong, nonatomic) UIImageView *setImageView;
-//@property (strong, nonatomic) UIImage *camLibIconImage;
 
-- (void)takePhoto;
+- (void)pressTakeButton;
 - (void)backTabView;
 - (void)pressMailButton;
 - (void)pressCamLibButton;

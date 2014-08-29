@@ -10,7 +10,7 @@
 #import "imageSearchDetailViewController.h"
 
 @protocol ISVCDelegate <NSObject>
--(void)ISVCDelegateMethod:(UIImage *)im;
+-(void)imageSearchViewDelegate:(UIImage *)im;
 @end
 
 @interface imageSearchViewController : UIViewController

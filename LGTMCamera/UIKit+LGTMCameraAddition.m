@@ -53,7 +53,7 @@
 -(UIButton *)takeButton{
     UIButton *takeButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 70, 70)];
     [takeButton setBackgroundImage:[UIImage imageNamed:@"1_take"] forState:UIControlStateNormal];
-    [takeButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
+    [takeButton addTarget:self action:@selector(pressTakeButton) forControlEvents:UIControlEventTouchUpInside];
     return takeButton;
 }
 

@@ -19,7 +19,7 @@
     CGFloat py;
     CGFloat width, height;
     CGRect frame;
-    NSURLRequest *req;
+
     UIButton *addLGTMBtn;
     UIButton *twitterBtn;
     UIButton *saveBtn;
@@ -36,7 +36,6 @@
     CALayer *previewLayer;
     UIImage *mixed;
     UIImage *imag;
-    UIImageView *sii;
     UIScrollView *sv;
     UIDeviceOrientation deviceOrientation;
     AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
@@ -54,43 +53,6 @@
 
 @implementation ViewController
 
-
--(void)ISVCDelegateMethod:(id)im{
-    [self pushTabView];
-    [captureVideoPreviewLayer removeFromSuperlayer];
-    
-    imag = im;
-//    [_setImageView setImage:imag];
-    frame = AVMakeRectWithAspectRatioInsideRect(imag.size, _setImageView.bounds);
-    NSLog(@"setimage.w+%f,,,+%f", frame.size.width, frame.size.height);
-    
-    
-    [_setImageView setFrame:CGRectMake(0, 0,  frame.size.width, frame.size.height)];
-    [_setImageView setImage:imag];
-
-    NSLog(@"setimage22.w+%f,,,+%f", frame.size.width, frame.size.height);
-}
-
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
-    
-    [self pushTabView];
-    [captureVideoPreviewLayer removeFromSuperlayer];
-
-    UIImage *IPCImage = [editingInfo objectForKey: UIImagePickerControllerOriginalImage];
-    frame = AVMakeRectWithAspectRatioInsideRect(IPCImage.size, _setImageView.bounds);
-    NSLog(@"setimage.w+%f,,,+%f", IPCImage.size.width, IPCImage.size.height);
-    
-    
-    [_setImageView setFrame:CGRectMake(0, 0,  frame.size.width, frame.size.height)];
-    [_setImageView setImage:IPCImage];
-
-//    UIImageView *imageView = [[UIImageView alloc] initWithImage:IPCImage];
-//    imageView.frame = CGRectMake(0,0,image.size.width,image.size.height);
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil img:(UIImage *)im;{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -107,42 +69,11 @@
     lgtmSelectionButtonName = [NSArray arrayWithObjects:@"LGTM0", @"LGTM1", @"LGTM3", @"LGTM4", @"LGTM5", nil];
     
 //    [self camLibIcon];
-    [self addTakeButton];
+    [self setFirstView];
     [self setupAVCapture];
 }
 
--(void)takePhoto{
-    // ビデオ入力のAVCaptureConnectionを取得
-    AVCaptureConnection *videoConnection = [_stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
-    if (videoConnection == nil) {
-//        return;
-    }
-    // ビデオ入力から画像を非同期で取得。ブロックで定義されている処理が呼び出され、画像データを引数から取得する
-    [_stillImageOutput
-     captureStillImageAsynchronouslyFromConnection:videoConnection
-     completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
-         if (imageDataSampleBuffer == NULL) {
-             return;
-         }
-         
-         AVCaptureStillImageOutput *stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
-         NSDictionary *outputSettings = @{ AVVideoCodecKey : AVVideoCodecJPEG};
-         [stillImageOutput setOutputSettings:outputSettings];
-         
-         
-         // 入力された画像データからJPEGフォーマットとしてデータを取得
-         [_session stopRunning];
-
-         _imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-         [_setImageView setImage:[UIImage imageWithData:_imageData]];
-         frame.size.width = _setImageView.frame.size.width;
-         frame.size.height = _setImageView.frame.size.height;
-     }];
-    [self pushTabView];
-}
--(void)addTakeButton{
-//    [_setImageView setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-
+-(void)setFirstView{
     [_setImageView removeFromSuperview];
     _setImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.view addSubview:_setImageView];
@@ -172,7 +103,9 @@
     [takeTabView addSubview:takeBtn];
     [takeTabView addSubview:camLibBtn];
 }
--(void)pushTabView{
+
+#pragma mark Setting Of TabViews
+-(void)takedTabView{
     [takeTabView removeFromSuperview];
 //    takeTabView.center = CGPointMake(_setImageView.frame.size.width-(_setImageView.frame.size.width*2), _setImageView.frame.size.height - 40);
     
@@ -212,7 +145,7 @@
     [takedTabView addSubview:menuLbl];
 }
 -(void)backTabView{
-    [self addTakeButton];
+    [self setFirstView];
 
     [takedTabView removeFromSuperview];
 //    takedTabView.center = CGPointMake((_setImageView.frame.size.width * 3) / 2, _setImageView.frame.size.height - 40);
@@ -230,183 +163,8 @@
 //    [self.session startRunning];
 
 }
--(void)addLGTMSelectionView{
-    if (sv || baseView) {
-        return;
-    }
-    
-//    LGTM Selection ScrollView
-    sv = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 250, 320)];
-    sv.backgroundColor = RGB(51, 51, 51);
-    sv.center = self.view.center;
-//    sv.contentSize = CGSizeMake(0, 1200);
-    [self.view addSubview:sv];
 
-//    LGTM images Placement on ScrollView
-    int y = 10;
-    for (int i = 0; i < [lgtmSelectionButtonList count]; i ++) {
-        UIButton *lgtmSelectionButton = [[UIButton alloc]initWithFrame:CGRectMake(sv.frame.origin.x/2, y, 200, 50)];
-        [lgtmSelectionButton setBackgroundImage:[UIImage imageNamed:[lgtmSelectionButtonName objectAtIndex:i]] forState:UIControlStateNormal];
-        [lgtmSelectionButton addTarget:self action:@selector(addLGTMImage:) forControlEvents:UIControlEventTouchUpInside];
-        lgtmSelectionButton.tag = i;
-        [sv addSubview:lgtmSelectionButton];
-        y = y +60;
-    }
-}
--(void)addLGTMImage:(UIButton *)sender{
-    [_lgtmView removeFromSuperview];
-    _lgtmView = nil;
-    
-    UIImage *image = [UIImage imageNamed:[lgtmSelectionButtonName objectAtIndex:sender.tag]];
-    _lgtmView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
-    _lgtmView.image = image;
-    _lgtmView.center = CGPointMake(_setImageView.frame.size.width/2, _setImageView.frame.size.height/2);
-    _lgtmView.contentMode = UIViewContentModeScaleAspectFill;
-    
-    [sv removeFromSuperview];
-    sv = nil;
-    [_setImageView addSubview:_lgtmView];
-}
--(void)GetImageFromCurrentImageContext{
-//    if (_imageData) {
-//        _shutter = [[UIImageView alloc]initWithImage:[UIImage imageWithData:_imageData]];
-//    }else{
-        _shutter = [[UIImageView alloc]initWithImage:_setImageView.image];
-//    }
-    NSLog(@"shutter-x+%f+y+%f", _shutter.frame.size.width, _shutter.frame.size.height);
-    
-    UIGraphicsBeginImageContextWithOptions(frame.size, YES, 2);
-    UIGraphicsBeginImageContext(CGSizeMake(frame.size.width, frame.size.height));
-    
-    CGRect rect = CGRectMake(0, 0, frame.size.width, frame.size.height);
-    
-    CGRect rect1 = CGRectMake(lgtmViewX,lgtmViewY, lgtmViewW, lgtmViewH);
-    NSLog(@"savePhoto-x+%f+y+%f", lgtmViewX, lgtmViewY);
-    [_shutter.image drawInRect:rect];
-    [_lgtmView.image drawInRect:rect1];
-
-    _lgtmView.center = CGPointMake(px, py);
-    
-    // 現在のコンテキストのビットマップをUIImageとして取得
-     mixed = UIGraphicsGetImageFromCurrentImageContext();
-    // コンテキストを閉じる
-    UIGraphicsEndImageContext();
-    
-    UIImageWriteToSavedPhotosAlbum(mixed, self, nil, nil);
-}
-
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    if (baseView) {
-        return;
-    }else{
-    if ([touches count] == 1) {
-        CGPoint p = [[touches anyObject]locationInView:_setImageView];
-        _lgtmView.center = p;
-        
-        lgtmViewX = _lgtmView.frame.origin.x;
-        lgtmViewY = _lgtmView.frame.origin.y;
-        
-        lgtmViewW = _lgtmView.frame.size.width;
-        lgtmViewH = _lgtmView.frame.size.height;
-    } else if ([touches count] == 2) {
-        //2本指でタッチしている場合は、２点間の距離を計算
-        NSArray *twoFingers = [touches allObjects];
-        UITouch *touch1 = [twoFingers objectAtIndex:0];
-        UITouch *touch2 = [twoFingers objectAtIndex:1];
-        CGPoint previous1 = [touch1 previousLocationInView:self.view];
-        CGPoint previous2 = [touch2 previousLocationInView:self.view];
-        CGPoint now1 = [touch1 locationInView:self.view];
-        CGPoint now2 = [touch2 locationInView:self.view];
-        
-        //現状の距離と、前回の距離を比較して距離が縮まったか離れたかを判別
-        CGFloat previousDistance = [self distanceWithPointA:previous1 pointB:previous2];
-        CGFloat distance = [self distanceWithPointA:now1 pointB:now2];
-        
-        CGFloat scale = 1.0;
-        if (previousDistance > distance) {
-            //距離が縮まったらならピンチイン
-            scale -= ( previousDistance - distance ) / 300.0;
-        } else if (distance > previousDistance) {
-            // 距離が広がったならピンチアウト
-            scale += ( distance - previousDistance ) / 300.0;
-        }
-        CGAffineTransform newTransform =
-        CGAffineTransformScale(_lgtmView.transform, scale, scale);
-        _lgtmView.transform = newTransform;
-        _lgtmView.center = _setImageView.center;
-        }
-    }
-}
-- (CGFloat)distanceWithPointA:(CGPoint)pointA pointB:(CGPoint)pointB
-{
-    CGFloat dx = fabs( pointB.x - pointA.x );
-    CGFloat dy = fabs( pointB.y - pointA.y );
-    return sqrt(dx * dx + dy * dy);
-}
-
--(BOOL)shouldAutorotate{
-    if (_imageData) {
-        return NO;
-    }
-    
-    deviceOrientation = [[UIDevice currentDevice] orientation];
-    [self setVideoOrientation];
-    [self objectOrientation];
-    return YES;
-}
--(void)addUploadBaseViewFadeIn{
-    if (baseView) {
-        CGAffineTransform t = CGAffineTransformMakeRotation(0 * M_PI / 180);
-        menuBtn.transform = t;
-        [self uploadBaseViewFadeOut];
-    }else{
-    
-    baseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-90)];
-    baseView.alpha = 0;
-    baseView.backgroundColor = RGB(51, 51, 51);
-
-    twitterBtn = [self twitterButton];
-    twitterBtn.center = CGPointMake(baseView.frame.size.width/4.6, baseView.frame.size.height/2);
-        
-    saveBtn = [self saveButton];
-    saveBtn.center = CGPointMake(baseView.frame.size.width/1.3, baseView.frame.size.height/2);
-        
-//    mailBtn = [self mailButton];
-//    mailButton.center = CGPointMake(baseView.frame.size.width/1.2, baseView.frame.size.height/2);
-        
-    twitterBtn.alpha = 0;
-    saveBtn.alpha = 0;
-//    mailBtn.alpha = 0;
-        
-    [self.view addSubview:baseView];
-    [baseView addSubview:twitterBtn];
-    [baseView addSubview:saveBtn];
-//    [baseView addSubview:mailBtn];
-        
-    [UIView beginAnimations:@"fadeIn" context:nil];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationDuration:0.2];
-    baseView.alpha = 0.9;
-    twitterBtn.alpha = 1;
-    saveBtn.alpha = 1;
-//    mailBtn.alpha = 1;
-    [UIView commitAnimations];
-    
-    CGAffineTransform t = CGAffineTransformMakeRotation(45 * M_PI / 180);
-    menuBtn.transform = t;
-    }
-}
-
--(void)uploadBaseViewFadeOut{
-    [UIView beginAnimations:@"fadeOut" context:nil];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-    [UIView setAnimationDuration:0.2];
-    baseView.alpha = 0;
-    [baseView removeFromSuperview];
-    baseView = nil;
-    [UIView commitAnimations];
-}
-
+#pragma mark Press Button Method
 -(void)pressTwitterButton{
     [self GetImageFromCurrentImageContext];
     SLComposeViewController *tw = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
@@ -430,6 +188,91 @@
     [MCVC setMessageBody:@"LGTM!" isHTML:NO];
     [self presentViewController:MCVC animated:NO completion:nil];
 }
+
+-(void)pressCamLibButton{
+    UIImagePickerController *IPC = [[UIImagePickerController alloc]init];
+    [IPC setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [IPC setAllowsEditing:YES];
+    [IPC setDelegate:self];
+    [self presentViewController:IPC animated:YES completion:nil];
+}
+
+-(void)pressImageSearchButton{
+    imageSearchViewController *vc = [[imageSearchViewController alloc]initWithNibName:@"imageSearchViewController" bundle:nil];
+    vc.delegate = self;
+    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:vc];
+    [self presentViewController:nc animated:YES completion:nil];
+}
+
+-(void)addLGTMSelectionView{
+    if (sv || baseView) {
+        return;
+    }
+    
+    //    LGTM Selection ScrollView
+    sv = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, 250, 320)];
+    sv.backgroundColor = RGB(51, 51, 51);
+    sv.center = self.view.center;
+    //    sv.contentSize = CGSizeMake(0, 1200);
+    [self.view addSubview:sv];
+    
+    //    LGTM images Placement on ScrollView
+    int y = 10;
+    for (int i = 0; i < [lgtmSelectionButtonList count]; i ++) {
+        UIButton *lgtmSelectionButton = [[UIButton alloc]initWithFrame:CGRectMake(sv.frame.origin.x/2, y, 200, 50)];
+        [lgtmSelectionButton setBackgroundImage:[UIImage imageNamed:[lgtmSelectionButtonName objectAtIndex:i]] forState:UIControlStateNormal];
+        [lgtmSelectionButton addTarget:self action:@selector(pressLGTMImage:) forControlEvents:UIControlEventTouchUpInside];
+        lgtmSelectionButton.tag = i;
+        [sv addSubview:lgtmSelectionButton];
+        y = y +60;
+    }
+}
+
+-(void)pressLGTMImage:(UIButton *)sender{
+    [_lgtmView removeFromSuperview];
+    _lgtmView = nil;
+    
+    UIImage *image = [UIImage imageNamed:[lgtmSelectionButtonName objectAtIndex:sender.tag]];
+    _lgtmView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
+    _lgtmView.image = image;
+    _lgtmView.center = CGPointMake(_setImageView.frame.size.width/2, _setImageView.frame.size.height/2);
+    _lgtmView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    [sv removeFromSuperview];
+    sv = nil;
+    [_setImageView addSubview:_lgtmView];
+}
+
+-(void)pressTakeButton{
+    // ビデオ入力のAVCaptureConnectionを取得
+    AVCaptureConnection *videoConnection = [_stillImageOutput connectionWithMediaType:AVMediaTypeVideo];
+    if (videoConnection == nil) {
+        //        return;
+    }
+    // ビデオ入力から画像を非同期で取得。ブロックで定義されている処理が呼び出され、画像データを引数から取得する
+    [_stillImageOutput
+     captureStillImageAsynchronouslyFromConnection:videoConnection
+     completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
+         if (imageDataSampleBuffer == NULL) {
+             return;
+         }
+         
+         AVCaptureStillImageOutput *stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
+         NSDictionary *outputSettings = @{ AVVideoCodecKey : AVVideoCodecJPEG};
+         [stillImageOutput setOutputSettings:outputSettings];
+         
+         
+         // 入力された画像データからJPEGフォーマットとしてデータを取得
+         [_session stopRunning];
+         
+         _imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+         [_setImageView setImage:[UIImage imageWithData:_imageData]];
+         frame.size.width = _setImageView.frame.size.width;
+         frame.size.height = _setImageView.frame.size.height;
+     }];
+    [self takedTabView];
+}
+
 -(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
     switch (result) {
         case MFMailComposeResultCancelled:
@@ -444,15 +287,60 @@
     }
 }
 
--(void)pressImageSearchButton{
-    imageSearchViewController *vc = [[imageSearchViewController alloc]initWithNibName:@"imageSearchViewController" bundle:nil];
-    vc.delegate = self;
-    UINavigationController *nc = [[UINavigationController alloc]initWithRootViewController:vc];
-    [self presentViewController:nc animated:YES completion:nil];
+-(void)addUploadBaseViewFadeIn{
+    if (baseView) {
+        CGAffineTransform t = CGAffineTransformMakeRotation(0 * M_PI / 180);
+        menuBtn.transform = t;
+        [self uploadBaseViewFadeOut];
+    }else{
+        
+        baseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-90)];
+        baseView.alpha = 0;
+        baseView.backgroundColor = RGB(51, 51, 51);
+        
+        twitterBtn = [self twitterButton];
+        twitterBtn.center = CGPointMake(baseView.frame.size.width/4.6, baseView.frame.size.height/2);
+        
+        saveBtn = [self saveButton];
+        saveBtn.center = CGPointMake(baseView.frame.size.width/1.3, baseView.frame.size.height/2);
+        
+        //    mailBtn = [self mailButton];
+        //    mailButton.center = CGPointMake(baseView.frame.size.width/1.2, baseView.frame.size.height/2);
+        
+        twitterBtn.alpha = 0;
+        saveBtn.alpha = 0;
+        //    mailBtn.alpha = 0;
+        
+        [self.view addSubview:baseView];
+        [baseView addSubview:twitterBtn];
+        [baseView addSubview:saveBtn];
+        //    [baseView addSubview:mailBtn];
+        
+        [UIView beginAnimations:@"fadeIn" context:nil];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+        [UIView setAnimationDuration:0.2];
+        baseView.alpha = 0.9;
+        twitterBtn.alpha = 1;
+        saveBtn.alpha = 1;
+        //    mailBtn.alpha = 1;
+        [UIView commitAnimations];
+        
+        CGAffineTransform t = CGAffineTransformMakeRotation(45 * M_PI / 180);
+        menuBtn.transform = t;
+    }
 }
-- (void)didReceiveMemoryWarning{
-    [super didReceiveMemoryWarning];
+
+-(void)uploadBaseViewFadeOut{
+    [UIView beginAnimations:@"fadeOut" context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+    [UIView setAnimationDuration:0.2];
+    baseView.alpha = 0;
+    [baseView removeFromSuperview];
+    baseView = nil;
+    [UIView commitAnimations];
 }
+
+#pragma mark Orientation Method
 - (AVCaptureVideoOrientation)videoOrientation {
     switch (deviceOrientation) {
         case UIDeviceOrientationLandscapeLeft:
@@ -472,54 +360,15 @@
             break;
     }
 }
-- (void)setupAVCapture{
-    NSError *error = nil;
-    
-    // 入力と出力からキャプチャーセッションを作成
-    self.session = [[AVCaptureSession alloc] init];
 
-    // 正面に配置されているカメラを取得
-    AVCaptureDevice *camera = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    
-    // カメラからの入力を作成し、セッションに追加
-    self.videoInput = [[AVCaptureDeviceInput alloc] initWithDevice:camera error:&error];
-    if ([self.session canAddInput:self.videoInput]) {
-        [self.session addInput:self.videoInput];
-    }
-    
-    // 画像への出力を作成し、セッションに追加
-    self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
-    [self.session addOutput:self.stillImageOutput];
-    
-    // キャプチャーセッションから入力のプレビュー表示を作成
-    captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
-    captureVideoPreviewLayer.frame = _setImageView.frame;
-    captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    
-    [self setVideoOrientation];
-    
-    //  Setting Layer in View
-    previewLayer = _setImageView.layer;
-    previewLayer.masksToBounds = YES;    
-    [previewLayer addSublayer:captureVideoPreviewLayer];
-    
-    //    Session Start
-    [self.session startRunning];
-}
 - (void)setVideoOrientation{
     for(AVCaptureConnection *connection in _stillImageOutput.connections)
     {
         if(connection.supportsVideoOrientation)
         {
             connection.videoOrientation = [self videoOrientation];
-            //            NSLog(@"麒+%d", connection.videoOrientation);
         }
     }
-}
-
--(BOOL)is4inch{
-    CGSize SS = [[UIScreen mainScreen]bounds].size;
-    return SS.width == 320 && SS.height == 568;
 }
 
 - (void)objectOrientation{
@@ -560,19 +409,176 @@
     [UIView commitAnimations];
 }
 
--(UIImageView *)searchImage{
-    UIImageView *si = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-80)];
-    si.backgroundColor = [UIColor colorWithPatternImage:imag];
-    return si;
+- (CGFloat)distanceWithPointA:(CGPoint)pointA pointB:(CGPoint)pointB
+{
+    CGFloat dx = fabs( pointB.x - pointA.x );
+    CGFloat dy = fabs( pointB.y - pointA.y );
+    return sqrt(dx * dx + dy * dy);
 }
 
--(void)pressCamLibButton{
-    UIImagePickerController *IPC = [[UIImagePickerController alloc]init];
-    [IPC setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    [IPC setAllowsEditing:YES];
-    [IPC setDelegate:self];
+-(BOOL)shouldAutorotate{
+    if (_imageData) {
+        return NO;
+    }
     
-    [self presentViewController:IPC animated:YES completion:nil];
+    deviceOrientation = [[UIDevice currentDevice] orientation];
+    [self setVideoOrientation];
+    [self objectOrientation];
+    return YES;
+}
+
+
+#pragma mark Delegate Method
+-(void)imageSearchViewDelegate:(id)im{
+    [self takedTabView];
+    [captureVideoPreviewLayer removeFromSuperlayer];
+    
+    imag = im;
+    //    [_setImageView setImage:imag];
+    frame = AVMakeRectWithAspectRatioInsideRect(imag.size, _setImageView.bounds);
+    NSLog(@"setimage.w+%f,,,+%f", frame.size.width, frame.size.height);
+    
+    
+    [_setImageView setFrame:CGRectMake(0, 0,  frame.size.width, frame.size.height)];
+    [_setImageView setImage:imag];
+    
+    NSLog(@"setimage22.w+%f,,,+%f", frame.size.width, frame.size.height);
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
+    
+    [self takedTabView];
+    [captureVideoPreviewLayer removeFromSuperlayer];
+    
+    UIImage *IPCImage = [editingInfo objectForKey: UIImagePickerControllerOriginalImage];
+    frame = AVMakeRectWithAspectRatioInsideRect(IPCImage.size, _setImageView.bounds);
+    NSLog(@"setimage.w+%f,,,+%f", IPCImage.size.width, IPCImage.size.height);
+    
+    
+    [_setImageView setFrame:CGRectMake(0, 0,  frame.size.width, frame.size.height)];
+    [_setImageView setImage:IPCImage];
+    
+    //    UIImageView *imageView = [[UIImageView alloc] initWithImage:IPCImage];
+    //    imageView.frame = CGRectMake(0,0,image.size.width,image.size.height);
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark
+-(BOOL)is4inch{
+    CGSize SS = [[UIScreen mainScreen]bounds].size;
+    return SS.width == 320 && SS.height == 568;
+}
+
+-(void)swichingDevice{
+//    [_session beginConfiguration];
+//    [_session removeInput:fron]
+}
+
+-(void)GetImageFromCurrentImageContext{
+    _shutter = [[UIImageView alloc]initWithImage:_setImageView.image];
+    
+    UIGraphicsBeginImageContextWithOptions(frame.size, YES, 2);
+    UIGraphicsBeginImageContext(CGSizeMake(frame.size.width, frame.size.height));
+    
+    CGRect rect = CGRectMake(0, 0, frame.size.width, frame.size.height);
+    
+    CGRect rect1 = CGRectMake(lgtmViewX,lgtmViewY, lgtmViewW, lgtmViewH);
+    NSLog(@"savePhoto-x+%f+y+%f", lgtmViewX, lgtmViewY);
+    [_shutter.image drawInRect:rect];
+    [_lgtmView.image drawInRect:rect1];
+    
+    _lgtmView.center = CGPointMake(px, py);
+    
+    // 現在のコンテキストのビットマップをUIImageとして取得
+    mixed = UIGraphicsGetImageFromCurrentImageContext();
+    // コンテキストを閉じる
+    UIGraphicsEndImageContext();
+    
+    UIImageWriteToSavedPhotosAlbum(mixed, self, nil, nil);
+}
+
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+    if (baseView) {
+        return;
+    }else{
+        if ([touches count] == 1) {
+            CGPoint p = [[touches anyObject]locationInView:_setImageView];
+            _lgtmView.center = p;
+            
+            lgtmViewX = _lgtmView.frame.origin.x;
+            lgtmViewY = _lgtmView.frame.origin.y;
+            
+            lgtmViewW = _lgtmView.frame.size.width;
+            lgtmViewH = _lgtmView.frame.size.height;
+        } else if ([touches count] == 2) {
+            //2本指でタッチしている場合は、２点間の距離を計算
+            NSArray *twoFingers = [touches allObjects];
+            UITouch *touch1 = [twoFingers objectAtIndex:0];
+            UITouch *touch2 = [twoFingers objectAtIndex:1];
+            CGPoint previous1 = [touch1 previousLocationInView:self.view];
+            CGPoint previous2 = [touch2 previousLocationInView:self.view];
+            CGPoint now1 = [touch1 locationInView:self.view];
+            CGPoint now2 = [touch2 locationInView:self.view];
+            
+            //現状の距離と、前回の距離を比較して距離が縮まったか離れたかを判別
+            CGFloat previousDistance = [self distanceWithPointA:previous1 pointB:previous2];
+            CGFloat distance = [self distanceWithPointA:now1 pointB:now2];
+            
+            CGFloat scale = 1.0;
+            if (previousDistance > distance) {
+                //距離が縮まったらならピンチイン
+                scale -= ( previousDistance - distance ) / 300.0;
+            } else if (distance > previousDistance) {
+                // 距離が広がったならピンチアウト
+                scale += ( distance - previousDistance ) / 300.0;
+            }
+            CGAffineTransform newTransform =
+            CGAffineTransformScale(_lgtmView.transform, scale, scale);
+            _lgtmView.transform = newTransform;
+            _lgtmView.center = _setImageView.center;
+        }
+    }
+}
+
+- (void)setupAVCapture{
+    NSError *error = nil;
+    
+    // 入力と出力からキャプチャーセッションを作成
+    self.session = [[AVCaptureSession alloc] init];
+    
+    // 正面に配置されているカメラを取得
+    AVCaptureDevice *camera = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    
+    // カメラからの入力を作成し、セッションに追加
+    self.videoInput = [[AVCaptureDeviceInput alloc] initWithDevice:camera error:&error];
+    if ([self.session canAddInput:self.videoInput]) {
+        [self.session addInput:self.videoInput];
+    }
+    
+    // 画像への出力を作成し、セッションに追加
+    self.stillImageOutput = [[AVCaptureStillImageOutput alloc] init];
+    [self.session addOutput:self.stillImageOutput];
+    
+    // キャプチャーセッションから入力のプレビュー表示を作成
+    captureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
+    captureVideoPreviewLayer.frame = _setImageView.frame;
+    captureVideoPreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    
+    [self setVideoOrientation];
+    
+    //  Setting Layer in View
+    previewLayer = _setImageView.layer;
+    previewLayer.masksToBounds = YES;
+    [previewLayer addSublayer:captureVideoPreviewLayer];
+    
+    //    Session Start
+    [self.session startRunning];
+}
+
+#pragma mark
+- (void)didReceiveMemoryWarning{
+    [super didReceiveMemoryWarning];
 }
 
 @end

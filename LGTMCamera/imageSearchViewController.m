@@ -39,7 +39,7 @@
 }
 
 -(void)ISDVCMethod:(id)im{
-    [self.delegate ISVCDelegateMethod:im];
+    [self.delegate imageSearchViewDelegate:im];
 }
 
 - (void)viewDidLoad
