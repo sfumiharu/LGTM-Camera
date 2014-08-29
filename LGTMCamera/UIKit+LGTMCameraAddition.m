@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 fumiharu. All rights reserved.
 //
 
+#import <AssetsLibrary/AssetsLibrary.h>
 #import "UIKit+LGTMCameraAddition.h"
 #import "ViewController.h"
 
@@ -50,7 +51,7 @@
     return retakeButton;
 }
 -(UIButton *)takeButton{
-    UIButton *takeButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 60)];
+    UIButton *takeButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 70, 70)];
     [takeButton setBackgroundImage:[UIImage imageNamed:@"1_take"] forState:UIControlStateNormal];
     [takeButton addTarget:self action:@selector(takePhoto) forControlEvents:UIControlEventTouchUpInside];
     return takeButton;
@@ -62,6 +63,15 @@
     [imageSearchButton addTarget:self action:@selector(pressImageSearchButton) forControlEvents:UIControlEventTouchUpInside];
     return imageSearchButton;
 }
+
+-(UIButton *)camLibraryButton{
+    UIButton *camLibraryButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
+    [camLibraryButton setBackgroundImage:[UIImage imageNamed:@"cameraroll"] forState:UIControlStateNormal];
+    [camLibraryButton addTarget:self action:@selector(pressCamLibButton) forControlEvents:UIControlEventTouchUpInside];
+    NSLog(@"mbotan %@", [self camLibIcon]);
+    return camLibraryButton;
+}
+
 -(UILabel *)retakeLabel{
     UILabel *retakeLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 50, 15)];
     retakeLabel.backgroundColor = RGB(51, 51, 51);
@@ -82,6 +92,37 @@
     menuLabel.textAlignment = UIBaselineAdjustmentAlignCenters;
     menuLabel.text = @"save";
     return menuLabel;
+}
+
+
+-(NSURL *)camLibIcon{
+    __block NSURL *url1;
+    ALAssetsLibrary *lib = [[ALAssetsLibrary alloc]init];
+    [lib enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos
+                       usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+                           [group setAssetsFilter:[ALAssetsFilter allPhotos]];
+                           
+                           NSUInteger index = [group numberOfAssets] - 1;
+                           NSIndexSet *lastPhoto = [NSIndexSet indexSetWithIndex:index];
+                           [group enumerateAssetsAtIndexes:lastPhoto
+                                                   options:0
+                                                usingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
+                                                    NSLog(@"えらーだおｙ");
+                                                    if (result) {
+                                                        ALAssetRepresentation *representation = [result defaultRepresentation];
+                                                        NSURL *url = [representation url];
+//                                                        AVAsset *avAsset = [AVURLAsset URLAssetWithURL:url
+//                                                                                               options:nil];
+                                                        NSLog(@"url%@", url);
+                                                        url1 = url;
+                                                        NSLog(@"url11%@", url1);
+                                                    }
+                                                }];
+                       } failureBlock:^(NSError *error) {
+                           NSLog(@"エラー！");
+                       }];
+        NSLog(@"url1%@", url1);
+        return url1;
 }
 
 @end

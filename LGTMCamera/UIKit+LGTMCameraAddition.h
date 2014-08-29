@@ -7,7 +7,6 @@
 //
 
 
-
 @interface UIViewController (LGTMCameraAddition)
 - (UIButton *)twitterButton;
 - (UIButton *)mailButton;
@@ -19,4 +18,5 @@
 - (UIButton *)imageSearchButton;
 - (UILabel *)retakeLabel;
 - (UILabel *)menuLabel;
+- (UIButton *)camLibraryButton;
 @end

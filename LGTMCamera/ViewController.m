@@ -27,6 +27,7 @@
     UIButton *takeBtn;
     UIButton *menuBtn;
     UIButton *mailBtn;
+    UIButton *camLibBtn;
     UIButton *imageSearchBtn;
     UILabel *retakeLbl;
     UILabel *menuLbl;
@@ -69,6 +70,27 @@
 
     NSLog(@"setimage22.w+%f,,,+%f", frame.size.width, frame.size.height);
 }
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
+    
+    [self pushTabView];
+    [captureVideoPreviewLayer removeFromSuperlayer];
+
+    UIImage *IPCImage = [editingInfo objectForKey: UIImagePickerControllerOriginalImage];
+    frame = AVMakeRectWithAspectRatioInsideRect(IPCImage.size, _setImageView.bounds);
+    NSLog(@"setimage.w+%f,,,+%f", IPCImage.size.width, IPCImage.size.height);
+    
+    
+    [_setImageView setFrame:CGRectMake(0, 0,  frame.size.width, frame.size.height)];
+    [_setImageView setImage:IPCImage];
+
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:IPCImage];
+//    imageView.frame = CGRectMake(0,0,image.size.width,image.size.height);
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil img:(UIImage *)im;{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -84,6 +106,7 @@
     lgtmSelectionButtonList = [NSArray arrayWithObjects:@"0", @"1", @"2", @"3", @"4", nil];
     lgtmSelectionButtonName = [NSArray arrayWithObjects:@"LGTM0", @"LGTM1", @"LGTM3", @"LGTM4", @"LGTM5", nil];
     
+//    [self camLibIcon];
     [self addTakeButton];
     [self setupAVCapture];
 }
@@ -140,11 +163,14 @@
     takeBtn.center = CGPointMake(takeTabView.frame.size.width/2, takeTabView.frame.size.height/2);
     
     imageSearchBtn = [self imageSearchButton];
-    imageSearchBtn.center = CGPointMake(takeTabView.frame.size.width/4, takeTabView.frame.size.height/2);
+    imageSearchBtn.center = CGPointMake(takeTabView.frame.size.width/6, takeTabView.frame.size.height/2);
     
+    camLibBtn = [self camLibraryButton];
+    camLibBtn.center = CGPointMake(takeTabView.frame.size.width/1.2, takeTabView.frame.size.height/2);
     
     [takeTabView addSubview:imageSearchBtn];
     [takeTabView addSubview:takeBtn];
+    [takeTabView addSubview:camLibBtn];
 }
 -(void)pushTabView{
     [takeTabView removeFromSuperview];
@@ -539,4 +565,14 @@
     si.backgroundColor = [UIColor colorWithPatternImage:imag];
     return si;
 }
+
+-(void)pressCamLibButton{
+    UIImagePickerController *IPC = [[UIImagePickerController alloc]init];
+    [IPC setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    [IPC setAllowsEditing:YES];
+    [IPC setDelegate:self];
+    
+    [self presentViewController:IPC animated:YES completion:nil];
+}
+
 @end

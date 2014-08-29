@@ -52,7 +52,7 @@
     self.navigationItem.title = @"search LGTM! Base Image";
     UIBarButtonItem *bb = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                        target:self action:@selector(pressCancelButton)];
-    self.navigationItem.leftBarButtonItem = bb;
+    self.navigationItem.rightBarButtonItem = bb;
 }
 
 -(void)pressCancelButton{

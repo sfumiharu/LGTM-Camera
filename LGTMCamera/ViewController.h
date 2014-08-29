@@ -21,6 +21,8 @@
 AVCaptureVideoDataOutputSampleBufferDelegate,
 MFMailComposeViewControllerDelegate,
 NSURLAuthenticationChallengeSender,
+UIImagePickerControllerDelegate,
+UINavigationControllerDelegate,
 NSURLConnectionDelegate,
 ISDVCDelegate,
 ISVCDelegate
@@ -32,10 +34,12 @@ ISVCDelegate
 }
 @property (strong, nonatomic) UIView *previewView;
 @property (strong, nonatomic) UIImageView *setImageView;
+//@property (strong, nonatomic) UIImage *camLibIconImage;
 
 - (void)takePhoto;
 - (void)backTabView;
 - (void)pressMailButton;
+- (void)pressCamLibButton;
 - (void)pressTwitterButton;
 - (void)addLGTMSelectionView;
 - (void)pressImageSearchButton;
