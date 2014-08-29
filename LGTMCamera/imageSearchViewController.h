@@ -17,5 +17,4 @@
 <UISearchBarDelegate, ISDVCDelegate>
 @property (assign, nonatomic)id<ISVCDelegate> delegate;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil img:(UIImage *)im;
-- (void)imaged:(UIImage *)im;
 @end

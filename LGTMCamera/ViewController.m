@@ -44,7 +44,7 @@
 @property(nonatomic, strong)AVCaptureDeviceInput *videoInput;
 @property(nonatomic, strong)AVCaptureStillImageOutput *stillImageOutput;
 @property(nonatomic, strong)AVCaptureSession *session;
-//@property(nonatomic, strong)UIView *previewView;
+@property(nonatomic, strong)UIView *previewView;
 @property(nonatomic, strong)NSData *imageData;
 @property(nonatomic, strong)UIImageView *shutter;
 @property(nonatomic, strong)UIImageView *lgtmView;

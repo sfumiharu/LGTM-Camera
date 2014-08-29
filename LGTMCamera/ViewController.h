@@ -20,11 +20,8 @@
 <
 AVCaptureVideoDataOutputSampleBufferDelegate,
 MFMailComposeViewControllerDelegate,
-NSURLAuthenticationChallengeSender,
 UIImagePickerControllerDelegate,
 UINavigationControllerDelegate,
-NSURLConnectionDelegate,
-ISDVCDelegate,
 ISVCDelegate
 >
 {
@@ -32,7 +29,6 @@ ISVCDelegate
     UIView *takeTabView;
     UIView *takedTabView;
 }
-@property (strong, nonatomic) UIView *previewView;
 @property (strong, nonatomic) UIImageView *setImageView;
 
 - (void)pressTakeButton;

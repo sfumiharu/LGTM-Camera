@@ -14,7 +14,6 @@
 {
     UIImage *image;
 }
-- (IBAction)pressOutButton:(id)sender;
 @end
 
 @implementation imageSearchDetailViewController
