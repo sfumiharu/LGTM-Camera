@@ -459,9 +459,20 @@
     //    Set Animation
     [UIView beginAnimations:@"device rotation" context:nil];
     [UIView setAnimationDuration:0.3];
+    
     addLGTMBtn.transform = t;
     retakeBtn.transform = t;
     takeBtn.transform = t;
+    
+    twitterBtn.transform = t;
+    saveBtn.transform = t;
+    changeDeviceBtn.transform = t;
+    menuBtn.transform = t;
+    camLibBtn.transform = t;
+    imageSearchBtn.transform = t;
+    retakeLbl.transform = t;
+    menuLbl.transform = t;
+    
     [UIView commitAnimations];
 }
 
