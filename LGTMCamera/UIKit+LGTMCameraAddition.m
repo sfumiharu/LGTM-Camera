@@ -34,7 +34,7 @@
 
 -(UIButton *)addLGTMButton{
     UIButton *addLGTMButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
-    [addLGTMButton setBackgroundImage:[UIImage imageNamed:@"LGTM.png"] forState:UIControlStateNormal];
+    [addLGTMButton setBackgroundImage:[UIImage imageNamed:@"LGTM_2.png"] forState:UIControlStateNormal];
     [addLGTMButton addTarget:self action:@selector(addLGTMSelectionView) forControlEvents:UIControlEventTouchUpInside];
     return addLGTMButton;
 }
@@ -68,10 +68,16 @@
     UIButton *camLibraryButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
     [camLibraryButton setBackgroundImage:[UIImage imageNamed:@"cameraroll"] forState:UIControlStateNormal];
     [camLibraryButton addTarget:self action:@selector(pressCamLibButton) forControlEvents:UIControlEventTouchUpInside];
-    NSLog(@"mbotan %@", [self camLibIcon]);
+//    NSLog(@"mbotan %@", [self camLibIcon]);
     return camLibraryButton;
 }
 
+-(UIButton *)switchingCameraButton{
+    UIButton *switchingCameraButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [switchingCameraButton setBackgroundImage:[UIImage imageNamed:@"switch"] forState:UIControlStateNormal];
+    [switchingCameraButton addTarget:self action:@selector(changeDevice) forControlEvents:UIControlEventTouchUpInside];
+    return switchingCameraButton;
+}
 -(UILabel *)retakeLabel{
     UILabel *retakeLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 50, 15)];
     retakeLabel.backgroundColor = RGB(51, 51, 51);
@@ -94,7 +100,7 @@
     return menuLabel;
 }
 
-
+/*
 -(NSURL *)camLibIcon{
     __block NSURL *url1;
     ALAssetsLibrary *lib = [[ALAssetsLibrary alloc]init];
@@ -124,5 +130,5 @@
         NSLog(@"url1%@", url1);
         return url1;
 }
-
+*/
 @end

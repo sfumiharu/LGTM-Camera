@@ -28,11 +28,13 @@ ISVCDelegate
     UIView *baseView;
     UIView *takeTabView;
     UIView *takedTabView;
+    UIView *accessoriesTabView;
 }
 @property (strong, nonatomic) UIImageView *setImageView;
 
 - (void)pressTakeButton;
 - (void)backTabView;
+- (void)changeDevice;
 - (void)pressMailButton;
 - (void)pressCamLibButton;
 - (void)pressTwitterButton;

@@ -32,6 +32,9 @@
 		2724FBED195B93FF003D58AC /* 0_check.png in Resources */ = {isa = PBXBuildFile; fileRef = 2724FBEB195B93FF003D58AC /* 0_check.png */; };
 		2748510519B00CE90014C701 /* UIImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2748510419B00CE90014C701 /* UIImagePickerViewController.m */; };
 		2748510719B01A900014C701 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2748510619B01A900014C701 /* AssetsLibrary.framework */; };
+		2748510919B17C7E0014C701 /* repeat.png in Resources */ = {isa = PBXBuildFile; fileRef = 2748510819B17C7E0014C701 /* repeat.png */; };
+		2748510B19B4067B0014C701 /* switch.png in Resources */ = {isa = PBXBuildFile; fileRef = 2748510A19B4067B0014C701 /* switch.png */; };
+		2748510D19B4B27C0014C701 /* LGTM_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2748510C19B4B27C0014C701 /* LGTM_2.png */; };
 		27573D75193385A70035AA06 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27573D74193385A70035AA06 /* AVFoundation.framework */; };
 		278C981F19AC4A42004EF1E1 /* UIKit+LGTMCameraAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 278C981E19AC4A42004EF1E1 /* UIKit+LGTMCameraAddition.m */; };
 		27AB460C1941F59800A2F6D7 /* retake.png in Resources */ = {isa = PBXBuildFile; fileRef = 27AB46071941F59800A2F6D7 /* retake.png */; };
@@ -103,6 +106,9 @@
 		2748510319B00CE90014C701 /* UIImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImagePickerViewController.h; sourceTree = "<group>"; };
 		2748510419B00CE90014C701 /* UIImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImagePickerViewController.m; sourceTree = "<group>"; };
 		2748510619B01A900014C701 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		2748510819B17C7E0014C701 /* repeat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = repeat.png; sourceTree = "<group>"; };
+		2748510A19B4067B0014C701 /* switch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switch.png; sourceTree = "<group>"; };
+		2748510C19B4B27C0014C701 /* LGTM_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LGTM_2.png; sourceTree = "<group>"; };
 		27573D74193385A70035AA06 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		278C981D19AC4A42004EF1E1 /* UIKit+LGTMCameraAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+LGTMCameraAddition.h"; sourceTree = "<group>"; };
 		278C981E19AC4A42004EF1E1 /* UIKit+LGTMCameraAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIKit+LGTMCameraAddition.m"; sourceTree = "<group>"; };
@@ -258,10 +264,13 @@
 		27EA09DC19529B5600A7D430 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				2748510A19B4067B0014C701 /* switch.png */,
+				2748510819B17C7E0014C701 /* repeat.png */,
 				27AB46071941F59800A2F6D7 /* retake.png */,
 				27AB46081941F59800A2F6D7 /* camera.png */,
 				27AB46091941F59800A2F6D7 /* cameraroll.png */,
 				27AB460B1941F59800A2F6D7 /* LGTM.png */,
+				2748510C19B4B27C0014C701 /* LGTM_2.png */,
 				27EA09D219529B4B00A7D430 /* LGTM0.png */,
 				27EA09D319529B4B00A7D430 /* LGTM1.png */,
 				27EA09D419529B4B00A7D430 /* LGTM3.png */,
@@ -377,7 +386,9 @@
 				27AB460C1941F59800A2F6D7 /* retake.png in Resources */,
 				2716716919271187002AA1D8 /* ViewController.xib in Resources */,
 				27EA09F21953451D00A7D430 /* 1_menu.png in Resources */,
+				2748510B19B4067B0014C701 /* switch.png in Resources */,
 				27EA09F41953C8B400A7D430 /* 1_back.png in Resources */,
+				2748510919B17C7E0014C701 /* repeat.png in Resources */,
 				27EA09F11953451D00A7D430 /* 1_save.png in Resources */,
 				2724FBD81959BF7A003D58AC /* bingapires.strings in Resources */,
 				27AB460E1941F59800A2F6D7 /* cameraroll.png in Resources */,
@@ -385,6 +396,7 @@
 				27EA0A03195527C700A7D430 /* 1_mail.png in Resources */,
 				27EA09EF1953451D00A7D430 /* 1_upload.png in Resources */,
 				27EA09F91954059D00A7D430 /* 1_twitter.png in Resources */,
+				2748510D19B4B27C0014C701 /* LGTM_2.png in Resources */,
 				2724FBD619590382003D58AC /* imageSearchViewController.xib in Resources */,
 				27AB460D1941F59800A2F6D7 /* camera.png in Resources */,
 				27AB46101941F59800A2F6D7 /* LGTM.png in Resources */,

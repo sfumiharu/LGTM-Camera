@@ -19,4 +19,5 @@
 - (UILabel *)retakeLabel;
 - (UILabel *)menuLabel;
 - (UIButton *)camLibraryButton;
+- (UIButton *)switchingCameraButton;
 @end

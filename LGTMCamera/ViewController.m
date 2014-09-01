@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "imageSearchViewController.h"
 #import "UIKit+LGTMCameraAddition.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface ViewController (){
     CGFloat lgtmViewX;
@@ -25,6 +26,7 @@
     UIButton *saveBtn;
     UIButton *retakeBtn;
     UIButton *takeBtn;
+    UIButton *changeDeviceBtn;
     UIButton *menuBtn;
     UIButton *mailBtn;
     UIButton *camLibBtn;
@@ -40,6 +42,9 @@
     UIDeviceOrientation deviceOrientation;
     AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
     MFMailComposeViewController *MCVC;
+    AVCaptureDeviceInput *frontFacingCameraDeviceInput;
+    AVCaptureDeviceInput *backFacingCameraDeviceInput;
+
 }
 @property(nonatomic, strong)AVCaptureDeviceInput *videoInput;
 @property(nonatomic, strong)AVCaptureStillImageOutput *stillImageOutput;
@@ -52,6 +57,38 @@
 @end
 
 @implementation ViewController
+
+
+-(NSURL *)camLibIcon{
+    __block NSURL *url1;
+    ALAssetsLibrary *lib = [[ALAssetsLibrary alloc]init];
+    [lib enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos
+                       usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
+                           [group setAssetsFilter:[ALAssetsFilter allPhotos]];
+                           
+                           NSUInteger index = [group numberOfAssets] - 1;
+                           NSIndexSet *lastPhoto = [NSIndexSet indexSetWithIndex:index];
+                           [group enumerateAssetsAtIndexes:lastPhoto
+                                                   options:0
+                                                usingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
+                                                    NSLog(@"えらーだおｙ");
+                                                    if (result) {
+                                                        ALAssetRepresentation *representation = [result defaultRepresentation];
+                                                        NSURL *url = [representation url];
+                                                        //                                                        AVAsset *avAsset = [AVURLAsset URLAssetWithURL:url
+                                                        //                                                                                               options:nil];
+                                                        NSLog(@"url%@", url);
+                                                        url1 = url;
+                                                        NSLog(@"url11%@", url1);
+                                                    }
+                                                }];
+                       } failureBlock:^(NSError *error) {
+                           NSLog(@"エラー！");
+                       }];
+    NSLog(@"url1%@", url1);
+    return url1;
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil img:(UIImage *)im;{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -68,9 +105,15 @@
     lgtmSelectionButtonList = [NSArray arrayWithObjects:@"0", @"1", @"2", @"3", @"4", nil];
     lgtmSelectionButtonName = [NSArray arrayWithObjects:@"LGTM0", @"LGTM1", @"LGTM3", @"LGTM4", @"LGTM5", nil];
     
+    UIView *vv = [[UIView alloc]initWithFrame:CGRectMake(20, 20, 50, 50)];
+    vv.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"assets-library://asset/asset.JPG?id=6A37CFE4-AEB0-44B9-A5EE-AFCAE3B6F204&ext=JPG"]]]];
+
+
+    [_setImageView addSubview:vv];
 //    [self camLibIcon];
     [self setFirstView];
     [self setupAVCapture];
+    [self setCameraDeviceInput];
 }
 
 -(void)setFirstView{
@@ -82,14 +125,20 @@
     
     if ([self is4inch]) {
         takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-90, _setImageView.frame.size.width, 90)];
+        accessoriesTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-140, _setImageView.frame.size.width, 50)];
     }else{
         takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-80, _setImageView.frame.size.width, 80)];
+        accessoriesTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-130, _setImageView.frame.size.width, 50)];
     }
     
     takeTabView.backgroundColor = RGB(51, 51, 51);
     takeTabView.alpha = 0.5;
     [self.view addSubview:takeTabView];
     
+    accessoriesTabView.backgroundColor = RGB(51, 51, 51);
+    accessoriesTabView.alpha = 0.5;
+    [self.view addSubview:accessoriesTabView];
+
     takeBtn = [self takeButton];
     takeBtn.center = CGPointMake(takeTabView.frame.size.width/2, takeTabView.frame.size.height/2);
     
@@ -102,11 +151,18 @@
     [takeTabView addSubview:imageSearchBtn];
     [takeTabView addSubview:takeBtn];
     [takeTabView addSubview:camLibBtn];
+
+    
+    changeDeviceBtn = [self switchingCameraButton];
+    changeDeviceBtn.center = CGPointMake(accessoriesTabView.frame.size.width/1.2, accessoriesTabView.frame.size.height/2);
+    
+    [accessoriesTabView addSubview:changeDeviceBtn];
 }
 
 #pragma mark Setting Of TabViews
 -(void)takedTabView{
     [takeTabView removeFromSuperview];
+    [accessoriesTabView removeFromSuperview];
 //    takeTabView.center = CGPointMake(_setImageView.frame.size.width-(_setImageView.frame.size.width*2), _setImageView.frame.size.height - 40);
     
     if ([self is4inch]) {
@@ -581,4 +637,76 @@
     [super didReceiveMemoryWarning];
 }
 
+- (AVCaptureDevice *)frontFacingCameraIfAvailable
+{
+    //  look at all the video devices and get the first one that's on the front
+    NSArray *videoDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    AVCaptureDevice *captureDevice = nil;
+    for (AVCaptureDevice *device in videoDevices)
+    {
+        if (device.position == AVCaptureDevicePositionFront)
+        {
+            captureDevice = device;
+            break;
+        }
+    }
+    
+    //  couldn't find one on the front, so just get the default video device.
+    if ( ! captureDevice)
+    {
+        captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    }
+    
+    return captureDevice;
+}
+
+
+-(void)changeDevice{
+    CABasicAnimation* animation = [CABasicAnimation animationWithKeyPath:@"transform"];
+    animation.duration = 0.5;
+//    animation.repeatCount = 2;
+//    animation.autoreverses = NO;
+    CATransform3D transform = CATransform3DMakeRotation(M_PI, 0.0, 1.0, 0.0);
+    animation.toValue = [NSNumber valueWithCATransform3D:transform];
+    
+    [_setImageView.layer addAnimation:animation forKey:@"transform"];
+    [takeTabView.layer addAnimation:animation forKey:@"transform"];
+    [accessoriesTabView.layer addAnimation:animation forKey:@"transform"];
+
+    
+    [_session beginConfiguration];
+    //初回設定
+//    if([_session.inputs count] == 0){
+//        [_session addInput:backFacingCameraDeviceInput];
+        //2回目以降
+//    }else{
+    
+        AVCaptureDeviceInput *deviceInput = (AVCaptureDeviceInput *)[_session.inputs objectAtIndex:0];
+        AVCaptureDevice *device = deviceInput.device;
+        AVCaptureDeviceInput *nextDeviceInput;
+        if (device.position == AVCaptureDevicePositionBack) {
+            nextDeviceInput = frontFacingCameraDeviceInput;
+        }else{
+            nextDeviceInput = backFacingCameraDeviceInput;
+        }
+        [_session removeInput:deviceInput];
+        [_session addInput:nextDeviceInput];
+    
+    [_session commitConfiguration];
+}
+
+
+-(void)setCameraDeviceInput{
+    NSArray *devices = [AVCaptureDevice devices];
+    for (AVCaptureDevice *device in devices) {
+        if ([device hasMediaType:AVMediaTypeVideo]) {
+            NSError *error = nil;
+            if (device.position == AVCaptureDevicePositionBack) {
+                backFacingCameraDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
+            }else{
+                frontFacingCameraDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
+            }
+        }
+    }
+}
 @end
