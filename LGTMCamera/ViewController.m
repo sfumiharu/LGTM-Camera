@@ -10,6 +10,7 @@
 #import "imageSearchViewController.h"
 #import "UIKit+LGTMCameraAddition.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <AVFoundation/AVCaptureDevice.h>
 
 @interface ViewController (){
     CGFloat lgtmViewX;
@@ -27,6 +28,7 @@
     UIButton *retakeBtn;
     UIButton *takeBtn;
     UIButton *changeDeviceBtn;
+    UIButton *changeFlashBtn;
     UIButton *menuBtn;
     UIButton *mailBtn;
     UIButton *camLibBtn;
@@ -155,8 +157,12 @@
     
     changeDeviceBtn = [self switchingCameraButton];
     changeDeviceBtn.center = CGPointMake(accessoriesTabView.frame.size.width/1.2, accessoriesTabView.frame.size.height/2);
-    
     [accessoriesTabView addSubview:changeDeviceBtn];
+    
+    changeFlashBtn = [self switchingFlashButton];
+    changeFlashBtn.center = CGPointMake(accessoriesTabView.frame.size.width/2.4, accessoriesTabView.frame.size.height/2);
+    [accessoriesTabView addSubview:changeFlashBtn];
+    
 }
 
 #pragma mark Setting Of TabViews
@@ -648,28 +654,28 @@
     [super didReceiveMemoryWarning];
 }
 
-- (AVCaptureDevice *)frontFacingCameraIfAvailable
-{
-    //  look at all the video devices and get the first one that's on the front
-    NSArray *videoDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-    AVCaptureDevice *captureDevice = nil;
-    for (AVCaptureDevice *device in videoDevices)
-    {
-        if (device.position == AVCaptureDevicePositionFront)
-        {
-            captureDevice = device;
-            break;
-        }
-    }
-    
-    //  couldn't find one on the front, so just get the default video device.
-    if ( ! captureDevice)
-    {
-        captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    }
-    
-    return captureDevice;
-}
+//- (AVCaptureDevice *)frontFacingCameraIfAvailable
+//{
+//    //  look at all the video devices and get the first one that's on the front
+//    NSArray *videoDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+//    AVCaptureDevice *captureDevice = nil;
+//    for (AVCaptureDevice *device in videoDevices)
+//    {
+//        if (device.position == AVCaptureDevicePositionFront)
+//        {
+//            captureDevice = device;
+//            break;
+//        }
+//    }
+//    
+//    //  couldn't find one on the front, so just get the default video device.
+//    if ( ! captureDevice)
+//    {
+//        captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+//    }
+//    
+//    return captureDevice;
+//}
 
 
 -(void)changeDevice{
@@ -706,7 +712,6 @@
     [_session commitConfiguration];
 }
 
-
 -(void)setCameraDeviceInput{
     NSArray *devices = [AVCaptureDevice devices];
     for (AVCaptureDevice *device in devices) {
@@ -718,6 +723,30 @@
                 frontFacingCameraDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
             }
         }
+    }
+}
+
+-(void)changeFlash{
+    NSError *error;
+    if([backFacingCameraDeviceInput.device lockForConfiguration:&error]){
+        //Flashがついている場合
+        if(backFacingCameraDeviceInput.device.flashActive){
+            changeFlashBtn.layer.shadowOpacity = 0;
+
+            backFacingCameraDeviceInput.device.flashMode = AVCaptureFlashModeOff;
+            //Flashがついていない場合
+        }else{
+            changeFlashBtn.layer.shadowOffset = CGSizeMake(0, 0);
+            changeFlashBtn.layer.shadowOpacity = 1;
+            changeFlashBtn.layer.shadowColor = [UIColor whiteColor].CGColor;
+            changeFlashBtn.layer.shadowRadius = 7;
+            backFacingCameraDeviceInput.device.flashMode = AVCaptureFlashModeOn;
+        }
+        [backFacingCameraDeviceInput.device unlockForConfiguration];
+        //エラーが発生した場合
+        NSLog(@"おす");
+    }else{
+        NSLog(@"era-");
     }
 }
 @end

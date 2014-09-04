@@ -58,6 +58,7 @@
 		27EA0A071957DDFC00A7D430 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EA0A061957DDFC00A7D430 /* Icon-Small@2x.png */; };
 		27EA0A0A1957DE7800A7D430 /* good-chef-80.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EA0A081957DE7800A7D430 /* good-chef-80.png */; };
 		27EA0A0B1957DE7800A7D430 /* good-chef-120.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EA0A091957DE7800A7D430 /* good-chef-120.png */; };
+		27EB919C19B8AE49006FDCAF /* flash.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EB919B19B8AE49006FDCAF /* flash.png */; };
 		626E042D34FE428EA9D8F104 /* libPods-LGTMCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2515A0F986304E24BF5E366C /* libPods-LGTMCamera.a */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,7 @@
 		27EA0A061957DDFC00A7D430 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		27EA0A081957DE7800A7D430 /* good-chef-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "good-chef-80.png"; sourceTree = "<group>"; };
 		27EA0A091957DE7800A7D430 /* good-chef-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "good-chef-120.png"; sourceTree = "<group>"; };
+		27EB919B19B8AE49006FDCAF /* flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flash.png; sourceTree = "<group>"; };
 		71F42CE2FBAE44FCB3C44044 /* Pods-LGTMCamera.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LGTMCamera.xcconfig"; path = "Pods/Pods-LGTMCamera.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,6 +266,7 @@
 		27EA09DC19529B5600A7D430 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				27EB919B19B8AE49006FDCAF /* flash.png */,
 				2748510A19B4067B0014C701 /* switch.png */,
 				2748510819B17C7E0014C701 /* repeat.png */,
 				27AB46071941F59800A2F6D7 /* retake.png */,
@@ -381,6 +384,7 @@
 				27EA09D819529B4B00A7D430 /* LGTM1.png in Resources */,
 				27EA09DB19529B4B00A7D430 /* LGTM5.png in Resources */,
 				27EA09D719529B4B00A7D430 /* LGTM0.png in Resources */,
+				27EB919C19B8AE49006FDCAF /* flash.png in Resources */,
 				27EA0A0A1957DE7800A7D430 /* good-chef-80.png in Resources */,
 				27EA0A0B1957DE7800A7D430 /* good-chef-120.png in Resources */,
 				27AB460C1941F59800A2F6D7 /* retake.png in Resources */,

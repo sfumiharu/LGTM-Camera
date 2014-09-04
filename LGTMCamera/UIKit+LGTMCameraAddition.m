@@ -78,6 +78,14 @@
     [switchingCameraButton addTarget:self action:@selector(changeDevice) forControlEvents:UIControlEventTouchUpInside];
     return switchingCameraButton;
 }
+
+-(UIButton *)switchingFlashButton{
+    UIButton *switchingFlashButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [switchingFlashButton setBackgroundImage:[UIImage imageNamed:@"flash"] forState:UIControlStateNormal];
+    [switchingFlashButton addTarget:self action:@selector(changeFlash) forControlEvents:UIControlEventTouchUpInside];
+    return switchingFlashButton;
+}
+
 -(UILabel *)retakeLabel{
     UILabel *retakeLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 50, 15)];
     retakeLabel.backgroundColor = RGB(51, 51, 51);

@@ -34,6 +34,7 @@ ISVCDelegate
 
 - (void)pressTakeButton;
 - (void)backTabView;
+- (void)changeFlash;
 - (void)changeDevice;
 - (void)pressMailButton;
 - (void)pressCamLibButton;

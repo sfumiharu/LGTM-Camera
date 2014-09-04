@@ -20,4 +20,5 @@
 - (UILabel *)menuLabel;
 - (UIButton *)camLibraryButton;
 - (UIButton *)switchingCameraButton;
+- (UIButton *)switchingFlashButton;
 @end
