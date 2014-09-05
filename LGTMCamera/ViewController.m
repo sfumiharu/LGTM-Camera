@@ -46,6 +46,8 @@
     MFMailComposeViewController *MCVC;
     AVCaptureDeviceInput *frontFacingCameraDeviceInput;
     AVCaptureDeviceInput *backFacingCameraDeviceInput;
+    NSUserDefaults *changeDeviceUD;
+    NSUserDefaults *changeFlashUD;
 
 }
 @property(nonatomic, strong)AVCaptureDeviceInput *videoInput;
@@ -156,13 +158,15 @@
 
     
     changeDeviceBtn = [self switchingCameraButton];
-    changeDeviceBtn.center = CGPointMake(accessoriesTabView.frame.size.width/1.2, accessoriesTabView.frame.size.height/2);
+    changeDeviceBtn.center = CGPointMake(accessoriesTabView.frame.size.width/1.45, accessoriesTabView.frame.size.height/2);
     [accessoriesTabView addSubview:changeDeviceBtn];
     
     changeFlashBtn = [self switchingFlashButton];
-    changeFlashBtn.center = CGPointMake(accessoriesTabView.frame.size.width/2.4, accessoriesTabView.frame.size.height/2);
+    changeFlashBtn.center = CGPointMake(accessoriesTabView.frame.size.width/3.15, accessoriesTabView.frame.size.height/2);
     [accessoriesTabView addSubview:changeFlashBtn];
     
+    NSLog(@"first+%@", [changeFlashUD objectForKey:@"flashKey"]);
+    [self changeShadowOfFlashButton];
 }
 
 #pragma mark Setting Of TabViews
@@ -208,7 +212,7 @@
 }
 -(void)backTabView{
     [self setFirstView];
-
+    
     [takedTabView removeFromSuperview];
 //    takedTabView.center = CGPointMake((_setImageView.frame.size.width * 3) / 2, _setImageView.frame.size.height - 40);
     
@@ -473,6 +477,7 @@
     twitterBtn.transform = t;
     saveBtn.transform = t;
     changeDeviceBtn.transform = t;
+    changeFlashBtn.transform = t;
     menuBtn.transform = t;
     camLibBtn.transform = t;
     imageSearchBtn.transform = t;
@@ -729,24 +734,40 @@
 -(void)changeFlash{
     NSError *error;
     if([backFacingCameraDeviceInput.device lockForConfiguration:&error]){
-        //Flashがついている場合
+        //Flashがついている場合、OFFにする
         if(backFacingCameraDeviceInput.device.flashActive){
             changeFlashBtn.layer.shadowOpacity = 0;
-
             backFacingCameraDeviceInput.device.flashMode = AVCaptureFlashModeOff;
-            //Flashがついていない場合
+            [changeFlashUD setObject:@"0" forKey:@"flashKey"];
+            [changeFlashUD synchronize];
+            NSLog(@"ud+%@", [changeFlashUD objectForKey:@"flashKey"]);
         }else{
+            //Flashがついていない場合、ONにする
             changeFlashBtn.layer.shadowOffset = CGSizeMake(0, 0);
             changeFlashBtn.layer.shadowOpacity = 1;
             changeFlashBtn.layer.shadowColor = [UIColor whiteColor].CGColor;
             changeFlashBtn.layer.shadowRadius = 7;
             backFacingCameraDeviceInput.device.flashMode = AVCaptureFlashModeOn;
+            changeFlashUD = [NSUserDefaults standardUserDefaults];
+            [changeFlashUD setObject:@"1" forKey:@"flashKey"];
+            [changeFlashUD synchronize];
+            NSLog(@"ud1+%@", [changeFlashUD objectForKey:@"flashKey"]);
         }
         [backFacingCameraDeviceInput.device unlockForConfiguration];
-        //エラーが発生した場合
-        NSLog(@"おす");
     }else{
-        NSLog(@"era-");
+    }
+    
+}
+
+-(void)changeShadowOfFlashButton{
+    if ([[changeFlashUD objectForKey:@"flashKey"] isEqualToString:@"0"]||
+        [changeFlashUD objectForKey:@"flashKey"] == nil) {
+        changeFlashBtn.layer.shadowOpacity = 0;
+    }else{
+        changeFlashBtn.layer.shadowOffset = CGSizeMake(0, 0);
+        changeFlashBtn.layer.shadowOpacity = 1;
+        changeFlashBtn.layer.shadowColor = [UIColor whiteColor].CGColor;
+        changeFlashBtn.layer.shadowRadius = 7;
     }
 }
 @end
