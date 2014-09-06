@@ -20,8 +20,10 @@
     CGFloat px;
     CGFloat py;
     CGFloat width, height;
+    CGFloat setImageViewH, setImageViewW;
+    CGFloat takeTabViewH, takeTabViewW;
     CGRect frame;
-
+    
     UIButton *addLGTMBtn;
     UIButton *twitterBtn;
     UIButton *saveBtn;
@@ -109,6 +111,11 @@
     lgtmSelectionButtonList = [NSArray arrayWithObjects:@"0", @"1", @"2", @"3", @"4", nil];
     lgtmSelectionButtonName = [NSArray arrayWithObjects:@"LGTM0", @"LGTM1", @"LGTM3", @"LGTM4", @"LGTM5", nil];
     
+    setImageViewH = _setImageView.frame.size.height;
+    setImageViewW = _setImageView.frame.size.width;
+    takeTabViewH = takeTabView.frame.size.height;
+    takeTabViewW = takeTabView.frame.size.width;
+
     UIView *vv = [[UIView alloc]initWithFrame:CGRectMake(20, 20, 50, 50)];
     vv.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"assets-library://asset/asset.JPG?id=6A37CFE4-AEB0-44B9-A5EE-AFCAE3B6F204&ext=JPG"]]]];
 
@@ -128,11 +135,11 @@
 
     
     if ([self is4inch]) {
-        takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-90, _setImageView.frame.size.width, 90)];
-        accessoriesTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-140, _setImageView.frame.size.width, 50)];
+        takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, setImageViewH-90, setImageViewW, 90)];
+        accessoriesTabView = [[UIView alloc]initWithFrame:CGRectMake(0, setImageViewH-140, setImageViewW, 50)];
     }else{
-        takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-80, _setImageView.frame.size.width, 80)];
-        accessoriesTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-130, _setImageView.frame.size.width, 50)];
+        takeTabView = [[UIView alloc]initWithFrame:CGRectMake(0, setImageViewH-80, setImageViewW, 80)];
+        accessoriesTabView = [[UIView alloc]initWithFrame:CGRectMake(0, setImageViewH-130, setImageViewW, 50)];
     }
     
     takeTabView.backgroundColor = RGB(51, 51, 51);
@@ -144,13 +151,13 @@
     [self.view addSubview:accessoriesTabView];
 
     takeBtn = [self takeButton];
-    takeBtn.center = CGPointMake(takeTabView.frame.size.width/2, takeTabView.frame.size.height/2);
+    takeBtn.center = CGPointMake(takeTabViewW/2, takeTabViewH/2);
     
     imageSearchBtn = [self imageSearchButton];
-    imageSearchBtn.center = CGPointMake(takeTabView.frame.size.width/6, takeTabView.frame.size.height/2);
+    imageSearchBtn.center = CGPointMake(takeTabViewW/6, takeTabViewH/2);
     
     camLibBtn = [self camLibraryButton];
-    camLibBtn.center = CGPointMake(takeTabView.frame.size.width/1.2, takeTabView.frame.size.height/2);
+    camLibBtn.center = CGPointMake(takeTabViewW/1.2, takeTabViewH/2);
     
     [takeTabView addSubview:imageSearchBtn];
     [takeTabView addSubview:takeBtn];
@@ -176,9 +183,9 @@
 //    takeTabView.center = CGPointMake(_setImageView.frame.size.width-(_setImageView.frame.size.width*2), _setImageView.frame.size.height - 40);
     
     if ([self is4inch]) {
-        takedTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-90, _setImageView.frame.size.width, 90)];
+        takedTabView = [[UIView alloc]initWithFrame:CGRectMake(0, setImageViewH-90, setImageViewW, 90)];
     }else{
-        takedTabView = [[UIView alloc]initWithFrame:CGRectMake(0, _setImageView.frame.size.height-80, _setImageView.frame.size.width, 80)];
+        takedTabView = [[UIView alloc]initWithFrame:CGRectMake(0, setImageViewH-80, setImageViewW, 80)];
     }
     
     takedTabView.backgroundColor = RGB(51, 51, 51);
@@ -189,19 +196,19 @@
     [self.view addSubview:takedTabView];
     
     addLGTMBtn = [self addLGTMButton];
-    addLGTMBtn.center = CGPointMake(takeTabView.frame.size.width/1.2, takeTabView.frame.size.height/2);
+    addLGTMBtn.center = CGPointMake(takeTabViewW/1.2, takeTabViewH/2);
     
     retakeBtn = [self retakeButton];
-    retakeBtn.center = CGPointMake(takeTabView.frame.size.width/6, takeTabView.frame.size.height/2);
+    retakeBtn.center = CGPointMake(takeTabViewW/6, takeTabViewH/2);
     
     menuBtn = [self menuButton];
-    menuBtn.center = CGPointMake(takeTabView.frame.size.width/2, takeTabView.frame.size.height/2);
+    menuBtn.center = CGPointMake(takeTabViewW/2, takeTabViewH/2);
     
     retakeLbl = [self retakeLabel];
-    retakeLbl.center = CGPointMake(takeTabView.frame.size.width/6, takeTabView.frame.size.height/1.1);
+    retakeLbl.center = CGPointMake(takeTabViewW/6, takeTabViewH/1.1);
     
     menuLbl = [self menuLabel];
-    menuLbl.center = CGPointMake(takeTabView.frame.size.width/2, takeTabView.frame.size.height/1.1);
+    menuLbl.center = CGPointMake(takeTabViewW/2, takeTabViewH/1.1);
 
     
     [takedTabView addSubview:menuBtn];
@@ -301,7 +308,7 @@
     UIImage *image = [UIImage imageNamed:[lgtmSelectionButtonName objectAtIndex:sender.tag]];
     _lgtmView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
     _lgtmView.image = image;
-    _lgtmView.center = CGPointMake(_setImageView.frame.size.width/2, _setImageView.frame.size.height/2);
+    _lgtmView.center = CGPointMake(setImageViewW/2, setImageViewH/2);
     _lgtmView.contentMode = UIViewContentModeScaleAspectFill;
     
     [sv removeFromSuperview];
@@ -333,8 +340,8 @@
          
          _imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
          [_setImageView setImage:[UIImage imageWithData:_imageData]];
-         frame.size.width = _setImageView.frame.size.width;
-         frame.size.height = _setImageView.frame.size.height;
+         frame.size.width = setImageViewW;
+         frame.size.height = setImageViewH;
      }];
     [self takedTabView];
 }
@@ -433,6 +440,7 @@
         if(connection.supportsVideoOrientation)
         {
             connection.videoOrientation = [self videoOrientation];
+            NSLog(@"orie+%d", [self videoOrientation]);
         }
     }
 }
